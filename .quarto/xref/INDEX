@@ -1,0 +1,26 @@
+{
+  "index.qmd": {
+    "index.html": "e3130871",
+    "index.tex": "b473f9ad"
+  },
+  "intro.qmd": {
+    "intro.html": "316c7eab",
+    "intro.tex": "61017df9"
+  },
+  "numpy_and_pandas.qmd": {
+    "numpy_and_pandas.html": "749ab954",
+    "numpy_and_pandas.tex": "970fd800"
+  },
+  "python_basics.qmd": {
+    "python_basics.html": "afe8c10d",
+    "python_basics.tex": "e217a685"
+  },
+  "references.qmd": {
+    "references.html": "f5aec516",
+    "references.tex": "aa067a52"
+  },
+  "summary.qmd": {
+    "summary.html": "a8148266",
+    "summary.tex": "70c515cb"
+  }
+}

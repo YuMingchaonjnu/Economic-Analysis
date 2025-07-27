@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: docs
+  #type: book
+#execute:
+#  freeze: auto
+book:
+  title: "基于Python的经济数据分析与应用"
+  author: "于明超"
+  date: today
+  chapters:
+    - index.qmd    
+    - intro.qmd
+    - python_basics.qmd
+    - numpy_and_pandas.qmd
+    #- eda.qmd(mac)
+    #- statistics.qmd macbook(mac)
+    #- regression.qmd
+    #- monte_carlo.qmd
+    #- entropy.qmd
+    #- pca.qmd
+    #- io.qmd
+    #- text_analysis.qmd
+    #- trade_flow.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: ctexbook
+    toc: true
+    toc-depth: 2
+    toc-title: "Table of Contents"
+    number-sections: true    
+    fig-cap-location: bottom
+    fig_caption: true  
+    latex-engine: xelatex
+    includes:
+      in-header: header.tex    
+    keep-tex: false
+    latex-auto-install: false
+    cite-method: biblatex
