@@ -1,9 +1,6 @@
 project:
   type: website
   output-dir: docs
-  #type: book
-#execute:
-#  freeze: auto
 book:
   title: "基于Python的经济数据分析与应用"
   author: "于明超"
@@ -30,6 +27,10 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    toc: true
+    toc-depth: 2
+    toc-title: "Table of Contents"
+    toc-position: right
   pdf:
     documentclass: ctexbook
     toc: true

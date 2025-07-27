@@ -131,8 +131,18 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#课程是关于什么的" id="toc-课程是关于什么的" class="nav-link active" data-scroll-target="#课程是关于什么的">课程是关于什么的？</a></li>
+  <li><a href="#分析工具python" id="toc-分析工具python" class="nav-link" data-scroll-target="#分析工具python">分析工具：Python</a></li>
+  <li><a href="#安装python" id="toc-安装python" class="nav-link" data-scroll-target="#安装python">安装Python</a></li>
+  <li><a href="#脚本模式和交互模式" id="toc-脚本模式和交互模式" class="nav-link" data-scroll-target="#脚本模式和交互模式">脚本模式和交互模式</a></li>
+  <li><a href="#文档与帮助" id="toc-文档与帮助" class="nav-link" data-scroll-target="#文档与帮助">文档与帮助</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -292,7 +302,7 @@ div.csl-indent {
 <p><code>python pyfiles/polar_plot.py</code></p>
 <p>当然，也可以先改变当前文件夹至pyfiles文件夹，就可以省略路径。 ### Jupyter notebook兼有</p>
 <p>在Jupyter Notebook中试验是否成功安装，打开链接中的例子，将代码复制到一个单元格中，绘制一个<a href="https://matplotlib.org/3.1.1/gallery/pie_and_polar_charts/polar_bar.html">圆形柱状图</a>：</p>
-<div id="ee739fdf" class="cell" data-execution_count="1">
+<div id="1ea7e701" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -320,7 +330,7 @@ div.csl-indent {
 </div>
 </div>
 <p>Jupyter Notebook 延续了ipython中的<code>%run</code>命令，可以脚本模式运行：</p>
-<div id="d4ac77f7" class="cell" data-execution_count="2">
+<div id="a9762f47" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run pyfiles<span class="op">/</span>polar_plot.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -338,7 +348,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="help-和"><code>help()</code> 和<code>?</code></h3>
 <p>Python有非常详细的官方<a href="https://docs.python.org/zh-cn/3.13/">帮助文档</a>，帮助新用户快速的熟悉其用法。</p>
 <p>例如，Python有一个内置函数<code>help()</code>，可以查看定义的文档，例如对函数<code>len()</code>：</p>
-<div id="8d25fefb" class="cell" data-execution_count="3">
+<div id="f222a41e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on built-in function len in module builtins:
@@ -349,11 +359,11 @@ len(obj, /)
 </div>
 </div>
 <p>由于其重要性，Ipython和Jupyter中可以使用<code>?</code>作为缩写：</p>
-<div id="a79ea9af" class="cell" data-execution_count="4">
+<div id="eec36f68" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>当然，对自定义的对象也是适用的。下面定义的函数，有一段函数的说明文字（docstring）：</p>
-<div id="e0ba5cef" class="cell" data-execution_count="5">
+<div id="23aa9e25" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates the square of a given number.</span></span>
@@ -367,7 +377,7 @@ len(obj, /)
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果输入<code>help()</code>函数：</p>
-<div id="e9633a2b" class="cell" data-execution_count="6">
+<div id="ae1184fc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function square in module __main__:
