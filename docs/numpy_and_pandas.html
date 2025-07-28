@@ -78,6 +78,7 @@ div.csl-indent {
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -153,14 +154,105 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy_and_pandas.html">数据分析</a></li><li class="breadcrumb-item"><a href="./numpy_and_pandas.html">NumPy与Pandas</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">基于Python的经济数据分析与应用</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python基础</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介绍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python基础</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">数据分析</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy_and_pandas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">NumPy与Pandas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">探索性数据分析</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">总结</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -176,7 +268,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy_and_pandas.html">数据分析</a></li><li class="breadcrumb-item"><a href="./numpy_and_pandas.html">NumPy与Pandas</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Numpy 和Pandas 基础</h1>
 </div>
@@ -200,7 +292,7 @@ window.Quarto = {
 <section id="创建数组" class="level3">
 <h3 class="anchored" data-anchor-id="创建数组">创建数组</h3>
 <p>有许多种方法创建数组，下面是一些简单的例子，使用<code>np.array()</code>函数，将列表、元组转化为数组：</p>
-<div id="f3435fe9" class="cell" data-execution_count="1">
+<div id="c9e7de2d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -210,7 +302,7 @@ window.Quarto = {
 </div>
 </div>
 <p>注意，与列表不同，Numpy数组只能包含相同类型的数据，下面的例子中，<code>np.array()</code>函数自动将列表中的整数转换为浮点数：</p>
-<div id="83f75310" class="cell" data-execution_count="2">
+<div id="d3c75f43" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">3.14</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -218,7 +310,7 @@ window.Quarto = {
 </div>
 </div>
 <p>列表总是一维的，Numpy数组可以是多维的，例如下面的例子使用：</p>
-<div id="c4ead9fd" class="cell" data-execution_count="3">
+<div id="021b393f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.1</span>, <span class="dv">3</span>],</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="fl">6.5</span>]])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -228,7 +320,7 @@ window.Quarto = {
 </div>
 </div>
 <p>数组<code>data</code>是二维数组，可以查看属性<code>ndim</code>和<code>shape</code>：</p>
-<div id="57ccad19" class="cell" data-execution_count="4">
+<div id="1b2d6d43" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.ndim</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -236,7 +328,7 @@ window.Quarto = {
 </div>
 </div>
 <p>可以对<code>data</code>进行通常的数学运算：</p>
-<div id="d63e9e4b" class="cell" data-execution_count="5">
+<div id="aa332c02" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">*</span> <span class="dv">10</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">+</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -302,7 +394,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </figure>
 </div>
-<div id="20be2ef2" class="cell" data-execution_count="6">
+<div id="bb263106" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">10</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
@@ -328,26 +420,26 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>Numpy中random子库包含丰富的生成随机数的函数，例如：</p>
-<div id="f42dbeaa" class="cell" data-execution_count="7">
+<div id="b60f2d37" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#生成正态分布</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nums_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_norm)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nums_int <span class="op">=</span> np.random.randint(low<span class="op">=</span><span class="dv">1</span>, high<span class="op">=</span><span class="dv">11</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">10</span>))</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 0.44846963 -0.8691623  -0.2255711 ]
- [ 1.59208179  1.25217788 -1.68309807]
- [ 0.26391054 -0.43658427  0.77462679]
- [-0.17047397  1.59207911  1.07267578]]
-[[ 7  6  9  1  7  3 10  2  3  4]
- [ 3  3  3  7  2  6  7  3  8  4]]</code></pre>
+<pre><code>[[ 0.49643846  1.03935339  0.15237618]
+ [ 1.19161575  1.0532383   0.63093856]
+ [-1.93298467 -1.81144982 -0.12185218]
+ [-1.26276553  0.58213885  0.73733134]]
+[[ 9  6  2  7  7  8  9  8  9  3]
+ [ 4  9 10  7  4  4  7  2  3  4]]</code></pre>
 </div>
 </div>
 </section>
 <section id="数组的索引" class="level3">
 <h3 class="anchored" data-anchor-id="数组的索引">数组的索引</h3>
 <p>注意索引与列表一样，从0开始；选择元素时不包括右侧。</p>
-<div id="8ba77069" class="cell" data-execution_count="8">
+<div id="1a201ab5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.array((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>:<span class="dv">2</span>]</span>
@@ -369,7 +461,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="数组方法">数组方法</h3>
 <p>数组方法众多，例如：</p>
 <p>代码段</p>
-<div id="e68df20f" class="cell" data-execution_count="9">
+<div id="09da7a19" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array((<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>a.sort()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -390,7 +482,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <section id="数组的数学运算" class="level3">
 <h3 class="anchored" data-anchor-id="数组的数学运算">数组的数学运算</h3>
 <p>注意，运算符 <code>+</code>, <code>-</code> , <code>*</code>, <code>/</code> 和 <code>**</code>，都是逐元素运算。例如：</p>
-<div id="d2ee7a19" class="cell" data-execution_count="10">
+<div id="9c3ded3d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span>
@@ -410,7 +502,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>可以使用 @ 或 np.dot() 进行矩阵乘法。如果是向量则计算内积。</p>
-<div id="57c4b76f" class="cell" data-execution_count="11">
+<div id="06172252" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>],</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>,<span class="dv">4</span>]])</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>,<span class="dv">6</span>,],</span>
@@ -430,7 +522,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="例多项式计算">例：多项式计算</h3>
 <p>Numpy中有一些列简便运算的函数。例如 <code>np.poly1d()</code>，多项式求和:</p>
 <p><span class="math display">\[p(x) = a_{0} + a_{1}x + a_{2}x^{2} + \cdots + a_{N}x^{N} = \sum_{n=0}^{N}a_{n}x^{n} \]</span></p>
-<div id="9e14bb94" class="cell" data-execution_count="12">
+<div id="377ffbc1" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.poly1d([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -442,7 +534,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 <p>注意，<code>np.poly1d()</code> 函数高阶项在前面。</p>
 <p>利用向量计算，自定义一个函数：</p>
-<div id="6bb71687" class="cell" data-execution_count="13">
+<div id="47f2c8c8" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poly1d(x, coef):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.ones_like(coef)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    X[<span class="dv">1</span>:] <span class="op">=</span> x</span>
@@ -460,7 +552,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="random子库">Random子库</h3>
 <p>Numpy中有大量的与随机数生成器有关的函数。</p>
 <p>下面是一个例子，注意，没有设定随机种子数，因此每次运行结果会不同。</p>
-<div id="d37906d5" class="cell" data-execution_count="14">
+<div id="5da20c48" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an array of choices</span></span>
@@ -472,12 +564,12 @@ Table&nbsp;1: Numpy中生成数组的函数
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the random choice</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_choice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>grape</code></pre>
+<pre><code>banana</code></pre>
 </div>
 </div>
 <section id="例简单的随机游走" class="level4">
 <h4 class="anchored" data-anchor-id="例简单的随机游走">例：简单的随机游走</h4>
-<div id="7c0c1d02" class="cell" data-execution_count="15">
+<div id="ce393d21" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -518,7 +610,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <li>重复抽样并计算均值: 从总体中抽取 num_samples 次样本，每次抽取 sample_size 个数据点，并计算每次抽样的平均值。</li>
 <li>可视化: 绘制样本均值的直方图，并与原始总体分布的直方图进行对比。</li>
 </ul>
-<div id="893087bb" class="cell" data-execution_count="16">
+<div id="6a4a68ed" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'SimHei'</span></span>
@@ -603,7 +695,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="通用函数">通用函数</h3>
 <p>Numpy中许多函数是通用函数(universal functions)，是一种在 ndarray 数据中进行逐元素操作的函数，大多数数学函数属于此类。</p>
 <p>例如 <code>np.cos()</code> 函数：</p>
-<div id="8f99ecc3" class="cell" data-execution_count="17">
+<div id="2bd8cc5d" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>np.cos(<span class="fl">1.0</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>np.cos(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -611,7 +703,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>例如，我们想计算<span class="math inline">\(\frac{0}{1},\frac{1}{2},\cdots, \frac{4}{5}\)</span>:</p>
-<div id="6ad12bc4" class="cell" data-execution_count="18">
+<div id="8ca791d7" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">5</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([0.        , 0.5       , 0.66666667, 0.75      , 0.8       ])</code></pre>
@@ -698,7 +790,7 @@ Table&nbsp;2: Numpy中算术运算子和函数
 <p>考察最大化函数 <span class="math inline">\(f(x,y)\)</span> 在区间 $ [−a,a] $ 上的最大值： <span class="math display">\[
 f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 \]</span> ​ 令<span class="math inline">\(a=3\)</span>。 我们定义一个函数，然后生成数组，计算对应的-值，通过栅格（grid）搜索最大值（等于1）。</p>
-<div id="bc6fb96d" class="cell" data-execution_count="19">
+<div id="1237c00a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -738,7 +830,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="例洛伦茨曲线和基尼系数" class="level3">
 <h3 class="anchored" data-anchor-id="例洛伦茨曲线和基尼系数">例：洛伦茨曲线和基尼系数</h3>
-<div id="19dde8cd" class="cell" data-execution_count="20">
+<div id="4b94f1a4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># 载入numpy库</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lorenz_curve(y):</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
@@ -749,7 +841,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    cum_income <span class="op">=</span> s <span class="op">/</span> s[n] <span class="co"># s[n]为最后的值，即所有值的和</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cum_people, cum_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="96373b5c" class="cell" data-execution_count="21">
+<div id="64eb17a4" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">2000</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> np.exp(np.random.randn(n))</span>
@@ -781,7 +873,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="基尼系数" class="level3">
 <h3 class="anchored" data-anchor-id="基尼系数">基尼系数</h3>
-<div id="5c4b2281" class="cell" data-execution_count="22">
+<div id="3f379c89" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gini(y):</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    y_1 <span class="op">=</span> np.reshape(y, (n, <span class="dv">1</span>))</span>
@@ -789,7 +881,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    g_sum <span class="op">=</span> np.<span class="bu">sum</span>(np.<span class="bu">abs</span>(y_1 <span class="op">-</span> y_2)) <span class="co"># 利用了numpy的广播（broadcasting）</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g_sum <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n <span class="op">*</span> np.<span class="bu">sum</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e8b5d7aa" class="cell" data-execution_count="23">
+<div id="bd2e8ded" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 模拟对数正态数据</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">5</span></span>
@@ -801,7 +893,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> np.exp(mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(n))</span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    ginis.append(gini(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="255d74eb" class="cell" data-execution_count="24">
+<div id="15b08127" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>ax.plot(sigmas, ginis, marker <span class="op">=</span> <span class="st">'o'</span>,label<span class="op">=</span><span class="st">'simulated'</span>, lw <span class="op">=</span> <span class="dv">2</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Standard deviation'</span>)</span>
@@ -833,7 +925,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <p>Series 可以看作一“列”数据；</p>
 <p>DataFrame 可以看作储存相应列数据的二维对象；类似Excel表单；</p>
 <p>Series一些方法</p>
-<div id="48bf53c5" class="cell" data-execution_count="25">
+<div id="b4cda30c" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series(np.random.randn(<span class="dv">100</span>), name<span class="op">=</span><span class="st">"daily return"</span>)</span>
@@ -871,7 +963,7 @@ Name: daily return, dtype: float64</code></pre>
 <section id="导入数据" class="level3">
 <h3 class="anchored" data-anchor-id="导入数据">导入数据</h3>
 <p>假设数据保存在当前路径的datasets子文件中：</p>
-<div id="df0cb8c5" class="cell" data-execution_count="26">
+<div id="eb94c08b" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>pwt <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">"datasets/pwt1001.xlsx"</span>,</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                header<span class="op">=</span><span class="dv">0</span>,                </span>
@@ -881,11 +973,11 @@ Name: daily return, dtype: float64</code></pre>
 </div>
 <p>注意其中的几个参数，<code>io</code>是文件路径；<code>header</code>表明列标题行，这里是第一行；<code>sheet_name</code>是数据所在表单名；将载入的数据赋值给pwt数据框。我们只保留2019年的观测值，变量<code>cor_exp</code>在这一年全部为缺失值，这里直接删除了。</p>
 <p>先为<code>pwt2019</code>数据框设置索引变量，这里使用国家名代码变量（countrycode）：</p>
-<div id="ae1f3c42" class="cell" data-execution_count="27">
+<div id="ef213a50" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>pwt2019.set_index(<span class="st">'countrycode'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>可以<code>df.info()</code>概率数据集，或者使用<code>df.head()</code>或<code>df.tail()</code>查看头部和尾部观测值：</p>
-<div id="653a1d26" class="cell" data-execution_count="28">
+<div id="36b49b20" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>pwt2019.info()</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>pwt2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1134,7 +1226,7 @@ memory usage: 72.9+ KB</code></pre>
 </div>
 <p>默认显示5条观测值，如果希望看到更多观测值，可以使用 <code>df.tail(n=10)</code> 修改数值。</p>
 <p>可以应用<code>.shape, .ndim</code>,<code>.columns</code>等属性查看基本信息，可以看到数据集包含51个变量共183个观测值。</p>
-<div id="92bba4f3" class="cell" data-execution_count="29">
+<div id="9f08a683" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pwt2019.shape)</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pwt2019.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1154,7 +1246,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <h3 class="anchored" data-anchor-id="选择观测值和变量">选择观测值和变量</h3>
 <p>应用中经常对某些观测值或特定子集进行操作，因此很重要的一步是选择观测值和变量。</p>
 <p>最基本的方法可以通过Python数组的切片（slicing）方式选择特定的<strong>行</strong>。例如，选择第3至5个观测值：</p>
-<div id="c13803a3" class="cell" data-execution_count="30">
+<div id="4a34b802" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pwt2019[<span class="dv">2</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
@@ -1294,7 +1386,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 <p>要选择<strong>列</strong>，可以用包含列名字的列表：</p>
-<div id="50cfe272" class="cell" data-execution_count="31">
+<div id="df3835c5" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>vars_selected <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'rgdpe'</span>, <span class="st">'rgdpo'</span>, <span class="st">'pop'</span>, <span class="st">'emp'</span>, <span class="st">'cgdpe'</span>, <span class="st">'cgdpo'</span>, <span class="st">'ctfp'</span> ]</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pwt2019[vars_selected]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1302,7 +1394,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <h4 class="anchored" data-anchor-id="loc方法"><code>.loc</code>方法</h4>
 <p><code>.loc</code> 是基于 标签（label-based） 的数据选择方法。这意味着你使用行和列的实际标签名来选择数据，而不是它们的整数位置。</p>
 <p>例如，要选择金砖国家（BRICKS）的观测值：</p>
-<div id="c2cbb9e1" class="cell" data-execution_count="32">
+<div id="8274b47e" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>bricks <span class="op">=</span> [<span class="st">'CHN'</span>, <span class="st">'BRA'</span>, <span class="st">'RUS'</span>, <span class="st">'IND'</span>, <span class="st">'ZAF'</span>]</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[bricks]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
@@ -1491,7 +1583,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 <p>或者选择列：</p>
-<div id="eeae56f2" class="cell" data-execution_count="33">
+<div id="464ff3dd" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'rgdpe'</span>, <span class="st">'pop'</span>]</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[:, variables]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
@@ -1590,7 +1682,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 <p>或者同时指定行和列：</p>
-<div id="3af03a5d" class="cell" data-execution_count="34">
+<div id="346a015d" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[bricks, variables]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <div>
@@ -1654,7 +1746,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <section id="iloc方法" class="level4">
 <h4 class="anchored" data-anchor-id="iloc方法"><code>.iloc</code>方法</h4>
 <p>相应的，<code>.iloc</code> 是基于整数位置（integer-location based）的，使用行和列的整数位置（从 0 开始）来选择数据。例如：</p>
-<div id="4bb2e20e" class="cell" data-execution_count="35">
+<div id="ff5d7152" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择第2行数据（索引位置为1）</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>pwt2019.iloc[<span class="dv">1</span>]</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择第1行（索引为0）、第3行（索引为2）和第5行（索引为4）</span></span>
@@ -1728,7 +1820,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <section id="根据条件筛选" class="level4">
 <h4 class="anchored" data-anchor-id="根据条件筛选">根据条件筛选</h4>
 <p>除了根据索引或位置选择数据外，也可以利用条件来筛选观测值。例如，根据人口变量（<code>pop</code>，单位：百万）选择2019年总人口超过2亿的观测值：</p>
-<div id="003aba1a" class="cell" data-execution_count="36">
+<div id="7cd2ec46" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>pwt2019[pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;=</span> <span class="dv">200</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <div>
@@ -1970,7 +2062,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <li>2019年人口超过10亿。</li>
 </ul>
 <p>当有不止一个条件时，我们用<code>&amp;</code>, <code>|</code>表示<code>and</code> 和 <code>or</code>运算符；</p>
-<div id="b4434f42" class="cell" data-execution_count="37">
+<div id="7c491c1a" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>BRICKS <span class="op">=</span> [<span class="st">'China'</span>,<span class="st">'Brazil'</span>,  <span class="st">' Russian Federation'</span>, <span class="st">'India'</span>, <span class="st">'South Africa'</span>]</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>pwt2019[(pwt2019[<span class="st">'country'</span>].isin(BRICKS)) <span class="op">&amp;</span> (pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">1000</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2088,7 +2180,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 <p>更复杂的情况，可以在条件语句中加入数学表达式。例如，下面的代码筛选了人均实际GDP超过2万美元和人口超过5000万的国家的观测值，这里人均实际GDP是购买力平价调整后支出法衡量的实际GDP与人口的比值：</p>
-<div id="c8e953b7" class="cell" data-execution_count="38">
+<div id="5aa9aec3" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>pwt2019[(pwt2019[<span class="st">'rgdpe'</span>]<span class="op">/</span>pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">20000</span>) <span class="op">&amp;</span> (pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">50</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <div>
@@ -2377,7 +2469,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <h3 class="anchored" data-anchor-id="apply-方法">apply 方法</h3>
 <p>Pandas中一个广泛应用的方法是 <code>df.apply()</code>，它将一个函数应用到每一行/列，返回一个序列；</p>
 <p>函数可以是内嵌的（built in）也可以是自定义的，例如，计算每一列的最大值，为了节省输出空间，使用子集<code>df</code>数据框：</p>
-<div id="998dc762" class="cell" data-execution_count="39">
+<div id="0540ebec" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">apply</span>(np.<span class="bu">max</span>, axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>country       Zimbabwe
@@ -2392,7 +2484,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>或者，自定义一个函数<code>range(x)</code>计算极差：</p>
-<div id="a1aa4669" class="cell" data-execution_count="40">
+<div id="df9c087f" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">range</span>(x):</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">max</span>(x) <span class="op">-</span> np.<span class="bu">min</span>(x)</span>
@@ -2412,7 +2504,7 @@ dtype: float64</code></pre>
 Y = \frac{X_{i} - \min(X_{i})}{\max(X_{i}) - \min(X_{i})}
 \]</span></p>
 <p>我们定义一个函数<code>minmax()</code>，然后应用<code>apply()</code>方法：</p>
-<div id="22e750de" class="cell" data-execution_count="41">
+<div id="c4a64769" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> minmax(S):</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (S<span class="op">-</span>S.<span class="bu">min</span>())<span class="op">/</span>(S.<span class="bu">max</span>() <span class="op">-</span> S.<span class="bu">min</span>())</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>pwt2019[[<span class="st">'pop'</span>,<span class="st">'rgdpe'</span>, <span class="st">'emp'</span>]].<span class="bu">apply</span>(minmax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2512,7 +2604,7 @@ Y = \frac{X_{i} - \min(X_{i})}{\max(X_{i}) - \min(X_{i})}
 </div>
 </div>
 <p>经常将<code>lambda</code>函数方法与<code>df.apply()</code>方法相结合。例如，数据集中有4个指标度量GDP，分别是<code>['rgdpe', 'rgdpo','cgdpe','cgdpo']</code>，假设我们希望计算一个加权平均数，权重为（0.3，0.2，0.3，0.2）：</p>
-<div id="4e13f967" class="cell" data-execution_count="42">
+<div id="8bedac73" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [<span class="st">'rgdpe'</span>, <span class="st">'rgdpo'</span>,<span class="st">'cgdpe'</span>,<span class="st">'cgdpo'</span>]</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df[variables].<span class="bu">apply</span>(<span class="kw">lambda</span> row:</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    row[<span class="st">'rgdpe'</span>]<span class="op">*</span><span class="fl">0.3</span> <span class="op">+</span> row[<span class="st">'rgdpo'</span>]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> row[<span class="st">'cgdpe'</span>]<span class="op">*</span><span class="fl">0.3</span> <span class="op">+</span> row[<span class="st">'cgdpo'</span>]<span class="op">*</span><span class="fl">0.2</span>,</span>
@@ -2538,7 +2630,7 @@ Length: 183, dtype: float64</code></pre>
 <section id="检测和处理缺失值" class="level3">
 <h3 class="anchored" data-anchor-id="检测和处理缺失值">检测和处理缺失值</h3>
 <p>Pandas中最常用的缺失值表示是<code>NaN</code>（Not a Number）。可以使用<code>isnull()</code>或<code>isna()</code>函数检测缺失值，返回一个布尔型的DataFrame，其中<code>True</code>表示缺失值：</p>
-<div id="553a3184" class="cell" data-execution_count="43">
+<div id="d9584020" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>pwt2019.isna()</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="co">#pwt2019.isnull()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
@@ -2871,7 +2963,7 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 <p>下面的的代码计算了缺失值的数量，将其除以样本容量得到缺失值比例，然后按照降序排序，并将比例最高的前15个变量绘制柱形图：</p>
-<div id="cf84a899" class="cell" data-execution_count="44">
+<div id="b28dc1fb" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>(pwt2019.isna().<span class="bu">sum</span>()<span class="op">/</span>pwt2019.shape[<span class="dv">0</span>]<span class="op">*</span><span class="dv">100</span>).sort_values(ascending<span class="op">=</span><span class="va">False</span>)[:<span class="dv">15</span>].plot(kind<span class="op">=</span><span class="st">'bar'</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"%"</span>)</span>
@@ -2885,7 +2977,7 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 <p>另一种图示的方法是类似矩阵绘图的方式，将缺失值标记出来，<code>missingno</code>库有简单的命令实现：</p>
-<div id="7f4232ed" class="cell" data-execution_count="45">
+<div id="5f4b79a3" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> missingno <span class="im">as</span> msno</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>msno.matrix(pwt2019)</span>
@@ -2904,7 +2996,7 @@ Length: 183, dtype: float64</code></pre>
 </div>
 <p><strong>删除缺失值</strong></p>
 <p>处理缺失值的方法有很多种，选择哪种方法取决于你的数据特性、缺失原因以及分析目标。最直接的方法是使用<code>df.dropna()</code>函数删除包含缺失值的行或列：</p>
-<div id="fb3197cb" class="cell" data-execution_count="46">
+<div id="6e26e9b5" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除含缺失值的行</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>pwt2019.dropna()</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除含缺失值的列</span></span>
@@ -3241,7 +3333,7 @@ Length: 183, dtype: float64</code></pre>
 <p>另外，上面的命令并没有改变原数据框，可以通过赋值方式保存。或者加上选项<code>df.dropna(inplace=True)</code>，即在原数据框中生效。</p>
 <p><strong>填充</strong></p>
 <p><code>df.fillna()</code>是用于填充缺失值的核心函数。</p>
-<div id="7868786f" class="cell" data-execution_count="47">
+<div id="e36d2264" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>pwt2019.fillna(<span class="dv">0</span>)</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -3577,11 +3669,11 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="c9cb81df" class="cell" data-execution_count="48">
+<div id="d273446f" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pwt2019.fillna(method='ffill')</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>pwt2019.fillna(method<span class="op">=</span><span class="st">'bfill'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_16464\1604694572.py:2: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_49944\1604694572.py:2: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
   pwt2019.fillna(method='bfill')</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="48">
@@ -3915,10 +4007,10 @@ Length: 183, dtype: float64</code></pre>
 </div>
 <p><strong>插值法（Interpolation）</strong></p>
 <p>除了填充给定值以外，也有更复杂的插值法。</p>
-<div id="da69d644" class="cell" data-execution_count="49">
+<div id="948ea7f6" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>pwt2019.interpolate(method<span class="op">=</span><span class="st">"linear"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_16464\33985437.py:1: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_49944\33985437.py:1: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
   pwt2019.interpolate(method="linear")</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="49">
@@ -4251,7 +4343,7 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 <p>更复杂的方法涉及到模型估计问题，如KNN预测等。Scikit-learn库有专门的方法，这里就不多涉及。</p>
-<div id="0e4ed97e" class="cell" data-execution_count="50">
+<div id="aa17e7fa" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>imputer_mean <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'mean'</span>)</span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(imputer_mean.fit_transform(pwt2019.select_dtypes(np.number)), columns<span class="op">=</span>pwt2019.select_dtypes(np.number).columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4565,7 +4657,7 @@ Length: 183, dtype: float64</code></pre>
 <h3 class="anchored" data-anchor-id="缩尾处理">缩尾处理</h3>
 <p>应用中，常需要对异常值进行一定的处理，其中一种方法是缩尾处理（Winsorize），将极端值替换为某个百分位数的值，例如，将上限设为 99 百分位数，下限设为 1 百分位数。</p>
 <p>可以使用<code>df.clip()</code>函数实现，例如全要素生产率水平<code>ctfp</code>：</p>
-<div id="8b46ed8f" class="cell" data-execution_count="51">
+<div id="d5177ac9" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>q95 <span class="op">=</span> pwt2019[<span class="st">'ctfp'</span>].quantile(<span class="fl">0.95</span>)</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>q05 <span class="op">=</span> pwt2019[<span class="st">'ctfp'</span>].quantile(<span class="fl">0.05</span>)</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4591,7 +4683,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <h3 class="anchored" data-anchor-id="观测值排序">观测值排序</h3>
 <p>有时候需要对数据集进行一定的排序，Pandas中可以按索引(<code>df.sort_index</code>)和值（<code>df.sort_values</code>）排序。</p>
 <p>例如，将索引按降序排序，这里的索引是国家代码，因此升序/降序是按照字母顺序：</p>
-<div id="a1ecbab6" class="cell" data-execution_count="52">
+<div id="bc5b1db2" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>pwt2019.sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 <div>
@@ -4923,7 +5015,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>来看<code>df.sort_values</code>的例子，假设我们希望按2019年的人均GDP（PPP链式调整后）降序排列：</p>
-<div id="f804093d" class="cell" data-execution_count="53">
+<div id="c8b2d2a0" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>pwt2019[<span class="st">'rgdp_per'</span>] <span class="op">=</span> pwt2019[<span class="st">'rgdpe'</span>]<span class="op">/</span>pwt2019[<span class="st">'pop'</span>]</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>pwt2019.sort_values(by<span class="op">=</span><span class="st">'rgdp_per'</span>, ascending<span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
@@ -5259,7 +5351,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <section id="数据集合并" class="level3">
 <h3 class="anchored" data-anchor-id="数据集合并">数据集合并</h3>
 <p>实际应用中，数据可能来自不同的来源，经常需要合并数据集，<code>pd.merge()</code>函数</p>
-<div id="a7447768" class="cell" data-execution_count="54">
+<div id="74e4939c" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbgapi <span class="im">as</span> wb</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>inf <span class="op">=</span> wb.data.DataFrame(series<span class="op">=</span><span class="st">'NY.GDP.DEFL.KD.ZG'</span>, time<span class="op">=</span><span class="st">'2019'</span>)</span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>pd.merge(df[[<span class="st">'country'</span>,<span class="st">'pop'</span>,<span class="st">'emp'</span>]], inf, left_index<span class="op">=</span><span class="va">True</span>, right_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5368,14 +5460,14 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <section id="多级索引" class="level3">
 <h3 class="anchored" data-anchor-id="多级索引">多级索引</h3>
 <p>这里的数据是一个面板数据，“国家-年”对应一个观测值，可以利用Pandas的多级索引功能，详见Pandas文档<a href="https://pandas.pydata.org/docs/dev/user_guide/advanced.html#">MultiIndex / advanced indexing</a>。</p>
-<div id="37ea4981" class="cell" data-execution_count="55">
+<div id="7a1a9293" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>pwt <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">"datasets/pwt1001.xlsx"</span>,</span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>                header<span class="op">=</span><span class="dv">0</span>,                </span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>                sheet_name<span class="op">=</span><span class="st">"Data"</span>)</span>
 <span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>pwt.set_index([<span class="st">'countrycode'</span>,<span class="st">'year'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>我们可以使用<code>.loc()</code>方法选择需要的数据，例如：</p>
-<div id="c08ce658" class="cell" data-execution_count="56">
+<div id="8e264947" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 中国子集</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>df_china <span class="op">=</span> pwt.loc[<span class="st">'CHN'</span>]</span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 中国、美国子集</span></span>
@@ -5384,7 +5476,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>df_sub_china_us <span class="op">=</span> pwt.loc[[<span class="st">'CHN'</span>, <span class="st">'USA'</span>]][[<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果需要选择某一年的截面数据：</p>
-<div id="ee4720c9" class="cell" data-execution_count="57">
+<div id="cf9281fd" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>), [<span class="dv">2019</span>]), :]</span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1992年之后的数据</span></span>
 <span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>), <span class="bu">slice</span>(<span class="dv">1992</span>, <span class="va">None</span>)), :]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5729,7 +5821,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <li><code>:</code>表示选择所有列。</li>
 </ul>
 <p>上面的例子使用<code>slice</code>函数不是那么直观，也可以使用<code>df.index.get_level_values('year')</code>提取索引<code>year</code>的值，形成一个序列（可以另存为一个变量），然后利用表达式生成一个布尔序列，对数据框进行筛选：</p>
-<div id="ab788d9e" class="cell" data-execution_count="58">
+<div id="65f61a89" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>pwt[pwt.index.get_level_values(<span class="st">'year'</span>) <span class="op">&gt;</span> <span class="dv">1992</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <div>
@@ -6066,7 +6158,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>当然，可以同时选择指定的变量和年份，例如：</p>
-<div id="2d55278c" class="cell" data-execution_count="59">
+<div id="ffbc90be" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>),[<span class="dv">2016</span>,<span class="dv">2019</span>]), [<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>pwt.loc[(([<span class="st">"CHN"</span>, <span class="st">"USA"</span>], [<span class="dv">2016</span>,<span class="dv">2019</span>])), [<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6121,7 +6213,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>除了通常的排序以外，由于有了二级索引，如果按索引排序，两级索引变量是同时排序的：</p>
-<div id="9402bbc4" class="cell" data-execution_count="60">
+<div id="2123c761" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>pwt.sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
 <div>
@@ -6458,7 +6550,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>可以对两级索引以列表的形式分别设定排序的顺序。例如，先将国家代码按字母升序，然后将年降序：</p>
-<div id="21129da7" class="cell" data-execution_count="61">
+<div id="0cdf469a" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>pwt.sort_index(ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="61">
 <div>
@@ -6799,14 +6891,14 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <h3 class="anchored" data-anchor-id="stack-和-unstack"><code>stack</code> 和 <code>unstack</code></h3>
 <p>数据有“长（long）”和“宽（wide）”两种组织方式，Penn World Table 是以“长”的形式保存的。有时候需要在两种数据格式之间进行转换，就需要用到<code>df.stack()</code>和<code>df.unstack()</code>函数。</p>
 <p>注意，<code>df.unstack()</code>函数的参数<code>level=</code>，设置为哪一级索引，便生成为列。默认在最后一级索引上转换，即年，因此列便为年，行为国家，反之，列为国家，行为年。如下面例子所示，为了简便只保留了三个国家5年的数据：</p>
-<div id="5544da98" class="cell" data-execution_count="62">
+<div id="8bb17b0a" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>pwt_sub <span class="op">=</span> pwt.loc[([<span class="st">"CHN"</span>, <span class="st">"KOR"</span>, <span class="st">"USA"</span>], <span class="bu">slice</span>(<span class="dv">2015</span>, <span class="va">None</span>)), [<span class="st">"rgdpe"</span>, <span class="st">"pop"</span>]]</span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>pwt_sub_wide <span class="op">=</span> pwt_sub.unstack(level<span class="op">=-</span><span class="dv">1</span>)</span>
 <span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pwt_sub.unstack(level=0)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>要获得长格式的数据，使用<code>df.stack()</code>即可：</p>
-<div id="2e5d8669" class="cell" data-execution_count="63">
+<div id="ed6c9f54" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>pwt_sub_wide.stack(future_stack<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="63">
 <div>
@@ -6915,7 +7007,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>当我们从一些数据库下载数据时，常见形式为列为不同时期相同变量的值。例如，从世界银行下载人均GDP和人口数据：</p>
-<div id="959b5bae" class="cell" data-execution_count="64">
+<div id="c740abff" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbgapi <span class="im">as</span> wb</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> wb.data.DataFrame(series<span class="op">=</span>[<span class="st">'NY.GDP.PCAP.CD'</span>, <span class="st">"SP.POP.TOTL"</span>], </span>
 <span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>                                <span class="co">#time=range(2017,2020),</span></span>
@@ -6986,7 +7078,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>下载的数据<code>df</code>索引是“economy - series”，每一年数据一列。我们希望序列成为列变量，时间成为索引。我们可以先对数据进行转置成宽格式的数据，然后再在国家层面堆叠，使其成为索引，再交换索引排序得到通常的情况：</p>
-<div id="46c6b90a" class="cell" data-execution_count="65">
+<div id="7d11f827" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>df.T.stack(level<span class="op">=</span><span class="dv">0</span>, future_stack<span class="op">=</span><span class="va">True</span>).swaplevel().sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="65">
 <div>
@@ -7078,7 +7170,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 <p>另外，stack不是唯一的方法，也可以使用<code>df.melt()</code>结合<code>df.pivot_table()</code>函数来实现：</p>
-<div id="ebcab834" class="cell" data-execution_count="66">
+<div id="848268c9" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>df_reset <span class="op">=</span> df.reset_index()</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_reset.melt(id_vars<span class="op">=</span>[<span class="st">'economy'</span>, <span class="st">'series'</span>], var_name<span class="op">=</span><span class="st">'year'</span>, value_name<span class="op">=</span><span class="st">'value'</span>)</span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>df_long.pivot_table(index<span class="op">=</span>[<span class="st">'economy'</span>, <span class="st">'year'</span>], columns<span class="op">=</span><span class="st">'series'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -7187,7 +7279,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <p>聚合方法将每个组的数据压缩成一个单一的值，是最常用的<code>groupby</code>操作，例如<code>mean()</code>,<code>sum()</code>,<code>count()</code>,<code>size()</code>,<code>min()</code>,<code>max()</code>,<code>std()</code>,<code>var()</code>,<code>median()</code>等常见的统计量，或者<code>first()</code>,<code>last()</code>,<code>nth(n)</code>等获取第一个、最好一个或第n个值：</p>
 <p><strong>索引</strong></p>
 <p>例如，根据索引计算世界人口，先在索引上分组，然后使用<code>.sum()</code>函数：</p>
-<div id="6d870731" class="cell" data-execution_count="67">
+<div id="aa07addc" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'pop'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>year
@@ -7206,7 +7298,7 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 <p><code>avh</code>变量度量了“Average annual hours worked by persons engaged”,让我们分组计算平均，得到按年和按国家平均</p>
-<div id="f1a3f0c2" class="cell" data-execution_count="68">
+<div id="13baeb32" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>avh <span class="op">=</span> pwt[pwt[<span class="st">'avh'</span>].notna()]</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">12</span>))</span>
 <span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'line'</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
@@ -7225,7 +7317,7 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 <p>最常见的是按变量进行分组，例如，按国家名<code>country</code>分组，最后一个观测值：</p>
-<div id="90342a19" class="cell" data-execution_count="69">
+<div id="923a9544" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(by<span class="op">=</span>[<span class="st">'country'</span>]).last()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="69">
 <div>
@@ -7564,7 +7656,7 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 <li><code>rank(method='average')</code>: 计算组内排名。</li>
 <li><code>fillna(value)</code>: 在组内填充缺失值。</li>
 </ul>
-<div id="1fa44f76" class="cell" data-execution_count="70">
+<div id="5ca65c70" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].transform(<span class="st">'mean'</span>)</span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="70">
@@ -7585,7 +7677,7 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 </div>
 <p>注意，转换与聚合的区别,转换将生成的值与原数据观测值一样多，这里是3492个，而聚合只有70个。</p>
 <p><code>.transform()</code>方法可以与<code>lambda</code>函数相结合，例如：</p>
-<div id="4a9e2797" class="cell" data-execution_count="71">
+<div id="8008ebd0" class="cell" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>pwt.select_dtypes(np.number).groupby(level<span class="op">=</span><span class="dv">0</span>).transform(<span class="kw">lambda</span> x: (x <span class="op">-</span> x.mean())<span class="op">/</span>x.std())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="71">
 <div>
@@ -7928,7 +8020,7 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 <ul>
 <li>filter(func): 根据一个返回布尔值的函数来过滤组。如果函数对一个组返回 True，则保留该组；否则，删除该组。</li>
 </ul>
-<div id="a3f28749" class="cell" data-execution_count="72">
+<div id="10809524" class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(level<span class="op">=</span><span class="dv">0</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'pop'</span>].mean() <span class="op">&gt;</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="72">
 <div>
@@ -8273,16 +8365,16 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-feenstra2015next" class="csl-entry" role="listitem">
-Feenstra, Robert C, Robert Inklaar, and Marcel P Timmer. 2015. <span>“The Next Generation of the Penn World Table.”</span> <em>American Economic Review</em> 105 (10): 3150–82.
-</div>
-</div>
+
 </section>
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-feenstra2015next" class="csl-entry" role="listitem">
+Feenstra, Robert C, Robert Inklaar, and Marcel P Timmer. 2015. <span>“The Next Generation of the Penn World Table.”</span> <em>American Economic Review</em> 105 (10): 3150–82.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

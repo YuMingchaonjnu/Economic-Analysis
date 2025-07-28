@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: afcf55ac-0ad1-4099-9cc1-01ac684fa73b
+      url: 'https://ymc.quarto.pub/ymc'

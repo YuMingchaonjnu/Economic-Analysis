@@ -22,5 +22,9 @@
   "summary.qmd": {
     "summary.html": "a8148266",
     "summary.tex": "70c515cb"
+  },
+  "text_analysis.qmd": {
+    "text_analysis.html": "1e2d45c9",
+    "text_analysis.tex": "5c5419c0"
   }
 }
