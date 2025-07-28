@@ -343,7 +343,7 @@ window.Quarto = {
 <p>预期国际贸易和</p>
 <section id="最小二乘回归方法" class="level3">
 <h3 class="anchored" data-anchor-id="最小二乘回归方法">最小二乘回归方法</h3>
-<div id="f96eada0" class="cell" data-execution_count="1">
+<div id="ea6378dc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -356,7 +356,7 @@ window.Quarto = {
 </section>
 <section id="ols-估计量" class="level2">
 <h2 class="anchored" data-anchor-id="ols-估计量">OLS 估计量</h2>
-<div id="d48eba6d" class="cell" data-execution_count="2">
+<div id="eea569c4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">20</span>)</span>
@@ -395,7 +395,7 @@ window.Quarto = {
 </div>
 <section id="okuns-law" class="level3">
 <h3 class="anchored" data-anchor-id="okuns-law">Okun’s law</h3>
-<div id="4145b0ab" class="cell" data-execution_count="3">
+<div id="0685e2f9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> <span class="st">'1947-01-01'</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> <span class="st">'2019-12-31'</span></span>
@@ -419,7 +419,7 @@ Dep. Variable:        gdp_growth_rate   R-squared:                       0.466
 Model:                            OLS   Adj. R-squared:                  0.464
 Method:                 Least Squares   F-statistic:                     248.4
 Date:                Mon, 28 Jul 2025   Prob (F-statistic):           1.11e-40
-Time:                        20:56:08   Log-Likelihood:                -295.55
+Time:                        23:16:35   Log-Likelihood:                -295.55
 No. Observations:                 287   AIC:                             595.1
 Df Residuals:                     285   BIC:                             602.4
 Df Model:                           1                                         
@@ -440,7 +440,7 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_25784\1037386578.py:6: FutureWarning: 'Q' is deprecated and will be removed in a future version, please use 'QE' instead.
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_33552\1037386578.py:6: FutureWarning: 'Q' is deprecated and will be removed in a future version, please use 'QE' instead.
   df = data.resample('Q').mean()</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -454,7 +454,7 @@ Notes:
 </section>
 <section id="无偏性" class="level3">
 <h3 class="anchored" data-anchor-id="无偏性">无偏性</h3>
-<div id="44ac863c" class="cell" data-execution_count="4">
+<div id="99e69265" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">12345</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>true_intercept <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>true_slope <span class="op">=</span> <span class="fl">3.0</span></span>
@@ -495,7 +495,7 @@ Notes:
 </section>
 <section id="置信区间" class="level3">
 <h3 class="anchored" data-anchor-id="置信区间">置信区间</h3>
-<div id="d0a67415" class="cell" data-execution_count="5">
+<div id="3f7f3446" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### ci</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lower, upper <span class="op">=</span> (<span class="fl">1.0941</span><span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>, <span class="fl">1.0941</span><span class="op">+</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>((lower, upper),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -518,7 +518,7 @@ Notes:
 </section>
 <section id="应用mankiw-romer-weil-1992" class="level3">
 <h3 class="anchored" data-anchor-id="应用mankiw-romer-weil-1992">应用：Mankiw, Romer, Weil (1992)</h3>
-<div id="5e8ceae2" class="cell" data-execution_count="6">
+<div id="5a55916b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>

@@ -133,6 +133,8 @@ np.round((lower, upper),3)
 
 ### 应用：Mankiw, Romer, Weil (1992)
 
+这一部分以@mankiw1992contribution 为例，阐释最小二乘法的应用。
+
 ```{python}
 import pandas as pd
 import numpy as np
