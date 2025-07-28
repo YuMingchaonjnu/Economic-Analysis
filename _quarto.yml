@@ -4,7 +4,7 @@ project:
   # type: book
 website:   
   sidebar:
-    style: "docked"
+    style: "docked" # floating
     search: true
     title: "基于Python的经济数据分析与应用"
     contents:
@@ -13,13 +13,15 @@ website:
       - section: "Python基础"
         contents:
           - text: "介绍"
-            href: intro.qmd
-          - text: "Python基础"
+            href: intro.qmd          
+          - text: "Python语言"
             href: python_basics.qmd
+          - text: "Numpy 基础"
+            href: numpy.qmd
       - section: "数据分析"
         contents:
-          - text: "NumPy与Pandas"
-            href: numpy_and_pandas.qmd    
+          - text: "Pandas及应用"
+            href: pandas.qmd    
           - text: "探索性数据分析"
             href: text_analysis.qmd
       - text: "总结"
@@ -29,28 +31,6 @@ website:
         
 
        
-
-# book:
-#   title: "基于Python的经济数据分析与应用"
-#   author: "于明超"
-#   date: today
-#   chapters:
-#     - index.qmd    
-#     - intro.qmd
-#     - python_basics.qmd
-#     - numpy_and_pandas.qmd
-#     #- eda.qmd(mac)
-#     #- statistics.qmd macbook(mac)
-#     #- regression.qmd
-#     #- monte_carlo.qmd
-#     #- entropy.qmd
-#     #- pca.qmd
-#     #- io.qmd
-#     #- text_analysis.qmd
-#     #- trade_flow.qmd
-#     - summary.qmd
-#     - references.qmd
-
 bibliography: references.bib
 
 format:

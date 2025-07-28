@@ -26,5 +26,13 @@
   "text_analysis.qmd": {
     "text_analysis.html": "1e2d45c9",
     "text_analysis.tex": "5c5419c0"
+  },
+  "numpy.qmd": {
+    "numpy.html": "597b1fb2",
+    "numpy.tex": "86b39a52"
+  },
+  "pandas.qmd": {
+    "pandas.html": "c458c3a6",
+    "pandas.tex": "1e71f78e"
   }
 }
