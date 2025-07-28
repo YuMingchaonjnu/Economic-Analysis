@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,6 +121,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -220,24 +303,372 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#后记" id="toc-后记" class="nav-link active" data-scroll-target="#后记">后记</a></li>
+  <li><a href="#建立计量模型" id="toc-建立计量模型" class="nav-link active" data-scroll-target="#建立计量模型">建立计量模型</a></li>
+  <li><a href="#ols-估计量" id="toc-ols-估计量" class="nav-link" data-scroll-target="#ols-估计量">OLS 估计量</a></li>
+  <li><a href="#iv-估计" id="toc-iv-估计" class="nav-link" data-scroll-target="#iv-估计">IV 估计</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="regression.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">回归分析</a></li><li class="breadcrumb-item"><a href="./regression.html">线性回归</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">回归分析</h1>
+</div>
 
 
 
-<section id="后记" class="level1">
-<h1>后记</h1>
-<p>In summary, this book has no content whatsoever.</p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="建立计量模型" class="level2">
+<h2 class="anchored" data-anchor-id="建立计量模型">建立计量模型</h2>
+<p>作者认为，一个国家的生活水平取决于该国与其他国家的国际贸易、该国的国内贸易以及其他因素。从一个简单的计量模型出发： <span class="math display">\[
+\ln Y_{i} = \alpha + \beta T_{i} + \gamma W_{i} + \epsilon_{i}
+\]</span></p>
+<p>其中，<strong>被解释变量</strong>是人均收入 <span class="math inline">\(Y_{i}\)</span> 的对数；<strong>解释变量</strong> <span class="math inline">\(T_{i}\)</span> 表示国际贸易，<span class="math inline">\(W_{i}\)</span> 表示国内贸易，<span class="math inline">\(\epsilon_{i}\)</span> 为<strong>误差项</strong>，表示其他对收入影响的因素。</p>
+<p>预期国际贸易和</p>
+<section id="最小二乘回归方法" class="level3">
+<h3 class="anchored" data-anchor-id="最小二乘回归方法">最小二乘回归方法</h3>
+<div id="6fc7f073" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>]<span class="op">=</span><span class="st">'SimHei'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="ols-估计量" class="level2">
+<h2 class="anchored" data-anchor-id="ols-估计量">OLS 估计量</h2>
+<div id="f84716af" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">20</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x <span class="op">+</span> np.random.randn(<span class="dv">20</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a line using OLS</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>coefficients <span class="op">=</span> np.polyfit(x, y, <span class="dv">1</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>poly <span class="op">=</span> np.poly1d(coefficients)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>x_fit <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>y_fit <span class="op">=</span> poly(x_fit)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate residuals</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>residuals <span class="op">=</span> y <span class="op">-</span> poly(x)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter plot and fitted line</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label<span class="op">=</span><span class="st">'Data'</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(x_fit, y_fit, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Fitted Line'</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.scatter(x[<span class="dv">4</span>], y[<span class="dv">4</span>], color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Selected Residual'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.plot([x[<span class="dv">4</span>], x[<span class="dv">4</span>]], [y[<span class="dv">4</span>], poly(x[<span class="dv">4</span>])], color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add annotation of the residual</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="ss">f'$e_i $ '</span>, </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>             xy<span class="op">=</span>(x[<span class="dv">4</span>], <span class="op">-</span><span class="dv">1</span>), </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>             xytext<span class="op">=</span>(x[<span class="dv">4</span>]<span class="op">+</span><span class="fl">0.1</span>, y[<span class="dv">4</span>]<span class="op">+</span><span class="fl">0.5</span>),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="regression_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="okuns-law" class="level3">
+<h3 class="anchored" data-anchor-id="okuns-law">Okun’s law</h3>
+<div id="996e960b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> <span class="st">'1947-01-01'</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> <span class="st">'2019-12-31'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> web.DataReader([<span class="st">'UNRATE'</span>,<span class="st">'GDPC1'</span>], <span class="st">'fred'</span>, start_date, end_date)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> data.resample(<span class="st">'Q'</span>).mean()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'gdp_growth_rate'</span>] <span class="op">=</span> np.log(df[<span class="st">'GDPC1'</span>]<span class="op">/</span>df[<span class="st">'GDPC1'</span>].shift(<span class="dv">1</span>))<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'unemp_changed'</span>] <span class="op">=</span> df[<span class="st">'UNRATE'</span>].diff()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>sns.regplot(df, y<span class="op">=</span><span class="st">'gdp_growth_rate'</span>,x<span class="op">=</span><span class="st">'unemp_changed'</span>,ax<span class="op">=</span>ax,marker<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Quarterly change in unemployment rate'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Quarterly change in Real GDP'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(df[<span class="st">'gdp_growth_rate'</span>], sm.add_constant(df[<span class="st">'unemp_changed'</span>])).fit()</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        gdp_growth_rate   R-squared:                       0.466
+Model:                            OLS   Adj. R-squared:                  0.464
+Method:                 Least Squares   F-statistic:                     248.4
+Date:                Mon, 28 Jul 2025   Prob (F-statistic):           1.11e-40
+Time:                        11:27:27   Log-Likelihood:                -295.55
+No. Observations:                 287   AIC:                             595.1
+Df Residuals:                     285   BIC:                             602.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P&gt;|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+const             0.7788      0.040     19.403      0.000       0.700       0.858
+unemp_changed    -1.6609      0.105    -15.762      0.000      -1.868      -1.453
+==============================================================================
+Omnibus:                       11.629   Durbin-Watson:                   1.912
+Prob(Omnibus):                  0.003   Jarque-Bera (JB):               13.361
+Skew:                           0.383   Prob(JB):                      0.00125
+Kurtosis:                       3.729   Cond. No.                         2.63
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_52852\1037386578.py:6: FutureWarning: 'Q' is deprecated and will be removed in a future version, please use 'QE' instead.
+  df = data.resample('Q').mean()</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="regression_files/figure-html/cell-4-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="无偏性" class="level3">
+<h3 class="anchored" data-anchor-id="无偏性">无偏性</h3>
+<div id="201d2ea7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">12345</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>true_intercept <span class="op">=</span> <span class="fl">2.0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>true_slope <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sample_size <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>num_simulations <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>estimated_slopes <span class="op">=</span> np.zeros(num_simulations)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_simulations):</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.random.randn(sample_size)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> true_intercept <span class="op">+</span> true_slope <span class="op">*</span> x <span class="op">+</span> np.random.randn(sample_size)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> sm.add_constant(x)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> sm.OLS(y, X).fit()</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    estimated_slopes[i] <span class="op">=</span> model.params[<span class="dv">1</span>]</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>average_slope <span class="op">=</span> np.mean(estimated_slopes)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"斜率真实值: </span><span class="sc">{</span>true_slope<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"斜率估计值的平均值: </span><span class="sc">{</span>average_slope<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>ax.hist(estimated_slopes, bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>ax.axvline(x<span class="op">=</span><span class="fl">3.0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>) </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'斜率估计值'</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'频率'</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'斜率估计值的直方图'</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>斜率真实值: 3.0
+斜率估计值的平均值: 2.9993457145927493</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="regression_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="置信区间" class="level3">
+<h3 class="anchored" data-anchor-id="置信区间">置信区间</h3>
+<div id="bc688190" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### ci</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lower, upper <span class="op">=</span> (<span class="fl">1.0941</span><span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>, <span class="fl">1.0941</span><span class="op">+</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>((lower, upper),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>array([1.037, 1.151])</code></pre>
+</div>
+</div>
+</section>
+<section id="联合显著性检验" class="level3">
+<h3 class="anchored" data-anchor-id="联合显著性检验">联合显著性检验</h3>
+</section>
+<section id="解释回归结果" class="level3">
+<h3 class="anchored" data-anchor-id="解释回归结果">解释回归结果</h3>
+</section>
+<section id="函数形式变化" class="level3">
+<h3 class="anchored" data-anchor-id="函数形式变化">函数形式变化</h3>
+</section>
+<section id="回归诊断分析" class="level3">
+<h3 class="anchored" data-anchor-id="回归诊断分析">回归诊断分析</h3>
+</section>
+<section id="应用mankiw-romer-weil-1992" class="level3">
+<h3 class="anchored" data-anchor-id="应用mankiw-romer-weil-1992">应用：Mankiw, Romer, Weil (1992)</h3>
+<div id="04fad477" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"datasets/mrw.csv"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate variables</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnY85'</span>] <span class="op">=</span> np.log(data[<span class="st">'rgdpw85'</span>])</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnY60'</span>] <span class="op">=</span> np.log(data[<span class="st">'rgdpw60'</span>])</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lns'</span>] <span class="op">=</span> np.log(data[<span class="st">'i_y'</span>] <span class="op">/</span> <span class="dv">100</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnngd'</span>] <span class="op">=</span> np.log(data[<span class="st">'popgrowth'</span>] <span class="op">/</span> <span class="dv">100</span> <span class="op">+</span> <span class="fl">0.05</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnschool'</span>] <span class="op">=</span> np.log(data[<span class="st">'school'</span>] <span class="op">/</span> <span class="dv">100</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'growth'</span>] <span class="op">=</span> data[<span class="st">'lnY85'</span>] <span class="op">-</span> data[<span class="st">'lnY60'</span>]</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'growth_annu'</span>] <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> data[<span class="st">'growth'</span>] <span class="op">/</span> <span class="dv">25</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lns_lnngd'</span>] <span class="op">=</span> data[<span class="st">'lns'</span>] <span class="op">-</span> data[<span class="st">'lnngd'</span>]</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnschool_lnngd'</span>] <span class="op">=</span> data[<span class="st">'lnschool'</span>] <span class="op">-</span> data[<span class="st">'lnngd'</span>]</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Table I</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> {<span class="st">'n'</span>: data[<span class="st">'n'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'i'</span>: data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'o'</span>: data[<span class="st">'o'</span>] <span class="op">==</span> <span class="dv">1</span>}</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>results_table1 <span class="op">=</span> {}</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns + lnngd'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    results_table1[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate alpha</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>model_i <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns + lnngd'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> model_i.params[<span class="st">'lns'</span>] <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> model_i.params[<span class="st">'lns'</span>])</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Restricted regression</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>results_restricted <span class="op">=</span> {}</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns_lnngd'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    results_restricted[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Table II</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>correlation <span class="op">=</span> data.loc[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>, [<span class="st">'school'</span>, <span class="st">'i_y'</span>, <span class="st">'popgrowth'</span>]].corr()</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>results_table2 <span class="op">=</span> {}</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns + lnngd + lnschool'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    results_table2[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Test coefficients</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>test_model <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns + lnngd + lnschool'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>test1 <span class="op">=</span> test_model.t_test(<span class="st">'lns + lnngd + lnschool = 0'</span>)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>test2 <span class="op">=</span> test_model.t_test(<span class="st">'lns = lnschool'</span>)</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Implicit alpha</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>alpha_lns <span class="op">=</span> test_model.params[<span class="st">'lns'</span>] <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> test_model.params[<span class="st">'lns'</span>] <span class="op">+</span> test_model.params[<span class="st">'lnschool'</span>])</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>alpha_lnschool <span class="op">=</span> test_model.params[<span class="st">'lnschool'</span>] <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> test_model.params[<span class="st">'lns'</span>] <span class="op">+</span> test_model.params[<span class="st">'lnschool'</span>])</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Restricted regression with school</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>results_restricted_school <span class="op">=</span> {}</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'lnY85 ~ lns_lnngd + lnschool_lnngd'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>    results_restricted_school[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Table III</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>results_table3 <span class="op">=</span> {}</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'growth ~ lnY60'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>    results_table3[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>    implied_lambda <span class="op">=</span> <span class="op">-</span>np.log(<span class="dv">1</span> <span class="op">+</span> model.params[<span class="st">'lnY60'</span>]) <span class="op">/</span> (<span class="dv">85</span> <span class="op">-</span> <span class="dv">60</span>)</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Table IV</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>results_table4 <span class="op">=</span> {}</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'growth ~ lnY60 + lns + lnngd'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>    results_table4[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>    implied_lambda <span class="op">=</span> <span class="op">-</span>np.log(<span class="dv">1</span> <span class="op">+</span> model.params[<span class="st">'lnY60'</span>]) <span class="op">/</span> (<span class="dv">85</span> <span class="op">-</span> <span class="dv">60</span>)</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Table V</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>results_table5 <span class="op">=</span> {}</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample, condition <span class="kw">in</span> samples.items():</span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> smf.ols(<span class="st">'growth ~ lnY60 + lns + lnngd + lnschool'</span>, data<span class="op">=</span>data[condition]).fit()</span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>    results_table5[sample] <span class="op">=</span> model.summary()</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>    implied_lambda <span class="op">=</span> <span class="op">-</span>np.log(<span class="dv">1</span> <span class="op">+</span> model.params[<span class="st">'lnY60'</span>]) <span class="op">/</span> (<span class="dv">85</span> <span class="op">-</span> <span class="dv">60</span>)</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure I</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">5</span>))</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Unconditional scatter plot</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>plt.scatter(data.loc[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'lnY60'</span>], data.loc[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'growth_annu'</span>])</span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Log output per working age adult: 1960"</span>)</span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Growth rate: 1960-85"</span>)</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Unconditional"</span>)</span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial out lns and lnngd</span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>residual_model1 <span class="op">=</span> smf.ols(<span class="st">'lnY60 ~ lns + lnngd'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnY60_residual1'</span>] <span class="op">=</span> residual_model1.resid <span class="op">+</span> residual_model1.params[<span class="st">'Intercept'</span>]</span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>residual_model2 <span class="op">=</span> smf.ols(<span class="st">'growth_annu ~ lns + lnngd'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'growth_annu_residual1'</span>] <span class="op">=</span> residual_model2.resid</span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[<span class="st">'lnY60_residual1'</span>], data[<span class="st">'growth_annu_residual1'</span>])</span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Log output per working age adult: 1960"</span>)</span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Growth rate: 1960-85"</span>)</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Conditional on lns and lnngd"</span>)</span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial out lns, lnngd, and lnschool</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>residual_model3 <span class="op">=</span> smf.ols(<span class="st">'lnY60 ~ lns + lnngd + lnschool'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'lnY60_residual2'</span>] <span class="op">=</span> residual_model3.resid <span class="op">+</span> residual_model3.params[<span class="st">'Intercept'</span>]</span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>residual_model4 <span class="op">=</span> smf.ols(<span class="st">'growth_annu ~ lns + lnngd + lnschool'</span>, data<span class="op">=</span>data[data[<span class="st">'i'</span>] <span class="op">==</span> <span class="dv">1</span>]).fit()</span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'growth_annu_residual2'</span>] <span class="op">=</span> residual_model4.resid</span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[<span class="st">'lnY60_residual2'</span>], data[<span class="st">'growth_annu_residual2'</span>])</span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Log output per working age adult: 1960"</span>)</span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Growth rate: 1960-85"</span>)</span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Conditional on lns, lnngd, and lnschool"</span>)</span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="regression_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="iv-估计" class="level2">
+<h2 class="anchored" data-anchor-id="iv-估计">IV 估计</h2>
+<section id="应用开放与增长" class="level3">
+<h3 class="anchored" data-anchor-id="应用开放与增长">应用：开放与增长</h3>
+<p>这一部分中，用 <span class="citation" data-cites="frankel1999">Frankel and Romer (<a href="#ref-frankel1999" role="doc-biblioref">1999</a>)</span> 的经典论文，阐释OLS和IV估计的方法，包括：</p>
+<ul>
+<li>如何从理论观点中确定一个统计模型；</li>
+<li>如何理解回归分析的逻辑；</li>
+<li>如何为统计模型中的变量准备数据；</li>
+<li>如何估计统计模型；</li>
+<li>如何解释模型估计的结果；</li>
+<li>如何根据模型估计值进行统计推断；</li>
+<li>如何解释模型整体拟合度。</li>
+</ul>
+</section>
+<section id="应用制度与增长" class="level3">
+
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">应用：制度与增长</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-frankel1999" class="csl-entry" role="listitem">
+Frankel, Jeffrey A., and David H. Romer. 1999. <span>“Does Trade Cause Growth?”</span> <em>American Economic Review</em> 89 (3): 379–99. <a href="https://doi.org/10.1257/aer.89.3.379">https://doi.org/10.1257/aer.89.3.379</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

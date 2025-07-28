@@ -20,11 +20,11 @@ website:
             href: numpy.qmd
       - section: "数据分析"
         contents:
-          - text: "数据可视化: Matplotlib"
+          - text: "数据可视化"
             href: matplotlib.qmd
           - text: "Pandas及应用"
             href: pandas.qmd    
-          - text: "探索性数据分析"
+          - text: "描述性分析"
             href: text_analysis.qmd
       - section: "回归分析"
         contents:
