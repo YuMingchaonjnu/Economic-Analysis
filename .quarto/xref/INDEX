@@ -34,5 +34,21 @@
   "pandas.qmd": {
     "pandas.html": "c458c3a6",
     "pandas.tex": "1e71f78e"
+  },
+  "matplotlib.qmd": {
+    "matplotlib.html": "7750c67a",
+    "matplotlib.tex": "d44e802d"
+  },
+  "lasso.qmd": {
+    "lasso.html": "bf6da4a8",
+    "lasso.tex": "57bfc78e"
+  },
+  "logistic.qmd": {
+    "logistic.html": "0cec056a",
+    "logistic.tex": "542b9cef"
+  },
+  "regression.qmd": {
+    "regression.html": "6b9ba953",
+    "regression.tex": "19a7e8ff"
   }
 }
