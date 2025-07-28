@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -80,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib.html">数据分析</a></li><li class="breadcrumb-item"><a href="./matplotlib.html">数据可视化: Matplotlib</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib.html">数据分析</a></li><li class="breadcrumb-item"><a href="./matplotlib.html">数据可视化</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,6 +133,9 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">基于Python的经济数据分析与应用</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/YuMingchaonjnu/Economic-Analysis" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -152,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">数据可视化: Matplotlib</span></a>
+ <span class="menu-text">数据可视化</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -164,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">探索性数据分析</span></a>
+ <span class="menu-text">描述性分析</span></a>
   </div>
 </li>
       </ul>
@@ -220,58 +260,437 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#数据可视化" id="toc-数据可视化" class="nav-link active" data-scroll-target="#数据可视化">数据可视化</a>
-  <ul class="collapse">
-  <li><a href="#matplotlib基本方法" id="toc-matplotlib基本方法" class="nav-link" data-scroll-target="#matplotlib基本方法">Matplotlib基本方法</a></li>
-  <li><a href="#主要的图形" id="toc-主要的图形" class="nav-link" data-scroll-target="#主要的图形">主要的图形</a></li>
-  <li><a href="#其他绘图包" id="toc-其他绘图包" class="nav-link" data-scroll-target="#其他绘图包">其他绘图包</a></li>
-  </ul></li>
+  <li><a href="#常用的图形" id="toc-常用的图形" class="nav-link active" data-scroll-target="#常用的图形">常用的图形</a></li>
+  <li><a href="#多图和子图" id="toc-多图和子图" class="nav-link" data-scroll-target="#多图和子图">多图和子图</a></li>
+  <li><a href="#多图" id="toc-多图" class="nav-link" data-scroll-target="#多图">多图</a></li>
+  <li><a href="#应用股票价格及收益率" id="toc-应用股票价格及收益率" class="nav-link" data-scroll-target="#应用股票价格及收益率">应用：股票价格及收益率</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="matplotlib.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib.html">数据分析</a></li><li class="breadcrumb-item"><a href="./matplotlib.html">数据可视化</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">数据可视化</h1>
+</div>
 
 
 
-<section id="数据可视化" class="level1">
-<h1>数据可视化</h1>
-<section id="matplotlib基本方法" class="level2">
-<h2 class="anchored" data-anchor-id="matplotlib基本方法">Matplotlib基本方法</h2>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://matplotlib.org/stable/tutorials/index.html">官方使用教程</a>是非常重要的学习来源。 ## 图形的构成</p>
+<p>我们用一个例子来说明绘图的过程。下面的全球电影票房数据来自维基百科<a href="https://en.wikipedia.org/wiki/List_of_highest-grossing_films">全球最高電影票房收入列表</a></p>
+<div id="3fcfaeb1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_excel(<span class="st">"datasets/highest_gross_films.xlsx"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'全球票房'</span>] <span class="op">=</span> data[<span class="st">'全球票房'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> ser: pd.to_numeric(re.sub(<span class="vs">r'\D'</span>,<span class="st">''</span>, ser)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> data[:<span class="dv">10</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">排名</th>
+<th data-quarto-table-cell-role="th">峰值</th>
+<th data-quarto-table-cell-role="th">影片名称</th>
+<th data-quarto-table-cell-role="th">全球票房</th>
+<th data-quarto-table-cell-role="th">年份</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>1</td>
+<td>阿凡达</td>
+<td>2923706026</td>
+<td>2009</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>1</td>
+<td>复仇者联盟：终局之战</td>
+<td>2797501328</td>
+<td>2019</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>3</td>
+<td>阿凡达：水之道</td>
+<td>2320250281</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>1</td>
+<td>泰坦尼克号</td>
+<td>2257844554</td>
+<td>1997</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>5</td>
+<td>哪吒2</td>
+<td>2217080000</td>
+<td>2025</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>3</td>
+<td>星球大战：原力觉醒</td>
+<td>2068223624</td>
+<td>2015</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>4</td>
+<td>复仇者联盟：无限战争</td>
+<td>2048359754</td>
+<td>2018</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>6</td>
+<td>蜘蛛侠：英雄无归</td>
+<td>1922598800</td>
+<td>2021</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9</td>
+<td>8</td>
+<td>头脑特工队2</td>
+<td>1698863816</td>
+<td>2024</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10</td>
+<td>3</td>
+<td>侏罗纪世界</td>
+<td>1671537444</td>
+<td>2015</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<section id="图形的解剖图" class="level3">
+<h3 class="anchored" data-anchor-id="图形的解剖图">图形的解剖图</h3>
 </section>
-<section id="主要的图形" class="level2">
-<h2 class="anchored" data-anchor-id="主要的图形">主要的图形</h2>
-<section id="折线图" class="level3">
-<h3 class="anchored" data-anchor-id="折线图">折线图</h3>
+<section id="步骤" class="level3">
+<h3 class="anchored" data-anchor-id="步骤">步骤</h3>
+<div id="e74f966c" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>现在有了图形轴（Axes）的实例，就可以在上面绘制图形了：</p>
+<div id="c67393a1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.bar(x<span class="op">=</span>df[<span class="st">'影片名称'</span>], height<span class="op">=</span>df[<span class="st">'全球票房'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 38463 (\N{CJK UNIFIED IDEOGRAPH-963F}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20961 (\N{CJK UNIFIED IDEOGRAPH-51E1}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 36798 (\N{CJK UNIFIED IDEOGRAPH-8FBE}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 22797 (\N{CJK UNIFIED IDEOGRAPH-590D}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20167 (\N{CJK UNIFIED IDEOGRAPH-4EC7}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 32773 (\N{CJK UNIFIED IDEOGRAPH-8005}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 32852 (\N{CJK UNIFIED IDEOGRAPH-8054}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 30431 (\N{CJK UNIFIED IDEOGRAPH-76DF}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 65306 (\N{FULLWIDTH COLON}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 32456 (\N{CJK UNIFIED IDEOGRAPH-7EC8}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 23616 (\N{CJK UNIFIED IDEOGRAPH-5C40}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20043 (\N{CJK UNIFIED IDEOGRAPH-4E4B}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 25112 (\N{CJK UNIFIED IDEOGRAPH-6218}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 36947 (\N{CJK UNIFIED IDEOGRAPH-9053}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 27888 (\N{CJK UNIFIED IDEOGRAPH-6CF0}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 22374 (\N{CJK UNIFIED IDEOGRAPH-5766}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 23612 (\N{CJK UNIFIED IDEOGRAPH-5C3C}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20811 (\N{CJK UNIFIED IDEOGRAPH-514B}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 21495 (\N{CJK UNIFIED IDEOGRAPH-53F7}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 21738 (\N{CJK UNIFIED IDEOGRAPH-54EA}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 21522 (\N{CJK UNIFIED IDEOGRAPH-5412}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 26143 (\N{CJK UNIFIED IDEOGRAPH-661F}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 29699 (\N{CJK UNIFIED IDEOGRAPH-7403}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 22823 (\N{CJK UNIFIED IDEOGRAPH-5927}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 21407 (\N{CJK UNIFIED IDEOGRAPH-539F}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 21147 (\N{CJK UNIFIED IDEOGRAPH-529B}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 35273 (\N{CJK UNIFIED IDEOGRAPH-89C9}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 37266 (\N{CJK UNIFIED IDEOGRAPH-9192}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 26080 (\N{CJK UNIFIED IDEOGRAPH-65E0}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 38480 (\N{CJK UNIFIED IDEOGRAPH-9650}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20105 (\N{CJK UNIFIED IDEOGRAPH-4E89}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 34584 (\N{CJK UNIFIED IDEOGRAPH-8718}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 34523 (\N{CJK UNIFIED IDEOGRAPH-86DB}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20384 (\N{CJK UNIFIED IDEOGRAPH-4FA0}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 33521 (\N{CJK UNIFIED IDEOGRAPH-82F1}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 38596 (\N{CJK UNIFIED IDEOGRAPH-96C4}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 24402 (\N{CJK UNIFIED IDEOGRAPH-5F52}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 22836 (\N{CJK UNIFIED IDEOGRAPH-5934}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 33041 (\N{CJK UNIFIED IDEOGRAPH-8111}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 29305 (\N{CJK UNIFIED IDEOGRAPH-7279}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 24037 (\N{CJK UNIFIED IDEOGRAPH-5DE5}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 38431 (\N{CJK UNIFIED IDEOGRAPH-961F}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 20367 (\N{CJK UNIFIED IDEOGRAPH-4F8F}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 32599 (\N{CJK UNIFIED IDEOGRAPH-7F57}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 32426 (\N{CJK UNIFIED IDEOGRAPH-7EAA}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 19990 (\N{CJK UNIFIED IDEOGRAPH-4E16}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Project\Quarto Books\EconomicAnalysis\eco\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 30028 (\N{CJK UNIFIED IDEOGRAPH-754C}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
+<section id="常用的图形" class="level2">
+<h2 class="anchored" data-anchor-id="常用的图形">常用的图形</h2>
 <section id="直方图" class="level3">
 <h3 class="anchored" data-anchor-id="直方图">直方图</h3>
 </section>
 <section id="核密度图" class="level3">
 <h3 class="anchored" data-anchor-id="核密度图">核密度图</h3>
 </section>
-<section id="箱形图" class="level3">
-<h3 class="anchored" data-anchor-id="箱形图">箱形图</h3>
+<section id="热图" class="level3">
+<h3 class="anchored" data-anchor-id="热图">热图</h3>
+<div id="49abf631" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>stocks_list <span class="op">=</span> [<span class="st">'AAPL'</span>,<span class="st">'BA'</span>,<span class="st">'MGM'</span>,<span class="st">'AMZN'</span>,<span class="st">'IBM'</span>,<span class="st">'TSLA'</span>,<span class="st">'GOOG'</span>,<span class="st">'^GSPC'</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> <span class="st">"2012-01-01"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> <span class="st">"2024-12-31"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>stocks_price_us <span class="op">=</span> yf.download(tickers<span class="op">=</span>stocks_list,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>         start<span class="op">=</span>start_date, end<span class="op">=</span>end_date, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         interval<span class="op">=</span><span class="st">"1mo"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>         auto_adjust<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>         progress<span class="op">=</span><span class="va">False</span>)[<span class="st">'Close'</span>]</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> stocks_price_us.pct_change()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> returns.corr().<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>ax,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="d图形" class="level3">
-<h3 class="anchored" data-anchor-id="d图形">3D图形</h3>
+</section>
+<section id="多图和子图" class="level2">
+<h2 class="anchored" data-anchor-id="多图和子图">多图和子图</h2>
+</section>
+<section id="多图" class="level2">
+<h2 class="anchored" data-anchor-id="多图">多图</h2>
+<div id="5db3066c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 正态分布</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">12345</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">500</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    mu, std <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), np.random.uniform(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> norm.pdf(x, loc <span class="op">=</span> mu, scale <span class="op">=</span> std)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    current_label <span class="op">=</span> <span class="vs">rf"$\mu = </span><span class="sc">{</span>mu<span class="sc">:.2f}</span><span class="vs">$"</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, linewidth <span class="op">=</span> <span class="dv">2</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, label <span class="op">=</span> current_label)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="子图" class="level3">
+<h3 class="anchored" data-anchor-id="子图">子图</h3>
+<div id="1ab272d5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>),sharex<span class="op">=</span><span class="va">True</span>,sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        m, s <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), np.random.uniform(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> np.random.normal(m,s,<span class="dv">100</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        axes[i, j].hist(x, alpha <span class="op">=</span> <span class="fl">0.6</span>, bins<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        title <span class="op">=</span> <span class="vs">rf"$\mu = </span><span class="sc">{</span>m<span class="sc">:.2f}</span><span class="vs">,\quad \sigma = </span><span class="sc">{</span>s<span class="sc">:.2f}</span><span class="vs">$"</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        axes[i, j].<span class="bu">set</span>(title <span class="op">=</span> title, xticks <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">4</span>],yticks <span class="op">=</span> [])</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="图形风格" class="level3">
+<h3 class="anchored" data-anchor-id="图形风格">图形风格</h3>
+<div id="a87e7820" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.style.available</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>['Solarize_Light2',
+ '_classic_test_patch',
+ '_mpl-gallery',
+ '_mpl-gallery-nogrid',
+ 'bmh',
+ 'classic',
+ 'dark_background',
+ 'fast',
+ 'fivethirtyeight',
+ 'ggplot',
+ 'grayscale',
+ 'petroff10',
+ 'seaborn-v0_8',
+ 'seaborn-v0_8-bright',
+ 'seaborn-v0_8-colorblind',
+ 'seaborn-v0_8-dark',
+ 'seaborn-v0_8-dark-palette',
+ 'seaborn-v0_8-darkgrid',
+ 'seaborn-v0_8-deep',
+ 'seaborn-v0_8-muted',
+ 'seaborn-v0_8-notebook',
+ 'seaborn-v0_8-paper',
+ 'seaborn-v0_8-pastel',
+ 'seaborn-v0_8-poster',
+ 'seaborn-v0_8-talk',
+ 'seaborn-v0_8-ticks',
+ 'seaborn-v0_8-white',
+ 'seaborn-v0_8-whitegrid',
+ 'tableau-colorblind10']</code></pre>
+</div>
+</div>
+<div id="002563d7" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">"ggplot"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, theta):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.cos(np.pi <span class="op">*</span> theta <span class="op">*</span> x ) <span class="op">*</span> np.exp(<span class="op">-</span> x)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>θ_vals <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">10</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> theta <span class="kw">in</span> θ_vals:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, f(x, theta), label <span class="op">=</span> <span class="vs">rf"$\theta = </span><span class="sc">{</span>theta<span class="sc">:.2f}</span><span class="vs">$"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="其他绘图包" class="level2">
-<h2 class="anchored" data-anchor-id="其他绘图包">其他绘图包</h2>
-<section id="seaborn" class="level3">
-<h3 class="anchored" data-anchor-id="seaborn">Seaborn</h3>
-</section>
-<section id="plotly" class="level3">
-<h3 class="anchored" data-anchor-id="plotly">Plotly</h3>
+<section id="应用股票价格及收益率" class="level2">
+<h2 class="anchored" data-anchor-id="应用股票价格及收益率">应用：股票价格及收益率</h2>
 
 
 </section>
-</section>
-</section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -682,6 +1101,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2025 YuMingchao</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Powered by Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 

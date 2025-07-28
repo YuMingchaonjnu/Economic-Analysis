@@ -159,6 +159,9 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">基于Python的经济数据分析与应用</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/YuMingchaonjnu/Economic-Analysis" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -215,7 +218,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">数据可视化: Matplotlib</span></a>
+ <span class="menu-text">数据可视化</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,7 +230,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">探索性数据分析</span></a>
+ <span class="menu-text">描述性分析</span></a>
   </div>
 </li>
       </ul>
@@ -315,7 +318,7 @@ window.Quarto = {
 <section id="创建数组" class="level3">
 <h3 class="anchored" data-anchor-id="创建数组">创建数组</h3>
 <p>有许多种方法创建数组，下面是一些简单的例子，使用<code>np.array()</code>函数，将列表、元组转化为数组：</p>
-<div id="ca9d9200" class="cell" data-execution_count="1">
+<div id="062098a5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -325,7 +328,7 @@ window.Quarto = {
 </div>
 </div>
 <p>注意，与列表不同，Numpy数组只能包含相同类型的数据，下面的例子中，<code>np.array()</code>函数自动将列表中的整数转换为浮点数：</p>
-<div id="d7d87ac0" class="cell" data-execution_count="2">
+<div id="880da054" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">3.14</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -333,7 +336,7 @@ window.Quarto = {
 </div>
 </div>
 <p>列表总是一维的，Numpy数组可以是多维的，例如下面的例子使用：</p>
-<div id="4075127f" class="cell" data-execution_count="3">
+<div id="f468c679" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.1</span>, <span class="dv">3</span>],</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="fl">6.5</span>]])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -343,7 +346,7 @@ window.Quarto = {
 </div>
 </div>
 <p>数组<code>data</code>是二维数组，可以查看属性<code>ndim</code>和<code>shape</code>：</p>
-<div id="b719812d" class="cell" data-execution_count="4">
+<div id="43f4f59e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.ndim</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -351,7 +354,7 @@ window.Quarto = {
 </div>
 </div>
 <p>可以对<code>data</code>进行通常的数学运算：</p>
-<div id="630c0893" class="cell" data-execution_count="5">
+<div id="8a798075" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">*</span> <span class="dv">10</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">+</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -417,7 +420,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </figure>
 </div>
-<div id="07e71fac" class="cell" data-execution_count="6">
+<div id="95ba662a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">10</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
@@ -443,26 +446,26 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>Numpy中random子库包含丰富的生成随机数的函数，例如：</p>
-<div id="88dc4974" class="cell" data-execution_count="7">
+<div id="1db8036a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#生成正态分布</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nums_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_norm)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nums_int <span class="op">=</span> np.random.randint(low<span class="op">=</span><span class="dv">1</span>, high<span class="op">=</span><span class="dv">11</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">10</span>))</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 1.09093781  0.68883812  0.8901703 ]
- [-0.49684045  0.94979574  1.57609239]
- [-0.57809989  0.22583805 -0.70277733]
- [ 1.41372602  0.7046849   0.65644131]]
-[[ 7  1  7  6  3  2  2  1  9  3]
- [ 3 10  9  8  9  5 10  2  9  2]]</code></pre>
+<pre><code>[[-1.91011187 -0.8853441   0.75084712]
+ [-0.28720876  0.9486837  -0.69314227]
+ [-0.2190483   0.90926595 -0.59143013]
+ [ 0.74090703  1.53903794 -3.23085733]]
+[[ 6  7  6  1  8  9  2 10  8  2]
+ [ 4  1  2  2  5  1  2  4  7  4]]</code></pre>
 </div>
 </div>
 </section>
 <section id="数组的索引" class="level3">
 <h3 class="anchored" data-anchor-id="数组的索引">数组的索引</h3>
 <p>注意索引与列表一样，从0开始；选择元素时不包括右侧。</p>
-<div id="2b96cec2" class="cell" data-execution_count="8">
+<div id="1246f0b4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.array((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>:<span class="dv">2</span>]</span>
@@ -484,7 +487,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="数组方法">数组方法</h3>
 <p>数组方法众多，例如：</p>
 <p>代码段</p>
-<div id="2db7fa8e" class="cell" data-execution_count="9">
+<div id="e70bb7e0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array((<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>a.sort()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -505,7 +508,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <section id="数组的数学运算" class="level3">
 <h3 class="anchored" data-anchor-id="数组的数学运算">数组的数学运算</h3>
 <p>注意，运算符 <code>+</code>, <code>-</code> , <code>*</code>, <code>/</code> 和 <code>**</code>，都是逐元素运算。例如：</p>
-<div id="54e72802" class="cell" data-execution_count="10">
+<div id="d64af484" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span>
@@ -525,7 +528,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>可以使用 @ 或 np.dot() 进行矩阵乘法。如果是向量则计算内积。</p>
-<div id="2f5918d6" class="cell" data-execution_count="11">
+<div id="bebc2bfa" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>],</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>,<span class="dv">4</span>]])</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>,<span class="dv">6</span>,],</span>
@@ -545,7 +548,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="例多项式计算">例：多项式计算</h3>
 <p>Numpy中有一些列简便运算的函数。例如 <code>np.poly1d()</code>，多项式求和:</p>
 <p><span class="math display">\[p(x) = a_{0} + a_{1}x + a_{2}x^{2} + \cdots + a_{N}x^{N} = \sum_{n=0}^{N}a_{n}x^{n} \]</span></p>
-<div id="92b8619f" class="cell" data-execution_count="12">
+<div id="328e2163" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.poly1d([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -557,7 +560,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 <p>注意，<code>np.poly1d()</code> 函数高阶项在前面。</p>
 <p>利用向量计算，自定义一个函数：</p>
-<div id="7ccd55cf" class="cell" data-execution_count="13">
+<div id="eef36255" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poly1d(x, coef):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.ones_like(coef)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    X[<span class="dv">1</span>:] <span class="op">=</span> x</span>
@@ -575,7 +578,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="random子库">Random子库</h3>
 <p>Numpy中有大量的与随机数生成器有关的函数。</p>
 <p>下面是一个例子，注意，没有设定随机种子数，因此每次运行结果会不同。</p>
-<div id="711d122a" class="cell" data-execution_count="14">
+<div id="1ec9b7a7" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an array of choices</span></span>
@@ -587,12 +590,12 @@ Table&nbsp;1: Numpy中生成数组的函数
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the random choice</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_choice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>orange</code></pre>
+<pre><code>grape</code></pre>
 </div>
 </div>
 <section id="例简单的随机游走" class="level4">
 <h4 class="anchored" data-anchor-id="例简单的随机游走">例：简单的随机游走</h4>
-<div id="1d14f1c5" class="cell" data-execution_count="15">
+<div id="28de6ba8" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -633,7 +636,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <li>重复抽样并计算均值: 从总体中抽取 num_samples 次样本，每次抽取 sample_size 个数据点，并计算每次抽样的平均值。</li>
 <li>可视化: 绘制样本均值的直方图，并与原始总体分布的直方图进行对比。</li>
 </ul>
-<div id="3d4d301d" class="cell" data-execution_count="16">
+<div id="31334b6b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'SimHei'</span></span>
@@ -718,7 +721,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 class="anchored" data-anchor-id="通用函数">通用函数</h3>
 <p>Numpy中许多函数是通用函数(universal functions)，是一种在 ndarray 数据中进行逐元素操作的函数，大多数数学函数属于此类。</p>
 <p>例如 <code>np.cos()</code> 函数：</p>
-<div id="3750b02d" class="cell" data-execution_count="17">
+<div id="96ba2423" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>np.cos(<span class="fl">1.0</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>np.cos(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -726,7 +729,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>例如，我们想计算<span class="math inline">\(\frac{0}{1},\frac{1}{2},\cdots, \frac{4}{5}\)</span>:</p>
-<div id="41dd65e8" class="cell" data-execution_count="18">
+<div id="fb2d920b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">5</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([0.        , 0.5       , 0.66666667, 0.75      , 0.8       ])</code></pre>
@@ -813,7 +816,7 @@ Table&nbsp;2: Numpy中算术运算子和函数
 <p>考察最大化函数 <span class="math inline">\(f(x,y)\)</span> 在区间 $ [−a,a] $ 上的最大值： <span class="math display">\[
 f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 \]</span> ​ 令<span class="math inline">\(a=3\)</span>。 我们定义一个函数，然后生成数组，计算对应的-值，通过栅格（grid）搜索最大值（等于1）。</p>
-<div id="491397c3" class="cell" data-execution_count="19">
+<div id="f046f120" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -853,7 +856,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="例洛伦茨曲线和基尼系数" class="level3">
 <h3 class="anchored" data-anchor-id="例洛伦茨曲线和基尼系数">例：洛伦茨曲线和基尼系数</h3>
-<div id="23bf27d8" class="cell" data-execution_count="20">
+<div id="cf831379" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># 载入numpy库</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lorenz_curve(y):</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
@@ -864,7 +867,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    cum_income <span class="op">=</span> s <span class="op">/</span> s[n] <span class="co"># s[n]为最后的值，即所有值的和</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cum_people, cum_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="17b30b96" class="cell" data-execution_count="21">
+<div id="ce5d3a5d" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">2000</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> np.exp(np.random.randn(n))</span>
@@ -896,7 +899,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="基尼系数" class="level3">
 <h3 class="anchored" data-anchor-id="基尼系数">基尼系数</h3>
-<div id="f5974d2f" class="cell" data-execution_count="22">
+<div id="c20cae72" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gini(y):</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    y_1 <span class="op">=</span> np.reshape(y, (n, <span class="dv">1</span>))</span>
@@ -904,7 +907,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    g_sum <span class="op">=</span> np.<span class="bu">sum</span>(np.<span class="bu">abs</span>(y_1 <span class="op">-</span> y_2)) <span class="co"># 利用了numpy的广播（broadcasting）</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g_sum <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n <span class="op">*</span> np.<span class="bu">sum</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4bef45c7" class="cell" data-execution_count="23">
+<div id="e5b31dec" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 模拟对数正态数据</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">5</span></span>
@@ -916,7 +919,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> np.exp(mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(n))</span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    ginis.append(gini(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cc607f12" class="cell" data-execution_count="24">
+<div id="26a6d928" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>ax.plot(sigmas, ginis, marker <span class="op">=</span> <span class="st">'o'</span>,label<span class="op">=</span><span class="st">'simulated'</span>, lw <span class="op">=</span> <span class="dv">2</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Standard deviation'</span>)</span>
@@ -939,7 +942,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1350,6 +1353,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2025 YuMingchao</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Powered by Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 

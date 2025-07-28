@@ -150,6 +150,9 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">基于Python的经济数据分析与应用</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/YuMingchaonjnu/Economic-Analysis" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -206,7 +209,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">数据可视化: Matplotlib</span></a>
+ <span class="menu-text">数据可视化</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -218,7 +221,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">探索性数据分析</span></a>
+ <span class="menu-text">描述性分析</span></a>
   </div>
 </li>
       </ul>
@@ -441,7 +444,7 @@ div.csl-indent {
 <p><code>python pyfiles/polar_plot.py</code></p>
 <p>当然，也可以先改变当前文件夹至pyfiles文件夹，就可以省略路径。 ### Jupyter notebook兼有</p>
 <p>在Jupyter Notebook中试验是否成功安装，打开链接中的例子，将代码复制到一个单元格中，绘制一个<a href="https://matplotlib.org/3.1.1/gallery/pie_and_polar_charts/polar_bar.html">圆形柱状图</a>：</p>
-<div id="e7117656" class="cell" data-execution_count="1">
+<div id="5a7dfca8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -469,7 +472,7 @@ div.csl-indent {
 </div>
 </div>
 <p>Jupyter Notebook 延续了ipython中的<code>%run</code>命令，可以脚本模式运行：</p>
-<div id="21258fc0" class="cell" data-execution_count="2">
+<div id="eda0cae6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run pyfiles<span class="op">/</span>polar_plot.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -487,7 +490,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="help-和"><code>help()</code> 和<code>?</code></h3>
 <p>Python有非常详细的官方<a href="https://docs.python.org/zh-cn/3.13/">帮助文档</a>，帮助新用户快速的熟悉其用法。</p>
 <p>例如，Python有一个内置函数<code>help()</code>，可以查看定义的文档，例如对函数<code>len()</code>：</p>
-<div id="4e793c6c" class="cell" data-execution_count="3">
+<div id="a1af3630" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on built-in function len in module builtins:
@@ -498,11 +501,11 @@ len(obj, /)
 </div>
 </div>
 <p>由于其重要性，Ipython和Jupyter中可以使用<code>?</code>作为缩写：</p>
-<div id="a30c1cfa" class="cell" data-execution_count="4">
+<div id="97d76d46" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>当然，对自定义的对象也是适用的。下面定义的函数，有一段函数的说明文字（docstring）：</p>
-<div id="5e10bb42" class="cell" data-execution_count="5">
+<div id="5824df30" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates the square of a given number.</span></span>
@@ -516,7 +519,7 @@ len(obj, /)
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果输入<code>help()</code>函数：</p>
-<div id="eb2ddf82" class="cell" data-execution_count="6">
+<div id="a44db9e9" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function square in module __main__:
@@ -538,7 +541,7 @@ square(x)
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-mckinney2022python" class="csl-entry" role="listitem">
 McKinney, Wes. 2022. <em>Python for Data Analysis: Data Wrangling with Pandas, Numpy, and Jupyter</em>. " O’Reilly Media, Inc.".
 </div>
@@ -956,6 +959,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2025 YuMingchao</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Powered by Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 

@@ -6,6 +6,9 @@ website:
   sidebar:
     style: "docked" # floating
     search: true
+    tools: 
+      - icon: github
+        href: https://github.com/YuMingchaonjnu/Economic-Analysis       
     title: "基于Python的经济数据分析与应用"
     contents:
       - text: "前言"
@@ -39,7 +42,10 @@ website:
       - text: "参考文献"
         href: references.qmd
         
-
+  back-to-top-navigation: true
+  page-footer:
+    left: "Copyright © 2025 YuMingchao"     
+    right: "Powered by Quarto"
        
 bibliography: references.bib
 
