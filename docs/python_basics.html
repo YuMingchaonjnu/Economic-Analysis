@@ -332,14 +332,14 @@ window.Quarto = {
 <li>建议使用有意义的英文单词，遵循小写加下划线的风格（如：student_name）</li>
 </ul>
 <p>如果命名方式不符合要求，软件将返回错误。将下面例子中表示注释的去掉，试运行语句，看提示的错误类型是什么？</p>
-<div id="099f0ca9" class="cell" data-execution_count="1">
+<div id="7cdcaaac" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1student = "Bob"      # 不能以数字开头</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class = "Math"        # 不能使用关键字</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># student-name = "Tom"  # 不能包含减号</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># t&amp;2 = 30              # 特殊符号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>例如，正确的变量名：</p>
-<div id="fddde1e5" class="cell" data-execution_count="2">
+<div id="cfcdf69f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">21</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>province <span class="op">=</span> <span class="st">"Jiang Su"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -348,7 +348,7 @@ window.Quarto = {
 <section id="保留关键词" class="level3">
 <h3 class="anchored" data-anchor-id="保留关键词">保留关键词</h3>
 <p>上面的<code>class</code>，属于软件内部保留的33个关键词之一，注意在命名时应避免与关键词冲突：</p>
-<div id="4c7f5390" class="cell" data-execution_count="3">
+<div id="6c5a5fd1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> keyword</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(keyword.kwlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -360,7 +360,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="常见数据类型">常见数据类型：</h3>
 <p><strong>整数</strong>（int）：用于表示整数类型的数据。</p>
 <p>可以通过<code>type()</code>函数查看一个对象的类型。</p>
-<div id="1e012456" class="cell" data-execution_count="4">
+<div id="b1538126" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a))  </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -375,7 +375,7 @@ window.Quarto = {
 </div>
 </div>
 <p><strong>浮点数</strong>（float）：用于表示带小数点的数值</p>
-<div id="060bc622" class="cell" data-execution_count="5">
+<div id="52f8a0ac" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14159</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="fl">1.75</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> pi <span class="op">*</span> radius <span class="op">**</span><span class="dv">2</span></span>
@@ -388,7 +388,7 @@ window.Quarto = {
 </div>
 <p><strong>字符串</strong>（str）：用于表示文本数据</p>
 <p>可以用双引号或者 单引号定义字符串。当字符串较长时，可以用三引号进行定义。例如：</p>
-<div id="c0c08da0" class="cell" data-execution_count="6">
+<div id="71c71690" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Python's syntax is easy to learn."</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>multiline <span class="op">=</span> <span class="st">"""这个句子</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">被我</span></span>
@@ -493,7 +493,7 @@ Table&nbsp;1: 常见的字符串方法
 </figure>
 </div>
 <p>注意，当对字符串使用某一方法时，虽然结果显示了变化，并没有改变原本对字符串。如果要保存结果可以赋值。</p>
-<div id="69529a39" class="cell" data-execution_count="7">
+<div id="99460be7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例：将日期字符串按“-”分割成年、月、日</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>date_str <span class="op">=</span> <span class="st">"2024-06-01"</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>parts <span class="op">=</span> date_str.split(<span class="st">"-"</span>)</span>
@@ -510,7 +510,7 @@ Python$#$_is$#$_fun</code></pre>
 </div>
 </div>
 <p><strong>布林类型</strong>（bool）：只有True和False两个值，常用于条件判断</p>
-<div id="db6fa93e" class="cell" data-execution_count="8">
+<div id="213e2c54" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Jane"</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">57</span></span>
@@ -534,7 +534,7 @@ Python$#$_is$#$_fun</code></pre>
 <h3 class="anchored" data-anchor-id="带引号的字符">带引号的字符</h3>
 <p>上面的例子中，常用<code>print()</code>函数将内容输出到屏幕，它是Python中最常用的输出语句，它可以输出字符串、变量、表达式等，并支持格式化输出。</p>
 <p>在Python语言中，字符可以使用单引号或者双引号表示，在输出带引号的字符串时，可以利用该特点。例如</p>
-<div id="8f5582c5" class="cell" data-execution_count="9">
+<div id="acc1674c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出带有引号的字符串</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'She said, "Hello!"'</span>)      <span class="co"># 外单内双</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"It's a nice day."</span>)        <span class="co"># 外双内单</span></span>
@@ -558,7 +558,7 @@ She said, "Hello!"
 <h3 class="anchored" data-anchor-id="格式化输出-f-string">格式化输出 f-string</h3>
 <p>f-string（格式化字符串字面量）是 Python 3.6 及以上版本提供的一种字符串格式化方式，它让我们可以在字符串中直接嵌入变量或表达式。</p>
 <p>输出结果时也可以进行数学运算：</p>
-<div id="6af8f28b" class="cell" data-execution_count="10">
+<div id="3356e38d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="dv">2024</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>GDP_per_capita <span class="op">=</span> <span class="dv">95749</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>growth <span class="op">=</span> <span class="fl">0.051</span></span>
@@ -586,7 +586,7 @@ She said, "Hello!"
 <section id="算术运算符" class="level3">
 <h3 class="anchored" data-anchor-id="算术运算符">算术运算符</h3>
 <p>算术运算符包括：加法（+）、减法（-）、乘法（*）、除法（/）、整除（//）、取余（%）、幂运算（**）：</p>
-<div id="4c340de4" class="cell" data-execution_count="11">
+<div id="0a0e75ab" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -603,7 +603,7 @@ a ** b = 50625</code></pre>
 <section id="比较运算符" class="level3">
 <h3 class="anchored" data-anchor-id="比较运算符">比较运算符</h3>
 <p>比较运算符用于比较两个值，结果为布尔类型（True或False）</p>
-<div id="3941ee4f" class="cell" data-execution_count="12">
+<div id="458fa139" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a &gt; b:"</span>, a <span class="op">&gt;</span> b)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a == b:"</span>, a <span class="op">==</span> b)   </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a != b:"</span>, a <span class="op">!=</span> b)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -616,7 +616,7 @@ a != b: True</code></pre>
 <section id="逻辑运算符" class="level4">
 <h4 class="anchored" data-anchor-id="逻辑运算符">逻辑运算符</h4>
 <p>逻辑运算符用于连接多个条件表达式，常用于复合条件判断。例如：</p>
-<div id="ceb14eee" class="cell" data-execution_count="13">
+<div id="e55b9ba9" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -634,7 +634,7 @@ False</code></pre>
 <section id="赋值运算符" class="level3">
 <h3 class="anchored" data-anchor-id="赋值运算符">赋值运算符</h3>
 <p>赋值运算符用于给变量赋值或在原有基础上进行运算后赋值:</p>
-<div id="0a142e31" class="cell" data-execution_count="14">
+<div id="f53bb6a0" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>      </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">+=</span> <span class="dv">5</span>   </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">-=</span> <span class="dv">3</span>   </span>
@@ -653,7 +653,7 @@ False</code></pre>
 <section id="成员运算符" class="level3">
 <h3 class="anchored" data-anchor-id="成员运算符">成员运算符</h3>
 <p>成员运算符用于判断某个元素是否属于某个序列，如列表、元组、字符串等。例如：</p>
-<div id="f88f5ca9" class="cell" data-execution_count="15">
+<div id="51b4179a" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -671,7 +671,7 @@ False</code></pre>
 <section id="条件语句" class="level3">
 <h3 class="anchored" data-anchor-id="条件语句">条件语句</h3>
 <p>条件语句（if语句）用于根据条件判断执行不同的代码块，基本结构：</p>
-<div id="fbee928d" class="cell" data-execution_count="16">
+<div id="f897b863" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if 条件:</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     代码块1</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># elif 其他条件:</span></span>
@@ -717,7 +717,7 @@ Table&nbsp;2: 世界银行经济体收入分组标准
 </figure>
 </div>
 <p>可以使用嵌套条件语句来进行判别：</p>
-<div id="8b1ccd26" class="cell" data-execution_count="17">
+<div id="a5014843" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>gni <span class="op">=</span> <span class="dv">13660</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> gni <span class="op">&lt;=</span> <span class="dv">1135</span>:</span>
@@ -740,7 +740,7 @@ Table&nbsp;2: 世界银行经济体收入分组标准
 <p>再来看一个计算BMI（Body Mass Index）指数的例子： <span class="math display">\[
 BMI = \frac{weight(kg)}{height(m)^{2}}
 \]</span></p>
-<div id="17e826fa" class="cell" data-execution_count="18">
+<div id="a7b30166" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="fl">1.75</span> </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>weight <span class="op">=</span> <span class="dv">75</span> </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -764,7 +764,7 @@ BMI = \frac{weight(kg)}{height(m)^{2}}
 <section id="for循环与range" class="level3">
 <h3 class="anchored" data-anchor-id="for循环与range">for循环与range</h3>
 <p><code>for</code>循环用于遍历序列（如列表、字符串、元组等）或按照一定范围循环，经常与<code>range()</code>一起使用。</p>
-<div id="55fe4be7" class="cell" data-execution_count="19">
+<div id="a0c7e562" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruit)</span>
@@ -785,7 +785,7 @@ cherry
 <h3 class="anchored" data-anchor-id="while循环">while循环</h3>
 <p>while循环是一种基于条件判断的循环结构。当条件为True时，循环体会反复执行，直到条件变为False为止。</p>
 <p>while循环要注意循环变量的更新，否则可能会造成死循环。</p>
-<div id="36131d80" class="cell" data-execution_count="20">
+<div id="c89703fb" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例1：输出1到5</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
@@ -921,7 +921,7 @@ Table&nbsp;3: 列表的常用方法
 </div>
 </figure>
 </div>
-<div id="552ada21" class="cell" data-execution_count="21">
+<div id="ed733bd7" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列表（list）：有序、可变的元素集合，用[]表示</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>]</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
@@ -980,7 +980,7 @@ orange
 [10, 25, 40]</code></pre>
 </div>
 </div>
-<div id="0f1a5e30" class="cell" data-execution_count="22">
+<div id="2fc281e8" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 元组（tuple）：有序、不可变的元素集合，用()表示</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> (<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>)</span>
@@ -1029,7 +1029,7 @@ blue</code></pre>
 P_{0} = \sum_{t=0}^{T} (\frac{1}{1+r})^{t}y_{t}
 \]</span></p>
 <p>我们将假设的收益序列保存为列表： <code>y = [-100, 80, 60, 50]</code>，贴现率假设为0.05：</p>
-<div id="aec26933" class="cell" data-execution_count="23">
+<div id="20f00e6b" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="op">-</span><span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">50</span>]</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">0.05</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>P0 <span class="op">=</span> <span class="dv">0</span></span>
@@ -1044,7 +1044,7 @@ P_{0} = \sum_{t=0}^{T} (\frac{1}{1+r})^{t}y_{t}
 <section id="字典的键值对操作" class="level3">
 <h3 class="anchored" data-anchor-id="字典的键值对操作">字典的键值对操作</h3>
 <p>字典（dict）是一种用于存储键值对的数据结构。每个元素由“键”（key）和“值”（value）组成，键必须唯一且不可变，值可以是任意类型。 字典用大括号{}表示，键和值之间用冒号:分隔，多个键值对之间用逗号,分隔。</p>
-<div id="3ba05670" class="cell" data-execution_count="24">
+<div id="c3e9ec5b" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义字典</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Tom"</span>, <span class="st">"age"</span>: <span class="dv">18</span>, <span class="st">"gender"</span>: <span class="st">"male"</span>}</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span>
@@ -1084,7 +1084,7 @@ True</code></pre>
 <section id="应用利用字典进行词频统计" class="level3">
 <h3 class="anchored" data-anchor-id="应用利用字典进行词频统计">应用：利用字典进行词频统计</h3>
 <p>统计一段文本中每个单词出现的次数，例如统计下面英文歌词代词出现的次数。首先将字母转化为小写字母，然后利用字符的切分方法<code>.split()</code>，将结果保存在字典<code>freq</code>之中，然后按词频排序，注意使用了lambda函数的方法。</p>
-<div id="0e7accf6" class="cell" data-execution_count="25">
+<div id="60fcd694" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"""Generals gathered in their masses</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="st">Just like witches at black masses</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="st">Evil minds that plot destruction</span></span>
@@ -1148,7 +1148,7 @@ they: 3</code></pre>
 <section id="内置函数的调用" class="level3">
 <h3 class="anchored" data-anchor-id="内置函数的调用">内置函数的调用</h3>
 <p>Python内置函数是系统自带的、可以直接使用的函数，无需导入模块。常见内置函数有：<code>abs()</code>, <code>len()</code>,<code>max()</code>, <code>min()</code>, <code>sum()</code>, <code>type()</code>, <code>int()</code>, <code>float()</code>, <code>str()</code>, <code>list()</code>, <code>dict()</code>, <code>range()</code> 等</p>
-<div id="27d778aa" class="cell" data-execution_count="26">
+<div id="385267d8" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例1：abs() </span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">abs</span>(<span class="op">-</span><span class="dv">10</span>))</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1186,7 +1186,7 @@ they: 3</code></pre>
 <section id="自定义函数" class="level3">
 <h3 class="anchored" data-anchor-id="自定义函数">自定义函数</h3>
 <p>自定义函数使用def关键字，指定函数名、参数列表和函数体。下面是几个简单的自定义函数的例子。</p>
-<div id="21dec187" class="cell" data-execution_count="27">
+<div id="9521aeac" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1195,7 +1195,7 @@ they: 3</code></pre>
 </div>
 </div>
 <p>带返回值的函数，如计算平均数</p>
-<div id="f3ed1eab" class="cell" data-execution_count="28">
+<div id="4852dccd" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mean(numbers):</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(numbers)</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> <span class="bu">len</span>(numbers)</span>
@@ -1209,7 +1209,7 @@ they: 3</code></pre>
 </div>
 </div>
 <p>带默认参数的函数</p>
-<div id="b485f253" class="cell" data-execution_count="29">
+<div id="7d841cc6" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> power(base, exponent<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> base <span class="op">**</span> exponent</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1221,7 +1221,7 @@ they: 3</code></pre>
 </div>
 </div>
 <p>函数也可以有多个返回值（返回元组）</p>
-<div id="0dcb3278" class="cell" data-execution_count="30">
+<div id="32fce145" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min_max(numbers):</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">min</span>(numbers), <span class="bu">max</span>(numbers)</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1229,7 +1229,7 @@ they: 3</code></pre>
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>, <span class="bu">max</span> <span class="op">=</span> min_max(nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>另外一个例子计算商和余数:</p>
-<div id="5a1a05ef" class="cell" data-execution_count="31">
+<div id="5c53c7a3" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    quotient <span class="op">=</span> a <span class="op">//</span> b</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    remainder <span class="op">=</span> a <span class="op">%</span> b</span>
@@ -1238,7 +1238,7 @@ they: 3</code></pre>
 <span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>q, r <span class="op">=</span> divide(<span class="dv">17</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>可变参数</strong>：<code>*args</code> 接收任意数量的位置参数，类型为元组</p>
-<div id="e1ab4ad8" class="cell" data-execution_count="32">
+<div id="557dc072" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total(<span class="op">*</span>args):</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(args)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1250,7 +1250,7 @@ they: 3</code></pre>
 </div>
 </div>
 <p><strong>关键字参数</strong>：**kwargs 接收任意数量的关键字参数，类型为字典</p>
-<div id="733c5637" class="cell" data-execution_count="33">
+<div id="617463d4" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_info(<span class="op">**</span>kwargs):</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -1265,7 +1265,7 @@ age: 20</code></pre>
 <section id="例世界银行经济体分组续" class="level3">
 <h3 class="anchored" data-anchor-id="例世界银行经济体分组续">例：世界银行经济体分组（续）</h3>
 <p>将前面例子中的<code>if</code>语句代码，赋值粘贴至某一个AI大模型平台，输入提示：“将下面的Python代码定义为一个函数”。</p>
-<div id="920e22da" class="cell" data-execution_count="34">
+<div id="42690d93" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_economy(gni):</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> gni <span class="op">&lt;=</span> <span class="dv">1135</span>:</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>        economy <span class="op">=</span> <span class="st">"低收入经济体"</span></span>
@@ -1283,7 +1283,7 @@ age: 20</code></pre>
 </div>
 </div>
 <p>自定义函数常与其他功能结合使用，例如Pandas库的<code>df.apply()</code>方法。下面的例子首先从World Bank数据库下载2024年<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD">GDP per capita (current US$)</a>数据，删除缺失值，然后应用自定义的<code>classify_economy()</code>函数：</p>
-<div id="5a7802d5" class="cell" data-execution_count="35">
+<div id="b4de9701" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbgapi <span class="im">as</span> wb</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>gdp_pc_2024 <span class="op">=</span> wb.data.DataFrame(<span class="st">"NY.GDP.PCAP.CD"</span>, time <span class="op">=</span> <span class="dv">2024</span>)</span>
@@ -1309,7 +1309,7 @@ Name: NY.GDP.PCAP.CD, Length: 232, dtype: object</code></pre>
 <section id="例bmi指数函数" class="level3">
 <h3 class="anchored" data-anchor-id="例bmi指数函数">例：BMI指数函数</h3>
 <p>同样，也可以将上面计算BMI指数的过程，定义为一个函数：</p>
-<div id="54c3d5ac" class="cell" data-execution_count="36">
+<div id="af39051f" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bmi(height, weight):</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""计算BMI指数并返回数值和健康状况"""</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    bmi <span class="op">=</span> weight <span class="op">/</span> (height <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -1340,7 +1340,7 @@ CR_{4} = \sum_{i=1}^{4}s_{i}
 <p>和赫芬达尔指数 <span class="math display">\[
 H_{i} = \sum_{i=1}^{n}s_{i}^{2}
 \]</span></p>
-<div id="b5fb74d3" class="cell" data-execution_count="37">
+<div id="3763a7a5" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> concentration_index(sales, top_n<span class="op">=</span><span class="dv">4</span>):</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="co">    计算前N家企业的集中度（Cn）和赫芬达尔-赫希曼指数（HHI）。</span></span>
@@ -1370,7 +1370,7 @@ H_{i} = \sum_{i=1}^{n}s_{i}^{2}
 Y = AK^{\alpha}L^{1-\alpha}
 \]</span></p>
 <p>其中，<span class="math inline">\(\alpha\)</span> 表示资本的产出弹性，<span class="math inline">\(A\)</span> 表示全要素生产率。</p>
-<div id="6eb42ac4" class="cell" data-execution_count="38">
+<div id="65c8fa75" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1383,7 +1383,7 @@ Y = AK^{\alpha}L^{1-\alpha}
 </div>
 </div>
 <p>从微观经济学内容我们知道，等产量曲线是带来相同产出的要素组合 <span class="math inline">\((K, L)\)</span> 形成的曲线，可以应用matplotlib中的<code>contour</code>函数绘制上面函数定义的等产量曲线：</p>
-<div id="26cbde8e" class="cell" data-execution_count="39">
+<div id="23c26974" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 生成K和L的网格</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
@@ -1412,7 +1412,7 @@ Y = AK^{\alpha}L^{1-\alpha}
 <section id="模块的导入与使用" class="level3">
 <h3 class="anchored" data-anchor-id="模块的导入与使用">模块的导入与使用</h3>
 <p>Python的模块（module）是包含一组功能的代码文件，可以通过import语句导入并使用其中的函数、变量等。分为三类： - python自带模块，不需要安装，直接import载入就可以了，如math包； - 第三方模块，通常需要下载安装，然后载入，如numpy，scipy等； - 自定义模块，自己写的实现某些功能的py文件的集合。</p>
-<div id="2cd0577a" class="cell" data-execution_count="40">
+<div id="207e706f" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))     </span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.pi)           </span>
@@ -1427,12 +1427,12 @@ Y = AK^{\alpha}L^{1-\alpha}
 <div class="cell-output cell-output-stdout">
 <pre><code>4.0
 3.141592653589793
-3
-2025-07-29 23:55:13.234122</code></pre>
+4
+2025-08-08 09:53:59.963540</code></pre>
 </div>
 </div>
 <p>可以把自定义的函数等保存在<code>.py</code>格式等脚本文件中，自定义模块。例如，在文件夹pyfiles中my_module.py文件保存了一个计算BMI的函数，我们载入该函数然后进行计算：</p>
-<div id="27e1515b" class="cell" data-execution_count="41">
+<div id="634b00c8" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfiles.my_module <span class="im">import</span> bmi_index</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 示例调用</span></span>
@@ -1455,7 +1455,7 @@ Y = AK^{\alpha}L^{1-\alpha}
 <section id="定义一个简单的类" class="level3">
 <h3 class="anchored" data-anchor-id="定义一个简单的类">定义一个简单的类</h3>
 <p>下面定义一个类<code>Student</code>，它具有两个属性<code>name</code>、<code>age</code>，和一个方法<code>introduce()</code>：</p>
-<div id="3edad3c9" class="cell" data-execution_count="42">
+<div id="c1a14b42" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 构造方法，初始化属性</span></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
@@ -1494,7 +1494,7 @@ Q_{D} = Q_{S}
 <li><code>supply</code>计算给定价格的供给量</li>
 <li><code>equilibrium</code>计算均衡价格和均衡数量;</li>
 </ul>
-<div id="72177f93" class="cell" data-execution_count="43">
+<div id="7c50948c" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Market:</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a, b, c, d):</span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""        </span></span>
@@ -1533,7 +1533,7 @@ Equilibrium Quantity = 68.00</code></pre>
 </div>
 </div>
 <p>可以利用定义的<code>market</code>类中的方法绘制需求曲线和供给曲线：</p>
-<div id="bb82abc6" class="cell" data-execution_count="44">
+<div id="5b81c054" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>

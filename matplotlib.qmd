@@ -20,28 +20,51 @@ df
 
 ```{python}
 import matplotlib.pyplot as plt
-plt.rcParams['font.family'] = "SimHei"
+plt.rcParams['font.family'] = 'SimHei'
 plt.rcParams["axes.unicode_minus"] = False
-
-fig, ax = plt.subplots()
 ```
 
-现在有了图形轴（Axes）的实例，就可以在上面绘制图形了：
+现在有了图形轴（Axes）的实例，就可以在上面绘制图形了。例如绘制一幅柱形图，使用`.bar()`方法：
 
 ```{python}
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(8, 6))
 ax.bar(x=df['影片名称'], height=df['全球票房'], color='skyblue')
 plt.show()
 ```
+
+显然，图形还有改善的空间。比如横轴、纵轴标签，图形标题等：
+
+```{python}
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.bar(x=df['影片名称'], height=df['全球票房'], color='skyblue')
+ax.set_yscale("log")
+ax.set_title('电影全球总票房前十名', fontsize=16, fontweight='bold')
+ax.set_xlabel('影片名称', fontsize=12)
+ax.set_ylabel('全球票房 ($)', fontsize=12)
+plt.xticks(rotation=45, ha='right') 
+plt.show()
+```
+
+横向柱形图
+
+```{python}
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.barh(y = df['影片名称'], width=df['全球票房'], color='skyblue')
+ax.set_xscale("log")
+ax.set_title('电影全球总票房前十名', fontsize=16, fontweight='bold')
+ax.set_ylabel('影片名称', fontsize=12)
+ax.set_xlabel('全球票房 ($)', fontsize=12)
+
+plt.show()
+```
+
 
 ## 常用的图形
 
 ### 直方图
 
-### 核密度图
+直方图可能是使用频率最高的图形。下面的例子，自雅虎财经网站下载几支股票的月度（后复权调整）收盘价数据，然后使用`df.pct_change()`函数计算了简单收益率；
 
-
-### 热图
 
 ```{python}
 import yfinance as yf
@@ -51,11 +74,56 @@ stocks_list = ['AAPL','BA','MGM','AMZN','IBM','TSLA','GOOG','^GSPC']
 start_date = "2012-01-01"
 end_date = "2024-12-31"
 stocks_price_us = yf.download(tickers=stocks_list,
-         start=start_date, end=end_date, 
+         start=start_date,
+         end=end_date, 
          interval="1mo",
          auto_adjust=True,
          progress=False)['Close']
 returns = stocks_price_us.pct_change()
+```
+
+例如，绘制苹果公司股票收益率的直方图：
+```{python}
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.hist(x=returns['AAPL'], bins=20, 
+        color="skyblue") 
+ax.vlines(x=returns['AAPL'].mean(), 
+        ymin=0, ymax=18, colors="darkred",        
+        alpha=0.6)
+ax.set_xlabel("Monthly Return of AAPL")
+ax.set_ylabel("Frequency")
+plt.show()
+```
+
+如果纵轴希望表示为概率密度，加上参数`density=True`。
+
+下载的数据包含8家7家企业以及标准普尔500指数（GSPC），下面将收益率为子图绘制直方图。为了可比，横轴使用了`sharex=True`参数：
+
+```{python}
+fig, axes = plt.subplots(nrows=2, 
+                        ncols=4,
+                        figsize=(15, 10),
+                        sharex=True)
+axes = axes.flatten()
+for i, stock in enumerate(stocks_list):
+    axes[i].hist(returns[stock], bins=20)
+    axes[i].set_title(f'{stock}', fontsize=12)
+fig.supxlabel("Monthly Returns", fontsize=16)
+fig.supylabel("Frequency", fontsize=16)
+fig.suptitle("Histograms of Monthly Returns", fontsize=18)
+plt.tight_layout()
+plt.show()
+```
+
+
+### 核密度图
+
+设 $(x_{1}, x_{2},\cdots ,x_{n})$ 为从单变量分布中抽取的独立同分布样本，给定点 $x$ 有未知的概率密度 $f$ ，函数 $f$ 核密度估计量是：
+
+### 热图
+
+```{python}
+
 corr = returns.corr().round(2)
 
 fig, ax = plt.subplots(figsize=(10, 8))
@@ -126,7 +194,129 @@ ax.legend()
 plt.show()
 ```
 
-## 应用：股票价格及收益率
+## 应用：收益率的几个典型事实
 
+这部分内容，
 
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import yfinance as yf
+import scipy.stats as stats
+import statsmodels.api as sm
+```
 
+然后下载或读取数据：
+```{python}
+# df = yf.download(['^GSPC', '^VIX'], 
+#                 start='1990-01-01',
+#                 auto_adjust=True,                
+#                 progress=False)['Close']
+# df.to_csv('datasets/sp500_vix.csv')
+
+df = pd.read_csv('datasets/sp500_vix.csv',                
+                header=0,
+                index_col=0,
+                parse_dates=True)
+df.columns = ["SP500", "VIX"]
+df['log_ret'] = np.log(df['SP500']/df['SP500'].shift(1))
+df.dropna(inplace=True)
+```
+
+### 厚尾
+
+```{python}
+fig,ax =plt.subplots(1,2,figsize=(10,6))
+sns.kdeplot(df['log_ret'], fill=False,label='kernel density',ax=ax[0])
+mu, sigma = stats.norm.fit(df['log_ret'])
+x = np.linspace(df['log_ret'].min(), df['log_ret'].max(), 1000)
+y = stats.norm.pdf(x, mu, sigma)
+ax[0].plot(x, y, color='r', label='Normal Distribution',linestyle='--')
+ax[0].legend(frameon=False)
+sm.qqplot(df['log_ret'], line='s', ax=ax[1])
+plt.tight_layout()
+plt.show()
+```
+
+### 高斯性质
+
+```{python}
+periods = ['D','W','ME']
+frequency = ['daily','weekly','monthly']
+
+fig, ax = plt.subplots(2,3,figsize=(12,8))
+for i, p in enumerate(periods):
+    df_resample = df.resample(p).last()
+    log_return = np.log(df_resample['SP500']/df_resample['SP500'].shift(1)).dropna()
+    sns.histplot(log_return, kde=True,label='Histogram',ax=ax[0][i])
+    ax[0][i].set_title(frequency[i])
+    sm.qqplot(log_return, line='s', ax=ax[1][i])
+plt.tight_layout()
+plt.show()
+```
+
+### 波动集聚性
+
+```{python}
+fig, ax = plt.subplots(dpi=300,figsize=(10,6))
+ax.plot(df['log_ret']*100,
+        label='SP500 Log Return')
+ax.set_ylabel('Log Returns(%)')
+ax.legend()
+plt.tight_layout()
+plt.show()
+```
+
+### 自相关
+
+```{python}
+from statsmodels.graphics.tsaplots import plot_acf
+
+periods = ['D','W','ME']
+frequency = ['daily','weekly','monthly']
+
+fig, ax = plt.subplots(3,3,figsize=(12, 8))
+for i, p in enumerate(periods):
+    df_resample = df.resample(p).last()
+    log_return = np.log(df_resample['SP500']/df_resample['SP500'].shift(1)).dropna()
+    plot_acf(log_return,ax=ax[i][0],title='')  
+    plot_acf(log_return**2,ax=ax[i][1],title='')    
+    plot_acf(np.abs(log_return),ax=ax[i][2],title='')    
+ax[0][0].set_ylabel('Daily Return')
+ax[1][0].set_ylabel('Weekly Return')
+ax[2][0].set_ylabel('Monthly Return')
+ax[0][0].set_title('Log Return')
+ax[0][1].set_title('Squared Return')
+ax[0][2].set_title('Absolute Return')
+plt.tight_layout()
+plt.show()
+```
+
+### 杠杆效应
+
+```{python}
+df = pd.read_csv('datasets/sp500_vix.csv',                
+                header=0,
+                index_col=0,
+                parse_dates=True)
+df.columns = ["SP500", "VIX"]
+ret_sp = np.log(df/df.shift(1)).dropna()
+
+fig, ax = plt.subplots(2,1,figsize=(10, 8))
+ax[0].plot(df['SP500'].loc["2018":],
+             color='blue',lw=2)
+ax[0].set_xlabel('Time')
+ax[0].set_ylabel('Close Price')
+ax2 = ax[0].twinx()
+ax2.plot(ret_sp['SP500'].loc["2018":],
+             color='red',alpha=0.7,lw=0.5)
+ax2.set_ylabel('Log Return')
+sns.regplot(x='SP500', y='VIX', 
+            data=ret_sp, ax=ax[1])
+ax[1].set_xlabel('Log Returns of SP500')
+ax[1].set_ylabel('Log Returns of Implied VIX')
+plt.tight_layout()
+plt.show()
+```
