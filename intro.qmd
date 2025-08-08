@@ -2,7 +2,7 @@
 
 《基于Python的经济分析与应用》课程专为国际商务专业硕士研究生设计，注重理论与实践相结合。课程内容涵盖Python编程基础、数据采集与处理、经济数据分析、可视化展示及实际案例应用。通过本课程，学生能够掌握利用Python进行经济数据分析的方法，提高数据处理与决策支持能力，增强在国际商务环境中的实际应用能力，为未来从事数据驱动的经济分析和国际商务决策打下坚实基础。
 
-## 课程是关于什么的？
+## 内容是关于什么的？
 
 ### 涉及课程
 
@@ -15,7 +15,9 @@
 
 ### 经济数据分析
 
-- 宏观经济形式分析。如[北京大学汇丰商学院](https://thinktank.phbs.pku.edu.cn/jingjifenxi/)的经济分析。毕马威的[中国经济观察](https://kpmg.com/cn/zh/home/insights/2018/02/china-economic-monitor.html)季度报告等。
+对经济数据进行分析长期以来都是政策制定、投资者、企业和消费者关注的焦点：
+
+- 宏观经济形式分析。如毕马威的[中国经济观察](https://kpmg.com/cn/zh/home/insights/2018/02/china-economic-monitor.html)季度报告等。
 - [中国宏观经济论坛](http://ier.ruc.edu.cn/)
 - 美国经济分析局（Bureau of Economic Analysis，BEA）：The Bureau of Economic Analysis (BEA) promotes a better understanding of the U.S. economy by providing the most timely, relevant, and accurate economic accounts data in an objective and cost-effective manner.
 - 数据科学

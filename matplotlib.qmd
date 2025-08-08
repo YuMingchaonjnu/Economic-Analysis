@@ -1,7 +1,12 @@
 # 数据可视化
 
 [官方使用教程](https://matplotlib.org/stable/tutorials/index.html)是非常重要的学习来源。
+
 ## 图形的构成
+
+图形的构成可以参考Matplotlib官方网站上[Anatomy of a figure](https://matplotlib.org/stable/gallery/showcase/anatomy.html)的说明：
+
+![图形解剖图](/figures/anatomy.png)
 
 我们用一个例子来说明绘图的过程。下面的全球电影票房数据来自维基百科[全球最高電影票房收入列表](https://en.wikipedia.org/wiki/List_of_highest-grossing_films)
 
@@ -14,13 +19,23 @@ df = data[:10]
 df
 ```
 
-### 图形的解剖图
+## 绘图一般步骤
+图形的种类非常多，应用Python绘图时可以大致分为几个步骤。
 
-### 步骤
+### 载入必要的库
+
+除了基本的绘图工具[Matplotlib](https://matplotlib.org/)外，[Seaborn](https://seaborn.pydata.org/)库也经常使用，在应用之前均应载入。
 
 ```{python}
 import matplotlib.pyplot as plt
-plt.rcParams['font.family'] = 'SimHei'
+import seaborn as sns
+```
+
+另外，Matplotlib 默认情况下不支持中文字符。如果你直接在图表标题、坐标轴标签或图例中使用中文，很可能会看到方框乱码或者问号。
+
+```{python}
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Heiti TC', 'WenQuanYi Zen Hei', 'Arial']
+
 plt.rcParams["axes.unicode_minus"] = False
 ```
 
@@ -32,7 +47,7 @@ ax.bar(x=df['影片名称'], height=df['全球票房'], color='skyblue')
 plt.show()
 ```
 
-显然，图形还有改善的空间。比如横轴、纵轴标签，图形标题等：
+显然，图形还有改善的空间。比如横轴的标签，即电影名字挤在一起看不清楚，也可以设置纵轴标签、图形标题等：
 
 ```{python}
 fig, ax = plt.subplots(figsize=(8, 6))

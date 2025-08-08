@@ -15,7 +15,7 @@ website:
         href: index.qmd
       - section: "Python基础"
         contents:
-          - text: "介绍"
+          - text: "引言"
             href: intro.qmd          
           - text: "Python语言"
             href: python_basics.qmd
@@ -23,11 +23,11 @@ website:
             href: numpy.qmd
       - section: "数据分析"
         contents:
-          - text: "数据可视化"
+          - text: "数据的可视化"
             href: matplotlib.qmd
           - text: "Pandas及应用"
             href: pandas.qmd    
-          - text: "描述性分析"
+          - text: "统计描述分析"
             href: text_analysis.qmd
       - section: "回归分析"
         contents:
