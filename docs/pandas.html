@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -84,15 +85,16 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ec321d2d17bac5f70310a65ef785ba48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,7 +126,7 @@ div.csl-indent {
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -157,167 +159,27 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib.html">数据分析</a></li><li class="breadcrumb-item"><a href="./pandas.html">Pandas及应用</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">基于Python的经济数据分析与应用</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/YuMingchaonjnu/Economic-Analysis" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">前言</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Python基础</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">引言</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python语言</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numpy 基础</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">数据分析</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">数据的可视化</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pandas.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Pandas及应用</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">统计描述分析</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">回归分析</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">线性回归</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">逻辑回归</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lasso.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lasso回归</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">总结</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">参考文献</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#pandas-序列" id="toc-pandas-序列" class="nav-link active" data-scroll-target="#pandas-序列">Pandas 序列</a></li>
-  <li><a href="#应用penn-world-table" id="toc-应用penn-world-table" class="nav-link" data-scroll-target="#应用penn-world-table">应用：Penn World Table</a></li>
+  <li><a href="#pandas-序列" id="toc-pandas-序列" class="nav-link active" data-scroll-target="#pandas-序列"><span class="header-section-number">1</span> Pandas 序列</a></li>
+  <li><a href="#应用penn-world-table" id="toc-应用penn-world-table" class="nav-link" data-scroll-target="#应用penn-world-table"><span class="header-section-number">2</span> 应用：Penn World Table</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="pandas.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib.html">数据分析</a></li><li class="breadcrumb-item"><a href="./pandas.html">Pandas及应用</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Pandas 及应用</h1>
 </div>
@@ -342,14 +204,14 @@ window.Quarto = {
 <li>数据处理：读取、调整指数、日期和时间序列、排序、分组、处理缺失值；</li>
 <li>一些更复杂的统计功能，如 statsmodels 和 scikit-learn，也是建立在pandas基础上。</li>
 </ul>
-<section id="pandas-序列" class="level2">
-<h2 class="anchored" data-anchor-id="pandas-序列">Pandas 序列</h2>
+<section id="pandas-序列" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="pandas-序列"><span class="header-section-number">1</span> Pandas 序列</h2>
 <p>Pandas中两类数据，Series 和 DataFrame；</p>
 <p>Series 基于Numpy数组，支持许多类似运算；</p>
 <p>Series 可以看作一“列”数据；</p>
 <p>DataFrame 可以看作储存相应列数据的二维对象；类似Excel表单；</p>
 <p>Series一些方法</p>
-<div id="2684f979" class="cell" data-execution_count="1">
+<div id="f3ef2c4b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -373,26 +235,26 @@ Name: daily return, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pandas_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="pandas_files/figure-html/cell-2-output-2.png" width="569" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="pandas数据框" class="level3">
-<h3 class="anchored" data-anchor-id="pandas数据框">Pandas数据框</h3>
+<section id="pandas数据框" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="pandas数据框"><span class="header-section-number">1.1</span> Pandas数据框</h3>
 <p>DataFrames 是几列数据组成，每一列对应一个变量；</p>
 <p>用来方便的处理行和列组织的数据；索引（index）对应行，变量列名（columns）对应列；</p>
 <p>可以读取各类软件格式存储数据，csv, excel, stata, html, json,sql等；</p>
 </section>
 </section>
-<section id="应用penn-world-table" class="level2">
-<h2 class="anchored" data-anchor-id="应用penn-world-table">应用：Penn World Table</h2>
+<section id="应用penn-world-table" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="应用penn-world-table"><span class="header-section-number">2</span> 应用：Penn World Table</h2>
 <p>这一部分应用<a href="https://www.rug.nl/ggdc/productivity/pwt/">Penn World Table</a>介绍对原始数据的一些常见处理方法。该数据集当前版本为PWT 10.01，包含183个国家1950-2019年的收入、产出、投入和生产率等指标，详细介绍可参见<a href="https://www.rug.nl/ggdc/docs/pwt100-user-guide-to-data-files.pdf">User Guide to PWT 10.0 data files</a>。数据背后的方法、理论及使用建议，可参见 <span class="citation" data-cites="feenstra2015next">Feenstra, Inklaar, and Timmer (<a href="#ref-feenstra2015next" role="doc-biblioref">2015</a>)</span>。</p>
 <p>网站提供了Stata和Excel格式数据，这里我们下载了后者。数据本身是一个面板数据（Panel Data），“国家 - 年” 唯一识别一个观测值。我们从截面数据入手先只保留2019年数据， 然后再看更复杂的情况。</p>
-<section id="导入数据" class="level3">
-<h3 class="anchored" data-anchor-id="导入数据">导入数据</h3>
+<section id="导入数据" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="导入数据"><span class="header-section-number">2.1</span> 导入数据</h3>
 <p>假设数据保存在当前路径的datasets子文件中：</p>
-<div id="dab58f96" class="cell" data-execution_count="2">
+<div id="da2a2941" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pwt <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">"datasets/pwt1001.xlsx"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                header<span class="op">=</span><span class="dv">0</span>,                </span>
@@ -402,11 +264,11 @@ Name: daily return, dtype: float64</code></pre>
 </div>
 <p>注意其中的几个参数，<code>io</code>是文件路径；<code>header</code>表明列标题行，这里是第一行；<code>sheet_name</code>是数据所在表单名；将载入的数据赋值给pwt数据框。我们只保留2019年的观测值，变量<code>cor_exp</code>在这一年全部为缺失值，这里直接删除了。</p>
 <p>先为<code>pwt2019</code>数据框设置索引变量，这里使用国家名代码变量（countrycode）：</p>
-<div id="ce34a88a" class="cell" data-execution_count="3">
+<div id="c7a115e6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pwt2019.set_index(<span class="st">'countrycode'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>可以<code>df.info()</code>概率数据集，或者使用<code>df.head()</code>或<code>df.tail()</code>查看头部和尾部观测值：</p>
-<div id="196d881f" class="cell" data-execution_count="4">
+<div id="0247d8f8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pwt2019.info()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pwt2019.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -470,10 +332,9 @@ memory usage: 72.9+ KB</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -499,7 +360,7 @@ memory usage: 72.9+ KB</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -652,10 +513,9 @@ memory usage: 72.9+ KB</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>默认显示5条观测值，如果希望看到更多观测值，可以使用 <code>df.tail(n=10)</code> 修改数值。</p>
 <p>可以应用<code>.shape, .ndim</code>,<code>.columns</code>等属性查看基本信息，可以看到数据集包含51个变量共183个观测值。</p>
-<div id="b48d0b53" class="cell" data-execution_count="5">
+<div id="4eeef21f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pwt2019.shape)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pwt2019.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -671,18 +531,17 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </section>
-<section id="选择观测值和变量" class="level3">
-<h3 class="anchored" data-anchor-id="选择观测值和变量">选择观测值和变量</h3>
+<section id="选择观测值和变量" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="选择观测值和变量"><span class="header-section-number">2.2</span> 选择观测值和变量</h3>
 <p>应用中经常对某些观测值或特定子集进行操作，因此很重要的一步是选择观测值和变量。</p>
 <p>最基本的方法可以通过Python数组的切片（slicing）方式选择特定的<strong>行</strong>。例如，选择第3至5个观测值：</p>
-<div id="7650b6bc" class="cell" data-execution_count="6">
+<div id="5a7919da" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pwt2019[<span class="dv">2</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -708,7 +567,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -813,25 +672,23 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>要选择<strong>列</strong>，可以用包含列名字的列表：</p>
-<div id="15ff2eaf" class="cell" data-execution_count="7">
+<div id="395f77b7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>vars_selected <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'rgdpe'</span>, <span class="st">'rgdpo'</span>, <span class="st">'pop'</span>, <span class="st">'emp'</span>, <span class="st">'cgdpe'</span>, <span class="st">'cgdpo'</span>, <span class="st">'ctfp'</span> ]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pwt2019[vars_selected]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="loc方法" class="level4">
-<h4 class="anchored" data-anchor-id="loc方法"><code>.loc</code>方法</h4>
+<section id="loc方法" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="loc方法"><span class="header-section-number">2.2.1</span> <code>.loc</code>方法</h4>
 <p><code>.loc</code> 是基于 标签（label-based） 的数据选择方法。这意味着你使用行和列的实际标签名来选择数据，而不是它们的整数位置。</p>
 <p>例如，要选择金砖国家（BRICKS）的观测值：</p>
-<div id="9d86f9eb" class="cell" data-execution_count="8">
+<div id="bf19fce0" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bricks <span class="op">=</span> [<span class="st">'CHN'</span>, <span class="st">'BRA'</span>, <span class="st">'RUS'</span>, <span class="st">'IND'</span>, <span class="st">'ZAF'</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[bricks]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -857,7 +714,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1010,17 +867,15 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>或者选择列：</p>
-<div id="a126d040" class="cell" data-execution_count="9">
+<div id="3f2eef29" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'rgdpe'</span>, <span class="st">'pop'</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[:, variables]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1028,7 +883,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">rgdpe</th>
 <th data-quarto-table-cell-role="th">pop</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1109,16 +964,14 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>或者同时指定行和列：</p>
-<div id="66e56843" class="cell" data-execution_count="10">
+<div id="bedb6196" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pwt2019.loc[bricks, variables]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1126,7 +979,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">rgdpe</th>
 <th data-quarto-table-cell-role="th">pop</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1170,12 +1023,11 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="iloc方法" class="level4">
-<h4 class="anchored" data-anchor-id="iloc方法"><code>.iloc</code>方法</h4>
+<section id="iloc方法" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="iloc方法"><span class="header-section-number">2.2.2</span> <code>.iloc</code>方法</h4>
 <p>相应的，<code>.iloc</code> 是基于整数位置（integer-location based）的，使用行和列的整数位置（从 0 开始）来选择数据。例如：</p>
-<div id="2f541438" class="cell" data-execution_count="11">
+<div id="bbbc5ffe" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择第2行数据（索引位置为1）</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pwt2019.iloc[<span class="dv">1</span>]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择第1行（索引为0）、第3行（索引为2）和第5行（索引为4）</span></span>
@@ -1184,10 +1036,9 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>pwt2019.iloc[:<span class="dv">5</span>, <span class="dv">3</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1195,7 +1046,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">rgdpo</th>
 <th data-quarto-table-cell-role="th">pop</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1239,24 +1090,22 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>这里需要注意Python中索引位置。Python中进行切片（slicing）操作时，语法通常类似 <code>[start:end]</code>，要注意：</p>
 <ul>
 <li><code>start</code>：切片的起始索引，对应的元素会被包含。</li>
 <li><code>end</code>：切片的结束索引，对应的元素不会被包含。</li>
 </ul>
 </section>
-<section id="根据条件筛选" class="level4">
-<h4 class="anchored" data-anchor-id="根据条件筛选">根据条件筛选</h4>
+<section id="根据条件筛选" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="根据条件筛选"><span class="header-section-number">2.2.3</span> 根据条件筛选</h4>
 <p>除了根据索引或位置选择数据外，也可以利用条件来筛选观测值。例如，根据人口变量（<code>pop</code>，单位：百万）选择2019年总人口超过2亿的观测值：</p>
-<div id="9495e834" class="cell" data-execution_count="12">
+<div id="516a6c15" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pwt2019[pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;=</span> <span class="dv">200</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1282,7 +1131,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1483,7 +1332,6 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>注意，<code>pwt2019['pop'] &gt;= 200</code> 的结果是一列布林值，然后<code>pwt2019[]</code>选择返回取值为<code>True</code>的观测值。</p>
 <p>再例如，下面的代码包含了两个条件：</p>
 <ul>
@@ -1491,16 +1339,15 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <li>2019年人口超过10亿。</li>
 </ul>
 <p>当有不止一个条件时，我们用<code>&amp;</code>, <code>|</code>表示<code>and</code> 和 <code>or</code>运算符；</p>
-<div id="b9b68a83" class="cell" data-execution_count="13">
+<div id="e23e8afa" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>BRICKS <span class="op">=</span> [<span class="st">'China'</span>,<span class="st">'Brazil'</span>,  <span class="st">' Russian Federation'</span>, <span class="st">'India'</span>, <span class="st">'South Africa'</span>]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>pwt2019[(pwt2019[<span class="st">'country'</span>].isin(BRICKS)) <span class="op">&amp;</span> (pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">1000</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1526,7 +1373,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1607,16 +1454,14 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 <p>更复杂的情况，可以在条件语句中加入数学表达式。例如，下面的代码筛选了人均实际GDP超过2万美元和人口超过5000万的国家的观测值，这里人均实际GDP是购买力平价调整后支出法衡量的实际GDP与人口的比值：</p>
-<div id="d95bb331" class="cell" data-execution_count="14">
+<div id="77a7906b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pwt2019[(pwt2019[<span class="st">'rgdpe'</span>]<span class="op">/</span>pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">20000</span>) <span class="op">&amp;</span> (pwt2019[<span class="st">'pop'</span>] <span class="op">&gt;</span> <span class="dv">50</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1642,7 +1487,7 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1891,14 +1736,13 @@ Index(['country', 'currency_unit', 'year', 'rgdpe', 'rgdpo', 'pop', 'emp',
 </div>
 </div>
 </div>
-</div>
 </section>
 </section>
-<section id="apply-方法" class="level3">
-<h3 class="anchored" data-anchor-id="apply-方法">apply 方法</h3>
+<section id="apply-方法" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="apply-方法"><span class="header-section-number">2.3</span> apply 方法</h3>
 <p>Pandas中一个广泛应用的方法是 <code>df.apply()</code>，它将一个函数应用到每一行/列，返回一个序列；</p>
 <p>函数可以是内嵌的（built in）也可以是自定义的，例如，计算每一列的最大值，为了节省输出空间，使用子集<code>df</code>数据框：</p>
-<div id="1bf0e419" class="cell" data-execution_count="15">
+<div id="76e2b41c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">apply</span>(np.<span class="bu">max</span>, axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>country       Zimbabwe
@@ -1913,7 +1757,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>或者，自定义一个函数<code>range(x)</code>计算极差：</p>
-<div id="35dd58d9" class="cell" data-execution_count="16">
+<div id="13666774" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">range</span>(x):</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">max</span>(x) <span class="op">-</span> np.<span class="bu">min</span>(x)</span>
@@ -1933,16 +1777,15 @@ dtype: float64</code></pre>
 Y = \frac{X_{i} - \min(X_{i})}{\max(X_{i}) - \min(X_{i})}
 \]</span></p>
 <p>我们定义一个函数<code>minmax()</code>，然后应用<code>apply()</code>方法：</p>
-<div id="2f184825" class="cell" data-execution_count="17">
+<div id="4b3844d5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> minmax(S):</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (S<span class="op">-</span>S.<span class="bu">min</span>())<span class="op">/</span>(S.<span class="bu">max</span>() <span class="op">-</span> S.<span class="bu">min</span>())</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>pwt2019[[<span class="st">'pop'</span>,<span class="st">'rgdpe'</span>, <span class="st">'emp'</span>]].<span class="bu">apply</span>(minmax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1950,7 +1793,7 @@ Y = \frac{X_{i} - \min(X_{i})}{\max(X_{i}) - \min(X_{i})}
 <th data-quarto-table-cell-role="th">rgdpe</th>
 <th data-quarto-table-cell-role="th">emp</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -2031,9 +1874,8 @@ Y = \frac{X_{i} - \min(X_{i})}{\max(X_{i}) - \min(X_{i})}
 </div>
 </div>
 </div>
-</div>
 <p>经常将<code>lambda</code>函数方法与<code>df.apply()</code>方法相结合。例如，数据集中有4个指标度量GDP，分别是<code>['rgdpe', 'rgdpo','cgdpe','cgdpo']</code>，假设我们希望计算一个加权平均数，权重为（0.3，0.2，0.3，0.2）：</p>
-<div id="6531bccc" class="cell" data-execution_count="18">
+<div id="6c4da845" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [<span class="st">'rgdpe'</span>, <span class="st">'rgdpo'</span>,<span class="st">'cgdpe'</span>,<span class="st">'cgdpo'</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df[variables].<span class="bu">apply</span>(<span class="kw">lambda</span> row:</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    row[<span class="st">'rgdpe'</span>]<span class="op">*</span><span class="fl">0.3</span> <span class="op">+</span> row[<span class="st">'rgdpo'</span>]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> row[<span class="st">'cgdpe'</span>]<span class="op">*</span><span class="fl">0.3</span> <span class="op">+</span> row[<span class="st">'cgdpo'</span>]<span class="op">*</span><span class="fl">0.2</span>,</span>
@@ -2056,18 +1898,17 @@ Length: 183, dtype: float64</code></pre>
 </div>
 <p>注意，z选项<code>axis = 1</code> ，将函数应用至每一行，默认值为0。</p>
 </section>
-<section id="检测和处理缺失值" class="level3">
-<h3 class="anchored" data-anchor-id="检测和处理缺失值">检测和处理缺失值</h3>
+<section id="检测和处理缺失值" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="检测和处理缺失值"><span class="header-section-number">2.4</span> 检测和处理缺失值</h3>
 <p>Pandas中最常用的缺失值表示是<code>NaN</code>（Not a Number）。可以使用<code>isnull()</code>或<code>isna()</code>函数检测缺失值，返回一个布尔型的DataFrame，其中<code>True</code>表示缺失值：</p>
-<div id="7948db45" class="cell" data-execution_count="19">
+<div id="bce98f94" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pwt2019.isna()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#pwt2019.isnull()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2093,7 +1934,7 @@ Length: 183, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -2390,9 +2231,8 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>下面的的代码计算了缺失值的数量，将其除以样本容量得到缺失值比例，然后按照降序排序，并将比例最高的前15个变量绘制柱形图：</p>
-<div id="0c59b8f7" class="cell" data-execution_count="20">
+<div id="319d3e7b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>(pwt2019.isna().<span class="bu">sum</span>()<span class="op">/</span>pwt2019.shape[<span class="dv">0</span>]<span class="op">*</span><span class="dv">100</span>).sort_values(ascending<span class="op">=</span><span class="va">False</span>)[:<span class="dv">15</span>].plot(kind<span class="op">=</span><span class="st">'bar'</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"%"</span>)</span>
@@ -2400,13 +2240,13 @@ Length: 183, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pandas_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="pandas_files/figure-html/cell-21-output-1.png" width="659" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>另一种图示的方法是类似矩阵绘图的方式，将缺失值标记出来，<code>missingno</code>库有简单的命令实现：</p>
-<div id="37f4c877" class="cell" data-execution_count="21">
+<div id="1adfb0fd" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> missingno <span class="im">as</span> msno</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>msno.matrix(pwt2019)</span>
@@ -2418,24 +2258,23 @@ Length: 183, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pandas_files/figure-html/cell-22-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="pandas_files/figure-html/cell-22-output-2.png" width="1963" height="919" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>删除缺失值</strong></p>
 <p>处理缺失值的方法有很多种，选择哪种方法取决于你的数据特性、缺失原因以及分析目标。最直接的方法是使用<code>df.dropna()</code>函数删除包含缺失值的行或列：</p>
-<div id="894d8b72" class="cell" data-execution_count="22">
+<div id="57b98040" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除含缺失值的行</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pwt2019.dropna()</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除含缺失值的列</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>pwt2019.dropna(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2461,7 +2300,7 @@ Length: 183, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_x</th>
 <th data-quarto-table-cell-role="th">pl_m</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -2758,11 +2597,10 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>另外，上面的命令并没有改变原数据框，可以通过赋值方式保存。或者加上选项<code>df.dropna(inplace=True)</code>，即在原数据框中生效。</p>
 <p><strong>填充</strong></p>
 <p><code>df.fillna()</code>是用于填充缺失值的核心函数。</p>
-<div id="7ed47d5a" class="cell" data-execution_count="23">
+<div id="a86acd4e" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>pwt2019.fillna(<span class="dv">0</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -2771,10 +2609,9 @@ Length: 183, dtype: float64</code></pre>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>pwt2019.select_dtypes(np.number).fillna(pwt2019.median(numeric_only<span class="op">=</span><span class="va">True</span>)).combine_first(pwt2019)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2800,7 +2637,7 @@ Length: 183, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">xr</th>
 <th data-quarto-table-cell-role="th">year</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -3097,20 +2934,18 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div id="93d2ab7d" class="cell" data-execution_count="24">
+<div id="23c62b72" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pwt2019.fillna(method='ffill')</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>pwt2019.fillna(method<span class="op">=</span><span class="st">'bfill'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_13592\1604694572.py:2: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_54420\1604694572.py:2: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
   pwt2019.fillna(method='bfill')</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3136,7 +2971,7 @@ Length: 183, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -3433,21 +3268,19 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p><strong>插值法（Interpolation）</strong></p>
 <p>除了填充给定值以外，也有更复杂的插值法。</p>
-<div id="e8db91b4" class="cell" data-execution_count="25">
+<div id="85d11a48" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>pwt2019.interpolate(method<span class="op">=</span><span class="st">"linear"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_13592\33985437.py:1: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_54420\33985437.py:1: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
   pwt2019.interpolate(method="linear")</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3473,7 +3306,7 @@ Length: 183, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -3770,18 +3603,16 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>更复杂的方法涉及到模型估计问题，如KNN预测等。Scikit-learn库有专门的方法，这里就不多涉及。</p>
-<div id="9f19ac5c" class="cell" data-execution_count="26">
+<div id="b32379a0" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>imputer_mean <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'mean'</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(imputer_mean.fit_transform(pwt2019.select_dtypes(np.number)), columns<span class="op">=</span>pwt2019.select_dtypes(np.number).columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4080,13 +3911,12 @@ Length: 183, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="缩尾处理" class="level3">
-<h3 class="anchored" data-anchor-id="缩尾处理">缩尾处理</h3>
+<section id="缩尾处理" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="缩尾处理"><span class="header-section-number">2.5</span> 缩尾处理</h3>
 <p>应用中，常需要对异常值进行一定的处理，其中一种方法是缩尾处理（Winsorize），将极端值替换为某个百分位数的值，例如，将上限设为 99 百分位数，下限设为 1 百分位数。</p>
 <p>可以使用<code>df.clip()</code>函数实现，例如全要素生产率水平<code>ctfp</code>：</p>
-<div id="c0178780" class="cell" data-execution_count="27">
+<div id="1ba26a8f" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>q95 <span class="op">=</span> pwt2019[<span class="st">'ctfp'</span>].quantile(<span class="fl">0.95</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>q05 <span class="op">=</span> pwt2019[<span class="st">'ctfp'</span>].quantile(<span class="fl">0.05</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4108,18 +3938,17 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="观测值排序" class="level3">
-<h3 class="anchored" data-anchor-id="观测值排序">观测值排序</h3>
+<section id="观测值排序" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="观测值排序"><span class="header-section-number">2.6</span> 观测值排序</h3>
 <p>有时候需要对数据集进行一定的排序，Pandas中可以按索引(<code>df.sort_index</code>)和值（<code>df.sort_values</code>）排序。</p>
 <p>例如，将索引按降序排序，这里的索引是国家代码，因此升序/降序是按照字母顺序：</p>
-<div id="75bd96c4" class="cell" data-execution_count="28">
+<div id="9b3436f6" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>pwt2019.sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4145,7 +3974,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -4442,17 +4271,15 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>来看<code>df.sort_values</code>的例子，假设我们希望按2019年的人均GDP（PPP链式调整后）降序排列：</p>
-<div id="c6b57391" class="cell" data-execution_count="29">
+<div id="4706ed2c" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>pwt2019[<span class="st">'rgdp_per'</span>] <span class="op">=</span> pwt2019[<span class="st">'rgdpe'</span>]<span class="op">/</span>pwt2019[<span class="st">'pop'</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>pwt2019.sort_values(by<span class="op">=</span><span class="st">'rgdp_per'</span>, ascending<span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4478,7 +4305,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_k</th>
 <th data-quarto-table-cell-role="th">rgdp_per</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -4775,21 +4602,19 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="数据集合并" class="level3">
-<h3 class="anchored" data-anchor-id="数据集合并">数据集合并</h3>
+<section id="数据集合并" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="数据集合并"><span class="header-section-number">2.7</span> 数据集合并</h3>
 <p>实际应用中，数据可能来自不同的来源，经常需要合并数据集，<code>pd.merge()</code>函数</p>
-<div id="74603b94" class="cell" data-execution_count="30">
+<div id="10323f04" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbgapi <span class="im">as</span> wb</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>inf <span class="op">=</span> wb.data.DataFrame(series<span class="op">=</span><span class="st">'NY.GDP.DEFL.KD.ZG'</span>, time<span class="op">=</span><span class="st">'2019'</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>pd.merge(df[[<span class="st">'country'</span>,<span class="st">'pop'</span>,<span class="st">'emp'</span>]], inf, left_index<span class="op">=</span><span class="va">True</span>, right_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4884,19 +4709,18 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="多级索引" class="level3">
-<h3 class="anchored" data-anchor-id="多级索引">多级索引</h3>
+<section id="多级索引" class="level3" data-number="2.8">
+<h3 data-number="2.8" class="anchored" data-anchor-id="多级索引"><span class="header-section-number">2.8</span> 多级索引</h3>
 <p>这里的数据是一个面板数据，“国家-年”对应一个观测值，可以利用Pandas的多级索引功能，详见Pandas文档<a href="https://pandas.pydata.org/docs/dev/user_guide/advanced.html#">MultiIndex / advanced indexing</a>。</p>
-<div id="5f4fed9e" class="cell" data-execution_count="31">
+<div id="98a95e18" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>pwt <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">"datasets/pwt1001.xlsx"</span>,</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                header<span class="op">=</span><span class="dv">0</span>,                </span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                sheet_name<span class="op">=</span><span class="st">"Data"</span>)</span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>pwt.set_index([<span class="st">'countrycode'</span>,<span class="st">'year'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>我们可以使用<code>.loc()</code>方法选择需要的数据，例如：</p>
-<div id="2ee7fb69" class="cell" data-execution_count="32">
+<div id="02bcdef5" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 中国子集</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df_china <span class="op">=</span> pwt.loc[<span class="st">'CHN'</span>]</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 中国、美国子集</span></span>
@@ -4905,16 +4729,15 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>df_sub_china_us <span class="op">=</span> pwt.loc[[<span class="st">'CHN'</span>, <span class="st">'USA'</span>]][[<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果需要选择某一年的截面数据：</p>
-<div id="7d38c7b0" class="cell" data-execution_count="33">
+<div id="0dfead46" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>), [<span class="dv">2019</span>]), :]</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1992年之后的数据</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>), <span class="bu">slice</span>(<span class="dv">1992</span>, <span class="va">None</span>)), :]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4941,7 +4764,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -5242,7 +5065,6 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>这里使用了<code>df.loc</code>结合<code>slice</code>函数的方法，注意：</p>
 <ul>
 <li><code>slice(None)</code>: 这表示选择 所有 <code>countrycode</code>。</li>
@@ -5250,14 +5072,13 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <li><code>:</code>表示选择所有列。</li>
 </ul>
 <p>上面的例子使用<code>slice</code>函数不是那么直观，也可以使用<code>df.index.get_level_values('year')</code>提取索引<code>year</code>的值，形成一个序列（可以另存为一个变量），然后利用表达式生成一个布尔序列，对数据框进行筛选：</p>
-<div id="8ad38515" class="cell" data-execution_count="34">
+<div id="8fcb63dd" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>pwt[pwt.index.get_level_values(<span class="st">'year'</span>) <span class="op">&gt;</span> <span class="dv">1992</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -5284,7 +5105,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -5585,18 +5406,16 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>当然，可以同时选择指定的变量和年份，例如：</p>
-<div id="b24a2a50" class="cell" data-execution_count="35">
+<div id="274d9e3e" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pwt.loc[(<span class="bu">slice</span>(<span class="va">None</span>),[<span class="dv">2016</span>,<span class="dv">2019</span>]), [<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>pwt.loc[(([<span class="st">"CHN"</span>, <span class="st">"USA"</span>], [<span class="dv">2016</span>,<span class="dv">2019</span>])), [<span class="st">'rgdpe'</span>,<span class="st">'rgdpo'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -5604,7 +5423,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">rgdpe</th>
 <th data-quarto-table-cell-role="th">rgdpo</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -5640,16 +5459,14 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>除了通常的排序以外，由于有了二级索引，如果按索引排序，两级索引变量是同时排序的：</p>
-<div id="a434ab99" class="cell" data-execution_count="36">
+<div id="9d43801f" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>pwt.sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -5676,7 +5493,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -5977,16 +5794,14 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>可以对两级索引以列表的形式分别设定排序的顺序。例如，先将国家代码按字母升序，然后将年降序：</p>
-<div id="556a267f" class="cell" data-execution_count="37">
+<div id="6e687820" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>pwt.sort_index(ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6013,7 +5828,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -6314,27 +6129,25 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="stack-和-unstack" class="level3">
-<h3 class="anchored" data-anchor-id="stack-和-unstack"><code>stack</code> 和 <code>unstack</code></h3>
+<section id="stack-和-unstack" class="level3" data-number="2.9">
+<h3 data-number="2.9" class="anchored" data-anchor-id="stack-和-unstack"><span class="header-section-number">2.9</span> <code>stack</code> 和 <code>unstack</code></h3>
 <p>数据有“长（long）”和“宽（wide）”两种组织方式，Penn World Table 是以“长”的形式保存的。有时候需要在两种数据格式之间进行转换，就需要用到<code>df.stack()</code>和<code>df.unstack()</code>函数。</p>
 <p>注意，<code>df.unstack()</code>函数的参数<code>level=</code>，设置为哪一级索引，便生成为列。默认在最后一级索引上转换，即年，因此列便为年，行为国家，反之，列为国家，行为年。如下面例子所示，为了简便只保留了三个国家5年的数据：</p>
-<div id="d55a6560" class="cell" data-execution_count="38">
+<div id="65a9a768" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>pwt_sub <span class="op">=</span> pwt.loc[([<span class="st">"CHN"</span>, <span class="st">"KOR"</span>, <span class="st">"USA"</span>], <span class="bu">slice</span>(<span class="dv">2015</span>, <span class="va">None</span>)), [<span class="st">"rgdpe"</span>, <span class="st">"pop"</span>]]</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>pwt_sub_wide <span class="op">=</span> pwt_sub.unstack(level<span class="op">=-</span><span class="dv">1</span>)</span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pwt_sub.unstack(level=0)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>要获得长格式的数据，使用<code>df.stack()</code>即可：</p>
-<div id="e102e679" class="cell" data-execution_count="39">
+<div id="9026dee4" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>pwt_sub_wide.stack(future_stack<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6342,7 +6155,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">rgdpe</th>
 <th data-quarto-table-cell-role="th">pop</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -6434,9 +6247,8 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>当我们从一些数据库下载数据时，常见形式为列为不同时期相同变量的值。例如，从世界银行下载人均GDP和人口数据：</p>
-<div id="c925de59" class="cell" data-execution_count="40">
+<div id="0075caf5" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbgapi <span class="im">as</span> wb</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> wb.data.DataFrame(series<span class="op">=</span>[<span class="st">'NY.GDP.PCAP.CD'</span>, <span class="st">"SP.POP.TOTL"</span>], </span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>                                <span class="co">#time=range(2017,2020),</span></span>
@@ -6445,10 +6257,9 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6457,7 +6268,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">2018</th>
 <th data-quarto-table-cell-role="th">2019</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">economy</th>
 <th data-quarto-table-cell-role="th">series</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -6505,16 +6316,14 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>下载的数据<code>df</code>索引是“economy - series”，每一年数据一列。我们希望序列成为列变量，时间成为索引。我们可以先对数据进行转置成宽格式的数据，然后再在国家层面堆叠，使其成为索引，再交换索引排序得到通常的情况：</p>
-<div id="7c79cb6b" class="cell" data-execution_count="41">
+<div id="171eba0e" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df.T.stack(level<span class="op">=</span><span class="dv">0</span>, future_stack<span class="op">=</span><span class="va">True</span>).swaplevel().sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6522,7 +6331,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">NY.GDP.PCAP.CD</th>
 <th data-quarto-table-cell-role="th">SP.POP.TOTL</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">economy</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -6597,18 +6406,16 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>另外，stack不是唯一的方法，也可以使用<code>df.melt()</code>结合<code>df.pivot_table()</code>函数来实现：</p>
-<div id="530595d7" class="cell" data-execution_count="42">
+<div id="151fdaba" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df_reset <span class="op">=</span> df.reset_index()</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_reset.melt(id_vars<span class="op">=</span>[<span class="st">'economy'</span>, <span class="st">'series'</span>], var_name<span class="op">=</span><span class="st">'year'</span>, value_name<span class="op">=</span><span class="st">'value'</span>)</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>df_long.pivot_table(index<span class="op">=</span>[<span class="st">'economy'</span>, <span class="st">'year'</span>], columns<span class="op">=</span><span class="st">'series'</span>, values<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6616,7 +6423,7 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">NY.GDP.PCAP.CD</th>
 <th data-quarto-table-cell-role="th">SP.POP.TOTL</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">economy</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -6691,10 +6498,9 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="pandas中的分组计算groupby" class="level3">
-<h3 class="anchored" data-anchor-id="pandas中的分组计算groupby">Pandas中的分组计算（<code>groupby</code>）</h3>
+<section id="pandas中的分组计算groupby" class="level3" data-number="2.10">
+<h3 data-number="2.10" class="anchored" data-anchor-id="pandas中的分组计算groupby"><span class="header-section-number">2.10</span> Pandas中的分组计算（<code>groupby</code>）</h3>
 <p>Pandas 的分组（<code>groupby()</code>）方法按照“分割-应用-组合（split-apply-combine）”的原理，创建一个 groupby 对象，可以应用各种方法来聚合、转换或过滤数据。更多介绍参见Pandas官方文档<a href="https://pandas.pydata.org/docs/user_guide/groupby.html">Group by: split-apply-combine</a>。</p>
 <p>选择合适的方法：</p>
 <ul>
@@ -6703,12 +6509,12 @@ Name: ctfp, Length: 118, dtype: float64</code></pre>
 <li>如果需要根据组的属性来决定保留或丢弃整个组，使用过滤方法。</li>
 <li>当以上方法都无法满足需求时，或者需要执行更复杂的自定义逻辑时，使用<strong>apply()</strong>方法。</li>
 </ul>
-<section id="聚合方法aggregation-methods" class="level4">
-<h4 class="anchored" data-anchor-id="聚合方法aggregation-methods">聚合方法（Aggregation Methods）</h4>
+<section id="聚合方法aggregation-methods" class="level4" data-number="2.10.1">
+<h4 data-number="2.10.1" class="anchored" data-anchor-id="聚合方法aggregation-methods"><span class="header-section-number">2.10.1</span> 聚合方法（Aggregation Methods）</h4>
 <p>聚合方法将每个组的数据压缩成一个单一的值，是最常用的<code>groupby</code>操作，例如<code>mean()</code>,<code>sum()</code>,<code>count()</code>,<code>size()</code>,<code>min()</code>,<code>max()</code>,<code>std()</code>,<code>var()</code>,<code>median()</code>等常见的统计量，或者<code>first()</code>,<code>last()</code>,<code>nth(n)</code>等获取第一个、最好一个或第n个值：</p>
 <p><strong>索引</strong></p>
 <p>例如，根据索引计算世界人口，先在索引上分组，然后使用<code>.sum()</code>函数：</p>
-<div id="7e21fbba" class="cell" data-execution_count="43">
+<div id="aeecaead" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'pop'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>year
@@ -6727,7 +6533,7 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 <p><code>avh</code>变量度量了“Average annual hours worked by persons engaged”,让我们分组计算平均，得到按年和按国家平均</p>
-<div id="efc1d968" class="cell" data-execution_count="44">
+<div id="5b3acfe1" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>avh <span class="op">=</span> pwt[pwt[<span class="st">'avh'</span>].notna()]</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">12</span>))</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'line'</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
@@ -6740,20 +6546,19 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pandas_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="pandas_files/figure-html/cell-45-output-1.png" width="974" height="948" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>最常见的是按变量进行分组，例如，按国家名<code>country</code>分组，最后一个观测值：</p>
-<div id="839b14e2" class="cell" data-execution_count="45">
+<div id="0193aa51" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(by<span class="op">=</span>[<span class="st">'country'</span>]).last()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="45">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -6779,7 +6584,7 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">country</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -7076,16 +6881,15 @@ Name: pop, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="转换方法transformation-methods" class="level4">
-<h4 class="anchored" data-anchor-id="转换方法transformation-methods">转换方法（Transformation Methods）</h4>
+<section id="转换方法transformation-methods" class="level4" data-number="2.10.2">
+<h4 data-number="2.10.2" class="anchored" data-anchor-id="转换方法transformation-methods"><span class="header-section-number">2.10.2</span> 转换方法（Transformation Methods）</h4>
 <ul>
 <li><code>transform(func)</code>: 对每个组应用函数，并将结果广播回原始 DataFrame 的形状。</li>
 <li><code>rank(method='average')</code>: 计算组内排名。</li>
 <li><code>fillna(value)</code>: 在组内填充缺失值。</li>
 </ul>
-<div id="1e8d3844" class="cell" data-execution_count="46">
+<div id="ccd29933" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].transform(<span class="st">'mean'</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>avh.groupby(level<span class="op">=</span><span class="dv">1</span>)[<span class="st">'avh'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
@@ -7106,14 +6910,13 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 </div>
 <p>注意，转换与聚合的区别,转换将生成的值与原数据观测值一样多，这里是3492个，而聚合只有70个。</p>
 <p><code>.transform()</code>方法可以与<code>lambda</code>函数相结合，例如：</p>
-<div id="e34bcbbc" class="cell" data-execution_count="47">
+<div id="956a5b11" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>pwt.select_dtypes(np.number).groupby(level<span class="op">=</span><span class="dv">0</span>).transform(<span class="kw">lambda</span> x: (x <span class="op">-</span> x.mean())<span class="op">/</span>x.std())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="47">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -7140,7 +6943,7 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -7441,22 +7244,20 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="过滤方法filtration-methods" class="level4">
-<h4 class="anchored" data-anchor-id="过滤方法filtration-methods">过滤方法（Filtration Methods）</h4>
+<section id="过滤方法filtration-methods" class="level4" data-number="2.10.3">
+<h4 data-number="2.10.3" class="anchored" data-anchor-id="过滤方法filtration-methods"><span class="header-section-number">2.10.3</span> 过滤方法（Filtration Methods）</h4>
 <p>过滤方法会根据每个组的某个条件来排除整个组。</p>
 <ul>
 <li>filter(func): 根据一个返回布尔值的函数来过滤组。如果函数对一个组返回 True，则保留该组；否则，删除该组。</li>
 </ul>
-<div id="c7941a2f" class="cell" data-execution_count="48">
+<div id="638d6ca9" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>pwt.groupby(level<span class="op">=</span><span class="dv">0</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'pop'</span>].mean() <span class="op">&gt;</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="48">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -7483,7 +7284,7 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">pl_n</th>
 <th data-quarto-table-cell-role="th">pl_k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">countrycode</th>
 <th data-quarto-table-cell-role="th">year</th>
 <th data-quarto-table-cell-role="th"></th>
@@ -7784,10 +7585,9 @@ Name: avh, Length: 70, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="应用方法application-methods" class="level4">
-<h4 class="anchored" data-anchor-id="应用方法application-methods">应用方法（Application Methods）</h4>
+<section id="应用方法application-methods" class="level4" data-number="2.10.4">
+<h4 data-number="2.10.4" class="anchored" data-anchor-id="应用方法application-methods"><span class="header-section-number">2.10.4</span> 应用方法（Application Methods）</h4>
 <p>apply() 方法是最通用的方法，它允许你对每个组应用任何自定义函数。这个函数可以执行聚合、转换或过滤操作，或者任何更复杂的逻辑。</p>
 <ul>
 <li>apply(func): 将一个自定义函数应用于每个组。函数的返回值可以是 Series、DataFrame 或标量。</li>
@@ -7805,228 +7605,242 @@ Feenstra, Robert C, Robert Inklaar, and Marcel P Timmer. 2015. <span>“The Next
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -8034,185 +7848,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

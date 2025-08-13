@@ -10,3 +10,7 @@ def bmi_index(height, weight):
     else:
         status = "肥胖"
     return bmi, status
+
+def cobb_douglas(K, L, alpha = 1/3, A = 1):
+    output = A * K**alpha * L**(1 - alpha)
+    return output

@@ -78,22 +78,32 @@ plt.show()
 
 ### 直方图
 
-直方图可能是使用频率最高的图形。下面的例子，自雅虎财经网站下载几支股票的月度（后复权调整）收盘价数据，然后使用`df.pct_change()`函数计算了简单收益率；
+直方图可以被看作是估计概率密度函数（PDF）的一种基本而直观的方法，但严格来说，它估计的是概率质量函数（PMF），尤其是在处理离散数据时。当用于连续数据时，它更像是PDF的一个粗略估计。
 
+直方图将数据分成一系列不重叠的“箱子”（bins）。对于每个箱子，它统计落入该箱子中的数据点的数量，并以一个矩形柱的高度来表示这个数量，当然也可以用每个柱子的高度表示该箱子中数据点所占的比例或频率。
+
+下面的例子自雅虎财经网站下载几支股票的月度（后复权调整）收盘价数据，然后使用`df.pct_change()`函数计算了简单收益率。
 
 ```{python}
-import yfinance as yf
 import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+#import yfinance as yf
+# stocks_list = ['AAPL','BA','MGM','AMZN','IBM','TSLA','GOOG','^GSPC']
+# start_date = "2012-01-01"
+# end_date = "2025-06-30"
+# df = yf.download(tickers=stocks_list,
+#          start=start_date,
+#          end=end_date, 
+#          interval="1mo",
+#          auto_adjust=True,
+#          progress=False)['Close']
 
-stocks_list = ['AAPL','BA','MGM','AMZN','IBM','TSLA','GOOG','^GSPC']
-start_date = "2012-01-01"
-end_date = "2024-12-31"
-stocks_price_us = yf.download(tickers=stocks_list,
-         start=start_date,
-         end=end_date, 
-         interval="1mo",
-         auto_adjust=True,
-         progress=False)['Close']
+# df.to_csv("datasets/stocks_price_us.csv")
+
+stocks_price_us = pd.read_csv("datasets/stocks_price_us.csv",
+                     header=0, index_col=0, parse_dates=True )
+
 returns = stocks_price_us.pct_change()
 ```
 
@@ -101,7 +111,7 @@ returns = stocks_price_us.pct_change()
 ```{python}
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.hist(x=returns['AAPL'], bins=20, 
-        color="skyblue") 
+        color="skyblue", edgecolor="black") 
 ax.vlines(x=returns['AAPL'].mean(), 
         ymin=0, ymax=18, colors="darkred",        
         alpha=0.6)
@@ -119,10 +129,14 @@ fig, axes = plt.subplots(nrows=2,
                         ncols=4,
                         figsize=(15, 10),
                         sharex=True)
-axes = axes.flatten()
-for i, stock in enumerate(stocks_list):
-    axes[i].hist(returns[stock], bins=20)
-    axes[i].set_title(f'{stock}', fontsize=12)
+stock_index = 0
+for row in range(2):
+    for col in range(4):
+        stock = returns.columns[stock_index]        
+        axes[row, col].hist(returns[stock], color="skyblue",
+                edgecolor='black', bins=20)
+        axes[row, col].set_title(f'{stock}', fontsize=14)
+        stock_index += 1
 fig.supxlabel("Monthly Returns", fontsize=16)
 fig.supylabel("Frequency", fontsize=16)
 fig.suptitle("Histograms of Monthly Returns", fontsize=18)
@@ -133,9 +147,217 @@ plt.show()
 
 ### 核密度图
 
-设 $(x_{1}, x_{2},\cdots ,x_{n})$ 为从单变量分布中抽取的独立同分布样本，给定点 $x$ 有未知的概率密度 $f$ ，函数 $f$ 核密度估计量是：
+对连续数据来讲，估计概率密度函数的更好的方法是核密度函数估计（Kernel Density Estimator，KDE）。
+
+设 $(x_{1}, x_{2},\cdots ,x_{n})$ 为从单变量分布中抽取的独立同分布样本，给定点 $x$ 有未知的概率密度 $f(x)$，我们需要估计观察到的值的概率密度函数 $\hat{f}(x)$ 。
+
+在KDE估计过程中处于核心地位的是**核函数**，我们逐步来看应用的过程。
+
+假设有一个观测值，例如 $x = 0$，我们要估计观测值服从的概率密度函数，最合理的估计是使用一个PDF在该点取峰值，向两侧衰减。例如函数 $= \exp(-x^{2})$ 满足这个条件。但是我们知道，PDF下面积应为1，因此进行适当转换以满足该条件，记为：
+$$
+K(x) = \frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})
+$$
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def k(x):
+    return np.exp(-x**2)
+def K(x):
+    return (1/np.sqrt(2*np.pi))*np.exp(-x**2/2)
+
+x = np.linspace(-3.5, 3.5, 1000)
+y1 = k(x)
+y2 = K(x)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(x, y1, linewidth = 2.5, label = r"$\exp(-x^{2})$")
+ax.plot(x, y2, linewidth = 2.5, label = r"$\frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})$")
+ax.set_xlabel(r'$x$', fontsize=16)
+ax.set_ylabel('') 
+ax.legend(fontsize=16)
+plt.tight_layout()
+plt.show() 
+```
+
+这样我们就得到了一个非常常用的核函数 $K(x)$，零均值和单位方差的高斯（Gaussian）分布。
+
+对观测值中的任意点 $x_{i}$，相当于沿着 $x$ 轴平移曲线，用核函数表示为：
+$$
+K(x - x_{i})
+$$
+
+要让曲线更宽或更窄，可以加入一个常数 $h$ 在分母上，称为带宽。这样将核函数曲线下面积乘了 $h$ ，为保持单位面积需要除以 $h$，即：
+
+<a id="equ-kde"></a>
+$$
+\frac{1}{h}K(\frac{x - x_{i}}{h})\tag{5.1}
+$$
+
+带宽的选择影响估计的密度函数，带宽越宽，曲线越平缓；带宽越小，曲线越陡峭。
+
+**KDE估计阐释性例子**
+
+下面利用上面的函数 [5.1](#equ-kde)，从最简单的情况开始，逐步阐释KDE是如何进行的。
+
+首先假设观测值只包含一个点，$x_{1} = 1.33$，我们选择一个带宽，比如 $h=0.3$，估计的PDF为：
+$$
+\frac{1}{h}K(\frac{x - x_{1}}{h})
+$$
+
+```{python}
+x1 = 1.5
+h = 0.3
+
+x_grid = np.linspace(-1, 2.5, num = 500)
+fig, ax = plt.subplots(figsize=(8, 6))
+f_grid = K((x_grid-x1)/h)/h
+ax.plot(x_grid, f_grid, linestyle = "--")
+ax.scatter(x1, 0, marker="s",s=50)
+ax.annotate(r"$x_{1}$", xy=[x1, 0.02], fontsize=16)
+plt.show()
+```
+
+现在假设第二个观测值为 $x_{2} = 0.5$，可以同样的方式估计
+$$
+\frac{1}{h}K(\frac{x - x_{2}}{h})
+$$
+
+要得到一个概率密度函数，需要将两者加起来，然后除以2：
+
+$$
+f(x) = \frac{1}{2h}\left[K(\frac{x-x_{1}}{h}) + K(\frac{x-x_{2}}{h}) \right] = \frac{1}{2h}\sum_{i=1}^{2}K(\frac{x-x_{i}}{h})
+$$
+
+在Scipy库中，有常见的统计分布的概率密度函数，可以利用其正态分布的概率密度函数`norm().pdf()`非常简便的进行计算:
+    
+- 对每个数据点xi，创建一个均值为xi、标准差为h的正态分布对象；
+- 对每个对象，计算x_d网格上的PDF值；
+- 对所有PDF值进行求和；
+- 
+```{python}
+from scipy.stats import norm
+x = np.array([1.5, 0.5])
+h = 0.3
+x_grid = np.linspace(-1, 2.5, num = 500)
+
+n = len(x)
+density = sum(norm(loc=xi, scale=h).pdf(x_grid) for xi in x)/n
+
+fig, ax = plt.subplots(figsize=(8, 6))
+for xi in x:
+    ax.plot(x_grid, norm(xi,h).pdf(x_grid), color = 'black', linestyle = "--")            
+ax.plot(x_grid, density, color='red', 
+            linewidth = 2.5, label = "KDE with gaussian kernel function")
+ax.legend()
+plt.tight_layout()
+plt.show()
+```
+
+很容易将上述方法类推到 $n$ 个观测值 $(x_{1}, x_{2},\cdots ,x_{n})$ 的情况：
+
+<a id="equ-kernel-"></a>
+$$
+f(x) = \frac{1}{nh}\sum_{i=1}^{n}K(\frac{x-x_{i}}{h}) \tag{5.2}
+$$
+
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+def plot_kde_scipy(data, h, n_points=500):
+    data_min = np.min(data)
+    data_max = np.max(data)
+    x_min = data_min - 3 * h
+    x_max = data_max + 3 * h
+    n = len(data)
+    x_grid = np.linspace(x_min, x_max, num=n_points)   
+    density = sum(norm(loc=xi, scale=h).pdf(x_grid) for xi in data)/n          
+    plt.figure(figsize=(8, 6))    
+    plt.fill_between(x_grid, density, alpha=0.3, color='skyblue')   
+    plt.plot(x_grid, density, color='cornflowerblue', linewidth=2)   
+    
+    plt.title(f'KDE Estimate using SciPy (Bandwidth h = {h})', fontsize=18)
+    plt.xlabel('x', fontsize=14)
+    plt.ylabel('Density', fontsize=14)
+    plt.ylim(bottom=-0.02)
+    plt.grid(True, linestyle='--', alpha=0.6)
+    plt.show()
+
+data = np.array([1.5, 0.5,-0.1, 0.9, 0.23])
+bandwidth1 = 0.3
+plot_kde_scipy(data, h=bandwidth1)
+```
+
+
+**Seaborn中的`kdeplot`方法**
+
+Seaborn库中有`kdeplot`函数，可以方便用来估计。带宽选择参数`bw_method`:
+
+- Scott方法(@scott2015multivariate): 
+$$
+h\approx 1.06\cdot\hat{\sigma}n^{-1/5}
+$$
+
+- Silvermans 方法(@silverman2018density)： 
+$$
+h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
+$$
+
+```{python}
+data = np.array([1.5, 0.5,-0.1, 0.9, 0.23])
+import seaborn as sns
+sns.set_theme(style="whitegrid")
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.kdeplot(data, bw_method="scott",
+            alpha = 0.3,
+            linewidth = 2.5,
+            ax=ax)
+
+ax.set_xlabel("value", fontsize=14)
+ax.set_ylabel("density", fontsize=14)
+sns.despine(left=False, bottom=True)
+plt.tight_layout()
+plt.show()
+```
+
+可以取不同带宽看其影响。注意这里`bw_adjust`是作为一个系数乘以`scott`方法得到的带宽值，详见说明文档：
+
+```{python}
+bw_adjust_values = [0.2, 0.8, 1.4, 2.0]
+fig, ax = plt.subplots(figsize=(12, 8))
+for bw in bw_adjust_values:
+    sns.kdeplot(data, bw_adjust=bw, label=f'bw_adjust = {bw}', linewidth=2.5)
+ax.plot(data, np.zeros_like(data), '|k', markeredgewidth=1, label='Data Points')
+
+ax.set_title('KDE Plots with Different Bandwidth Adjustments', fontsize=18)
+ax.set_xlabel('x', fontsize=14)
+ax.set_ylabel('Density', fontsize=14)
+ax.legend(title='Bandwidth', fontsize=12)
+plt.tight_layout()
+plt.show()
+```
+
+我们可以定义一个函数计算soctt方法的带宽值，然后用自定义的函数来绘制KDE图：
+```{python}
+def scott_method(x):
+    h = 1.06*x.std()*len(x)**(-0.2)
+    return h
+
+data = np.array([1.5, 0.5,-0.1, 0.9, 0.23])
+scott_value = scott_method(data)
+plot_kde_scipy(data, h=scott_value)
+```
+
+除了正态核函数以外，还有其他核函数，但总体来讲核函数的影响没有带宽影响的差异大，Seaborn的`kdeplot`方法甚至取消了原本可以选择的设定。[Scikit-Learn Kernel Density](https://scikit-learn.org/stable/modules/density.html) 算法提供了6种不同的核函数。另外，Pandas库的`s.plot.kde()`方法也可以绘制核密度图。
+
 
 ### 热图
+
+热图是一种数据可视化技术，用颜色深浅来表示数据集中不同数值的大小或密集程度。
 
 ```{python}
 
@@ -148,9 +370,16 @@ sns.heatmap(corr, annot=True,
 plt.show()
 ```
 
+### 箱形图
+
+### 散点图
+
+
+
 ## 多图和子图
 
-## 多图
+当有多幅图形绘制时，可以放在一张图形上或用子图排列。
+### 多图
 
 ```{python}
 # 正态分布
@@ -170,6 +399,8 @@ plt.show()
 ```
 
 ### 子图
+
+下面的例子绘制了4个子图，按照 $2\times 2$ 的方式排列`nrows=2, ncols=2`：
 
 ```{python}
 np.random.seed(123)

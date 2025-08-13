@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -84,15 +85,16 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ec321d2d17bac5f70310a65ef785ba48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,19 +127,19 @@ div.csl-indent {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Python基础</a></li><li class="breadcrumb-item"><a href="./intro.html">引言</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -170,9 +172,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Python基础</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -186,71 +188,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python语言</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numpy 基础</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">数据分析</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">数据的可视化</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pandas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas及应用</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">统计描述分析</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">回归分析</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">线性回归</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">逻辑回归</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lasso.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lasso回归</span></a>
+ <span class="menu-text">Python基础</span></a>
   </div>
 </li>
       </ul>
@@ -277,11 +215,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#内容是关于什么的" id="toc-内容是关于什么的" class="nav-link active" data-scroll-target="#内容是关于什么的">内容是关于什么的？</a></li>
-  <li><a href="#分析工具python" id="toc-分析工具python" class="nav-link" data-scroll-target="#分析工具python">分析工具：Python</a></li>
-  <li><a href="#安装python" id="toc-安装python" class="nav-link" data-scroll-target="#安装python">安装Python</a></li>
-  <li><a href="#脚本模式和交互模式" id="toc-脚本模式和交互模式" class="nav-link" data-scroll-target="#脚本模式和交互模式">脚本模式和交互模式</a></li>
-  <li><a href="#文档与帮助" id="toc-文档与帮助" class="nav-link" data-scroll-target="#文档与帮助">文档与帮助</a></li>
+  <li><a href="#内容是关于什么的" id="toc-内容是关于什么的" class="nav-link active" data-scroll-target="#内容是关于什么的"><span class="header-section-number">1</span> 内容是关于什么的？</a></li>
+  <li><a href="#分析工具python" id="toc-分析工具python" class="nav-link" data-scroll-target="#分析工具python"><span class="header-section-number">2</span> 分析工具：Python</a></li>
+  <li><a href="#安装和设置软件环境" id="toc-安装和设置软件环境" class="nav-link" data-scroll-target="#安装和设置软件环境"><span class="header-section-number">3</span> 安装和设置软件环境</a></li>
+  <li><a href="#脚本模式和交互模式" id="toc-脚本模式和交互模式" class="nav-link" data-scroll-target="#脚本模式和交互模式"><span class="header-section-number">4</span> 脚本模式和交互模式</a></li>
+  <li><a href="#文档与帮助" id="toc-文档与帮助" class="nav-link" data-scroll-target="#文档与帮助"><span class="header-section-number">5</span> 文档与帮助</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -307,34 +245,23 @@ div.csl-indent {
 </header>
 
 
-<p>《基于Python的经济分析与应用》课程专为国际商务专业硕士研究生设计，注重理论与实践相结合。课程内容涵盖Python编程基础、数据采集与处理、经济数据分析、可视化展示及实际案例应用。通过本课程，学生能够掌握利用Python进行经济数据分析的方法，提高数据处理与决策支持能力，增强在国际商务环境中的实际应用能力，为未来从事数据驱动的经济分析和国际商务决策打下坚实基础。</p>
-<section id="内容是关于什么的" class="level2">
-<h2 class="anchored" data-anchor-id="内容是关于什么的">内容是关于什么的？</h2>
-<section id="涉及课程" class="level3">
-<h3 class="anchored" data-anchor-id="涉及课程">涉及课程</h3>
-<ul>
-<li>理论模型？</li>
-<li>实证分析？</li>
-<li>数据分析？</li>
-<li>经济学？</li>
-<li>产业经济学</li>
-<li>国际贸易？</li>
-</ul>
-</section>
-<section id="经济数据分析" class="level3">
-<h3 class="anchored" data-anchor-id="经济数据分析">经济数据分析</h3>
+<p>《基于Python的经济分析与应用》旨在将经济学理论与现代数据分析技术相结合，内容涵盖Python编程基础、数据采集与处理、经济数据分析、可视化展示及实际案例应用。</p>
+<p>通过学习，使学生掌握应用Python进行经济数据分析的方法，提高数据处理与决策支持能力，为未来从事数据驱动的经济分析、科学研究或制定经济决策打下坚实基础。</p>
+<section id="内容是关于什么的" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="内容是关于什么的"><span class="header-section-number">1</span> 内容是关于什么的？</h2>
+<section id="经济数据分析" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="经济数据分析"><span class="header-section-number">1.1</span> 经济数据分析</h3>
 <p>对经济数据进行分析长期以来都是政策制定、投资者、企业和消费者关注的焦点：</p>
 <ul>
-<li>宏观经济形式分析。如毕马威的<a href="https://kpmg.com/cn/zh/home/insights/2018/02/china-economic-monitor.html">中国经济观察</a>季度报告等。</li>
-<li><a href="http://ier.ruc.edu.cn/">中国宏观经济论坛</a></li>
-<li>美国经济分析局（Bureau of Economic Analysis，BEA）：The Bureau of Economic Analysis (BEA) promotes a better understanding of the U.S. economy by providing the most timely, relevant, and accurate economic accounts data in an objective and cost-effective manner.</li>
-<li>数据科学</li>
-<li>数据服务商</li>
+<li>宏观经济形式分析。如毕马威的<a href="https://kpmg.com/cn/zh/home/insights/2018/02/china-economic-monitor.html">中国经济观察</a>季度报告等、<a href="http://ier.ruc.edu.cn/">中国宏观经济论坛</a>发布的<a href="http://ier.ruc.edu.cn/zybg/2a2b6422eeff408bb9df2d0266255c1d.htm">CMF中国宏观经济专题报告</a>等。</li>
+<li>美国经济分析局（Bureau of Economic Analysis，BEA）：负责公布美国宏观经济以及行业的统计数据，以及有关美国国内生产总值（GDP）和各个市/镇/乡/村/县和大都市区的数据；</li>
+<li><a href="https://aws.amazon.com/cn/what-is/data-science/">数据科学</a>在人工智能时代的广泛应用；</li>
+<li>数据服务商的重要作用。如<a href="https://www.bloombergchina.com/solution/data-content/">彭博社</a>、<a href="https://www.wind.com.cn/portal/zh/Home/index.html">Wind资讯</a>等。</li>
 </ul>
 </section>
-<section id="本课程的主要内容" class="level3">
-<h3 class="anchored" data-anchor-id="本课程的主要内容">本课程的主要内容</h3>
-<p>围绕经济学、国际贸易中有关主题展开，主要包括：</p>
+<section id="数据分析方法" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="数据分析方法"><span class="header-section-number">1.2</span> 数据分析方法</h3>
+<p>将数据分析方法应用至经济学、金融学和国际贸易等学科的有关主题。主要包括：</p>
 <ul>
 <li>经济数据分析：如增长、不平等等、通货膨胀等宏观数据；</li>
 <li>统计分析方法：t检验、方差分析等；</li>
@@ -345,8 +272,8 @@ div.csl-indent {
 <li>网络分析方法；</li>
 </ul>
 </section>
-<section id="主要参考书" class="level3">
-<h3 class="anchored" data-anchor-id="主要参考书">主要参考书</h3>
+<section id="主要参考书" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="主要参考书"><span class="header-section-number">1.3</span> 主要参考书</h3>
 <p>会用到部分Python有关的内容，如：</p>
 <ul>
 <li><span class="citation" data-cites="mckinney2022python">McKinney (<a href="#ref-mckinney2022python" role="doc-biblioref">2022</a>)</span>， <a href="https://wesmckinney.com/book/">在线阅读</a></li>
@@ -355,17 +282,21 @@ div.csl-indent {
 </ul>
 </section>
 </section>
-<section id="分析工具python" class="level2">
-<h2 class="anchored" data-anchor-id="分析工具python">分析工具：Python</h2>
-<p>我们使用Python作为主要的分析工具。根据<a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a>，Python是目前最流行的编程语言。</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/languages_ranking.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<figcaption>TIOBE Programming Community Index</figcaption>
+<section id="分析工具python" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="分析工具python"><span class="header-section-number">2</span> 分析工具：Python</h2>
+<p>我们使用Python作为主要的分析工具。根据<a href="https://www.tiobe.com/tiobe-index/">TIOBE Index for August 2025</a>，Python是目前最流行的编程语言。</p>
+<div id="fig-python_rank" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-python_rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/languages_ranking.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-python_rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: TIOBE Programming Community Index
+</figcaption>
 </figure>
 </div>
-<section id="功能强大应用广泛" class="level3">
-<h3 class="anchored" data-anchor-id="功能强大应用广泛">功能强大，应用广泛</h3>
+<section id="功能强大应用广泛" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="功能强大应用广泛"><span class="header-section-number">2.1</span> 功能强大，应用广泛</h3>
 <p>Python广泛应用于机器学习、科学计算等各个领域：</p>
 <ol type="1">
 <li>机器学习</li>
@@ -378,8 +309,8 @@ div.csl-indent {
 <li>等等</li>
 </ol>
 </section>
-<section id="python的特点" class="level3">
-<h3 class="anchored" data-anchor-id="python的特点">Python的特点</h3>
+<section id="python的特点" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="python的特点"><span class="header-section-number">2.2</span> Python的特点</h3>
 <p>Python具有许多优点：</p>
 <ol type="1">
 <li>易读、易写和易调试；</li>
@@ -391,108 +322,217 @@ div.csl-indent {
 </ol>
 </section>
 </section>
-<section id="安装python" class="level2">
-<h2 class="anchored" data-anchor-id="安装python">安装Python</h2>
-<section id="下载安装python" class="level3">
-<h3 class="anchored" data-anchor-id="下载安装python">下载安装Python</h3>
-<ol type="1">
-<li>自<a href="https://www.python.org/downloads/">官方网站</a>下载Python，当前版本3.13.5</li>
-<li>在点击“Install Now”安装程序之前，Windows系统<strong>注意</strong>勾选：Add Python to PATH，将Python的安装路径添加到操作系统的环境变量Path中；</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/ADD_TO_PATH.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<figcaption>将Python添加至环境</figcaption>
+<section id="安装和设置软件环境" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="安装和设置软件环境"><span class="header-section-number">3</span> 安装和设置软件环境</h2>
+<section id="下载安装python" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="下载安装python"><span class="header-section-number">3.1</span> 下载安装Python</h3>
+<ul>
+<li><p>自<a href="https://www.python.org/downloads/">官方网站</a>下载Python，当前版本3.13.x。</p></li>
+<li><p>双击打开下载的安装程序，如果是Windows操作系统，在点击“Install Now”安装程序之前，<strong>注意</strong>勾选：Add Python to PATH，将Python的安装路径添加到操作系统的环境变量Path中，如图 <a href="#fig-add_to_path" class="quarto-xref">Figure&nbsp;2</a> 所示：</p></li>
+</ul>
+<div id="fig-add_to_path" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-add_to_path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ADD_TO_PATH.PNG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-add_to_path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 将Python添加至环境
+</figcaption>
 </figure>
 </div>
-<ol start="3" type="1">
-<li><p>在“命令提示符”输入<code>python --version</code>查看安装版本。</p></li>
-<li><p>安装<a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab</a>。通过命令提示符（或Mac OS的终端）安装：<code>pip install jupyterlab</code>。另外，需要经常使用pip安装，建议配置镜像源为<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华大学开源软件镜像站</a>。</p></li>
-<li><p>推荐安装<a href="https://code.visualstudio.com/download">Visual Code Studio</a>，然后在扩展（Extensions Marketplace）搜索安装：</p></li>
-</ol>
+<ul>
+<li>在“命令提示符”输入<code>python --version</code>查看安装版本，如图 <a href="#fig-python_version" class="quarto-xref">Figure&nbsp;3</a> 所示。</li>
+</ul>
+<div id="fig-python_version" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-python_version-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/python_version.PNG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-python_version-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Python 版本
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="安装jupyer-lab" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="安装jupyer-lab"><span class="header-section-number">3.2</span> 安装Jupyer Lab</h3>
+<ul>
+<li>安装<a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab</a>。通过命令提示符（或Mac OS的终端）安装：<code>pip install jupyterlab</code>。应用过程中经常需要使用pip安装程序，建议将镜像源配置为<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华大学开源软件镜像站</a>。</li>
+<li>在命令提示符输入:<code>jupyter lab</code>，就可以在浏览器启动Jupyter Lab，新建一个Notebook就可以使用了，如 <a href="#fig-jupyter_lab" class="quarto-xref">Figure&nbsp;4</a> 所示 。选中单元格（cell），设置为“code”格式（其他两种是markdown和raw），输入：</li>
+</ul>
+<div id="b4c1013c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello World!</code></pre>
+</div>
+</div>
+<div id="fig-jupyter_lab" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jupyter_lab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/jupyter_lab.PNG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jupyter_lab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Jupyter Lab
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="安装visual-studio-code" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="安装visual-studio-code"><span class="header-section-number">3.3</span> 安装Visual Studio Code</h3>
+<p>Visual Studio Code是由微软推出的免费、开源、跨平台的代码编辑器，支持几十种主流编程语言（如JavaScript、Python、C++、Java、Go 等），并且与微软推出的Copilot人工智能工具高度融合，拥有强大的功能和灵活的扩展性。</p>
+<ul>
+<li><p>下载安装<a href="https://code.visualstudio.com/">Visual Studio Code</a>。 要将软件设置为中文，可以使用快捷键<code>Ctrl + Shift + P</code>打开命令面板，输入<code>Configure Display Languate</code>，在出现的列表中，选择“中文（简体）”，根据提示重启VS Code，界面语言就会变为中文。</p></li>
+<li><p>在扩展（Extensions Marketplace）搜索安装插件：</p>
 <ul>
 <li>Python</li>
-<li>Jupyter</li>
-<li>Quarto</li>
+<li>Jupyter,</li>
+<li>Excel Viewer</li>
+<li>Rainbow CSV</li>
+</ul></li>
 </ul>
-<ol type="1">
-<li>如果只使用JupyterLab，在命令提示符输入<code>jupyter lab</code>即可启动；</li>
-<li>另外，安装<a href="https://www.anaconda.com/download/">Anaconda</a>也是非常常见的方式，会同时方便的安装常用Python程序包。</li>
-<li>需要安装第三方程序包时，在命令提示符使用pip安装，例如：</li>
-</ol>
+<p>应用时，Visual Studio Code 可以“打开文件”或者 “打开文件夹”将项目所在文件夹处打开。建议以打开文件夹方式，可以比较清楚的概览代码、数据、图形等子文件夹。</p>
+</section>
+<section id="安装第三方程序包和创建虚拟环境" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="安装第三方程序包和创建虚拟环境"><span class="header-section-number">3.4</span> 安装第三方程序包和创建虚拟环境</h3>
+<p>要安装第三方程序包，基本的方式是通过<code>pip</code>命令：</p>
+<p><code>python -m pip install SomePackage</code></p>
+<p>例如，在命令提示符，或者在Visual Studio Code使用快捷键<code>Ctrl + Shift + \</code> `新建终端，输入命令使用pip安装。：</p>
 <ul>
-<li>Numpy: <code>pip install numpy</code></li>
-<li>Pandas: <code>pip install pandas</code></li>
-<li>Matplotlib: <code>pip install matplotlib</code></li>
+<li>Numpy: <code>python -m pip install numpy</code></li>
+<li>Pandas: <code>python -m pip install pandas</code></li>
+<li>Matplotlib: <code>python -m pip install matplotlib</code></li>
 </ul>
+<p>建议为单独的项目设置一个Python虚拟环境：</p>
+<ul>
+<li>创建虚拟环境：在VSC中新建终端，运行：<code>python -m venv &lt;env_name&gt;</code>，其中<code>&lt;env_name&gt;</code>是你想给虚拟环境其的名称；</li>
+<li>激活虚拟环境：Windows系统下使用：<code>&lt;env_name&gt;Scripts/activate</code>，macOS下使用：<code>source &lt;env_name&gt;/bin/activate</code></li>
+<li>停用虚拟环境： <code>deactivate</code>；</li>
+</ul>
+<p>更快捷的方式是通过下载记录有程序包名字的requirements.txt文件进行安装：</p>
+<p><code>pip install -r requirements.txt</code></p>
+<p>可以将需要的第三方程序一次安装。</p>
 </section>
 </section>
-<section id="脚本模式和交互模式" class="level2">
-<h2 class="anchored" data-anchor-id="脚本模式和交互模式">脚本模式和交互模式</h2>
-<section id="交互式" class="level3">
-<h3 class="anchored" data-anchor-id="交互式">交互式</h3>
+<section id="脚本模式和交互模式" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="脚本模式和交互模式"><span class="header-section-number">4</span> 脚本模式和交互模式</h2>
+<p>Python可以交互式或脚本模式运行。</p>
+<section id="交互式" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="交互式"><span class="header-section-number">4.1</span> 交互式</h3>
 <p>用户输入代码，回车运行。在如IDLE，Ipython都可以方便地进行交互式操作。例如：</p>
 <ul>
-<li>在命令提示符输入<code>ipython</code>，将打开Ipython的界面，输入<code>3 + 3</code>，回车，将显示计算结果；</li>
+<li>在命令提示符（或VSC终端）输入<code>ipython</code>，将打开Ipython的界面，输入<code>3 + 3</code>，回车，将在屏幕上立刻显示计算结果；</li>
 <li>在应用程序中打开 IDLE Shell，也可以方便的进行交互式操作；</li>
 <li>在Jupyter Notebook的代码单元格内，输入代码，点击运行显示结果；</li>
 </ul>
 </section>
-<section id="脚本模式" class="level3">
-<h3 class="anchored" data-anchor-id="脚本模式">脚本模式</h3>
-<p>将代码保存在.py格式文件中，使用命令提示符运行；</p>
-<p>例如，在文件夹pyfiles中保存有一个文件，存储了下面绘制圆形柱状图的代码。在命令提示符或终端中运行：</p>
-<p><code>python pyfiles/polar_plot.py</code></p>
-<p>当然，也可以先改变当前文件夹至pyfiles文件夹，就可以省略路径。 ### Jupyter notebook兼有</p>
-<p>在Jupyter Notebook中试验是否成功安装，打开链接中的例子，将代码复制到一个单元格中，绘制一个<a href="https://matplotlib.org/3.1.1/gallery/pie_and_polar_charts/polar_bar.html">圆形柱状图</a>：</p>
-<div id="1f0f7975" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixing random state for reproducibility</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">19680801</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pie slices</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, N, endpoint<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>radii <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> np.random.rand(N)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> np.pi <span class="op">/</span> <span class="dv">4</span> <span class="op">*</span> np.random.rand(N)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> plt.cm.viridis(radii <span class="op">/</span> <span class="fl">10.</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'polar'</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ax.bar(theta, radii, width<span class="op">=</span>width, bottom<span class="op">=</span><span class="fl">0.0</span>, color<span class="op">=</span>colors, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="脚本模式" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="脚本模式"><span class="header-section-number">4.2</span> 脚本模式</h3>
+<p>脚本模式是将代码保存在.py格式的文件中，然后使用命令提示符调用脚本。</p>
+<p>例如，在文件夹pyfiles中保存有一个文件<code>lunch.py</code>，定义了一个随机选择午餐的函数<code>lunch()</code>，当运行该函数时，随机从列表中选择一个作为推荐的午餐。</p>
+<div id="63c280b0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lunch():</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Randomly choose a lunch option and return the result."""</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    lunch_list <span class="op">=</span> [<span class="st">"Rice Bowl"</span>, <span class="st">"Ramen"</span>, <span class="st">"Salad"</span>, <span class="st">"Burger"</span>, <span class="st">"Dumplings"</span>, <span class="st">"Pizza"</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> random.choice(lunch_list)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> lunch()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Recomm:"</span>,result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Recomm: Salad</code></pre>
+</div>
+</div>
+<p>在命令提示符或终端中运行：</p>
+<p><code>python pyfiles/lunch.py</code></p>
+<p>当然，也可以先改变当前文件夹至pyfiles文件夹，就可以省略路径。</p>
+</section>
+<section id="在visual-studio-code-中-应用-jupyter-notebook" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="在visual-studio-code-中-应用-jupyter-notebook"><span class="header-section-number">4.3</span> 在Visual Studio Code 中 应用 Jupyter notebook</h3>
+<p>打开VSC，点击“文件- 新建文件”，从弹出的菜单选择“Jupyter Notebook”。</p>
+<div id="fig-new_notebook" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new_notebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/new_notebook.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new_notebook-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: 新建Jupyter Notebook
+</figcaption>
+</figure>
+</div>
+<p>下面的例子来自<a href="https://matplotlib.org/stable/gallery/statistics/histogram_cumulative.html#sphx-glr-gallery-statistics-histogram-cumulative-py">Matplotlib官方网站</a>，将代码复制到Notebook的一个单元格中，点击左侧的运行三角箭头（VSC也许会让你选择一个核），绘制 <a href="#fig-cum_hist" class="quarto-xref">Figure&nbsp;6</a> 所示的一个累计概率分布图：</p>
+<div id="cell-fig-cum_hist" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">19680801</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.normal(mu, sigma, size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">"constrained"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> fig.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative distributions.</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].ecdf(data, label<span class="op">=</span><span class="st">"CDF"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>n, bins, patches <span class="op">=</span> axs[<span class="dv">0</span>].hist(data, n_bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">"step"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                               cumulative<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Cumulative histogram"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(data.<span class="bu">min</span>(), data.<span class="bu">max</span>())</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ((<span class="dv">1</span> <span class="op">/</span> (np.sqrt(<span class="dv">2</span> <span class="op">*</span> np.pi) <span class="op">*</span> sigma)) <span class="op">*</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>     np.exp(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">/</span> sigma <span class="op">*</span> (x <span class="op">-</span> mu))<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y.cumsum()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>y <span class="op">/=</span> y[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].plot(x, y, <span class="st">"k--"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">"Theory"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Complementary cumulative distributions.</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].ecdf(data, complementary<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"CCDF"</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].hist(data, bins<span class="op">=</span>bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">"step"</span>, cumulative<span class="op">=-</span><span class="dv">1</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">"Reversed cumulative histogram"</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].plot(x, <span class="dv">1</span> <span class="op">-</span> y, <span class="st">"k--"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">"Theory"</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Label the figure.</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"Cumulative distributions"</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs:</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">"Annual rainfall (mm)"</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"Probability of occurrence"</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    ax.label_outer()</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+<div id="fig-cum_hist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cum_hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-cum_hist-output-1.png" width="875" height="395" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cum_hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: 累计概率分布
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Jupyter Notebook 延续了ipython中的<code>%run</code>命令，可以脚本模式运行：</p>
-<div id="169cbab6" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run pyfiles<span class="op">/</span>polar_plot.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<div id="91ddc56a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run pyfiles<span class="op">/</span>lunch.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>推荐的午餐: 沙拉</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="文档与帮助" class="level2">
-<h2 class="anchored" data-anchor-id="文档与帮助">文档与帮助</h2>
-<section id="help-和" class="level3">
-<h3 class="anchored" data-anchor-id="help-和"><code>help()</code> 和<code>?</code></h3>
+<section id="文档与帮助" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="文档与帮助"><span class="header-section-number">5</span> 文档与帮助</h2>
+<section id="help-和" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="help-和"><span class="header-section-number">5.1</span> <code>help()</code> 和<code>?</code></h3>
 <p>Python有非常详细的官方<a href="https://docs.python.org/zh-cn/3.13/">帮助文档</a>，帮助新用户快速的熟悉其用法。</p>
 <p>例如，Python有一个内置函数<code>help()</code>，可以查看定义的文档，例如对函数<code>len()</code>：</p>
-<div id="5c052bdc" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="274dfab5" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on built-in function len in module builtins:
 
@@ -502,26 +542,26 @@ len(obj, /)
 </div>
 </div>
 <p>由于其重要性，Ipython和Jupyter中可以使用<code>?</code>作为缩写：</p>
-<div id="36ce93b4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="46628f09" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>当然，对自定义的对象也是适用的。下面定义的函数，有一段函数的说明文字（docstring）：</p>
-<div id="74221a24" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates the square of a given number.</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">        x (int or float): The number to be squared.</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">        int or float: The square of the input number.</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f5c41bee" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates the square of a given number.</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">        x (int or float): The number to be squared.</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">        int or float: The square of the input number.</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果输入<code>help()</code>函数：</p>
-<div id="c13e41e6" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5684e189" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function square in module __main__:
 
@@ -551,228 +591,242 @@ VanderPlas, Jake. 2016. <em>Python Data Science Handbook: Essential Tools for Wo
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -780,185 +834,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

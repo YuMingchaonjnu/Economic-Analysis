@@ -17,7 +17,7 @@ website:
         contents:
           - text: "引言"
             href: intro.qmd          
-          - text: "Python语言"
+          - text: "Python基础"
             href: python_basics.qmd
           - text: "Numpy 基础"
             href: numpy.qmd
@@ -57,6 +57,8 @@ format:
     toc-depth: 2
     toc-title: "Table of Contents"
     toc-position: right
+    highlight-style: github
+    number-sections: true
   pdf:
     documentclass: ctexbook
     toc: true
