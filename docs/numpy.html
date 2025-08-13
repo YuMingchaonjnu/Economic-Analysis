@@ -136,12 +136,152 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Python基础</a></li><li class="breadcrumb-item"><a href="./numpy.html">Numpy 基础</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">基于Python的经济数据分析与应用</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/YuMingchaonjnu/Economic-Analysis" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python基础</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">引言</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python基础</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Numpy 基础</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">数据分析</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">数据的可视化</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas及应用</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">统计描述分析</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">回归分析</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">线性回归</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">逻辑回归</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lasso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lasso回归</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">总结</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">参考文献</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -156,7 +296,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Python基础</a></li><li class="breadcrumb-item"><a href="./numpy.html">Numpy 基础</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Numpy 和 Scipy</h1>
 </div>
@@ -180,7 +320,7 @@ window.Quarto = {
 <section id="创建数组" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="创建数组"><span class="header-section-number">1.1</span> 创建数组</h3>
 <p>有许多种方法创建数组，下面是一些简单的例子，使用<code>np.array()</code>函数，将列表、元组转化为数组：</p>
-<div id="c8aa7f70" class="cell" data-execution_count="1">
+<div id="3e5c6d3e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -190,7 +330,7 @@ window.Quarto = {
 </div>
 </div>
 <p>注意，与列表不同，Numpy数组只能包含相同类型的数据，下面的例子中，<code>np.array()</code>函数自动将列表中的整数转换为浮点数：</p>
-<div id="4719511f" class="cell" data-execution_count="2">
+<div id="eb351ec9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">3.14</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -198,7 +338,7 @@ window.Quarto = {
 </div>
 </div>
 <p>列表总是一维的，Numpy数组可以是多维的，例如下面的例子使用：</p>
-<div id="ca2e0791" class="cell" data-execution_count="3">
+<div id="9424259b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.1</span>, <span class="dv">3</span>],</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="fl">6.5</span>]])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -208,7 +348,7 @@ window.Quarto = {
 </div>
 </div>
 <p>数组<code>data</code>是二维数组，可以查看属性<code>ndim</code>和<code>shape</code>：</p>
-<div id="a290f9bf" class="cell" data-execution_count="4">
+<div id="63bf4880" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.ndim</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -216,7 +356,7 @@ window.Quarto = {
 </div>
 </div>
 <p>可以对<code>data</code>进行通常的数学运算：</p>
-<div id="f4c3a2cb" class="cell" data-execution_count="5">
+<div id="1aaaf0b6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">*</span> <span class="dv">10</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">+</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -282,7 +422,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </figure>
 </div>
-<div id="813d3b68" class="cell" data-execution_count="6">
+<div id="c05f51fe" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">10</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
@@ -308,26 +448,26 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>Numpy中random子库包含丰富的生成随机数的函数，例如：</p>
-<div id="76e9d3e3" class="cell" data-execution_count="7">
+<div id="11facb26" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#生成正态分布</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nums_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_norm)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nums_int <span class="op">=</span> np.random.randint(low<span class="op">=</span><span class="dv">1</span>, high<span class="op">=</span><span class="dv">11</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">10</span>))</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[-1.37539399  1.26851301 -0.58911433]
- [ 0.71198134 -0.21477278 -0.66124069]
- [-0.67356475  1.05377389  0.43696482]
- [-1.42191885 -0.81106133  0.05037252]]
-[[ 3 10  8  4  6  7  5  8  4  8]
- [ 9  8  9  2 10 10  7  9  8  7]]</code></pre>
+<pre><code>[[ 0.0725694   0.60367831 -2.1213417 ]
+ [-0.08028065  0.7767599   0.30146186]
+ [-0.69755681 -0.25142512  0.07708826]
+ [-0.99495966  0.18377317 -0.15260159]]
+[[ 6  1  8  8  4  2  9  9  7  8]
+ [ 8 10  9  2  4  9  6  4  8  3]]</code></pre>
 </div>
 </div>
 </section>
 <section id="数组的索引" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="数组的索引"><span class="header-section-number">1.2</span> 数组的索引</h3>
 <p>注意索引与列表一样，从0开始；选择元素时不包括右侧。</p>
-<div id="7e5b7e04" class="cell" data-execution_count="8">
+<div id="795b2fd1" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.array((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>:<span class="dv">2</span>]</span>
@@ -349,7 +489,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 data-number="1.3" class="anchored" data-anchor-id="数组方法"><span class="header-section-number">1.3</span> 数组方法</h3>
 <p>数组方法众多，例如：</p>
 <p>代码段</p>
-<div id="eff1fd65" class="cell" data-execution_count="9">
+<div id="1ed3df1a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array((<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>a.sort()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -370,7 +510,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <section id="数组的数学运算" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="数组的数学运算"><span class="header-section-number">1.4</span> 数组的数学运算</h3>
 <p>注意，运算符 <code>+</code>, <code>-</code> , <code>*</code>, <code>/</code> 和 <code>**</code>，都是逐元素运算。例如：</p>
-<div id="02151761" class="cell" data-execution_count="10">
+<div id="a8d7e815" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span>
@@ -390,7 +530,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>可以使用 @ 或 np.dot() 进行矩阵乘法。如果是向量则计算内积。</p>
-<div id="46fc70a5" class="cell" data-execution_count="11">
+<div id="44108bfe" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>],</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>,<span class="dv">4</span>]])</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>,<span class="dv">6</span>,],</span>
@@ -410,7 +550,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 data-number="1.5" class="anchored" data-anchor-id="例多项式计算"><span class="header-section-number">1.5</span> 例：多项式计算</h3>
 <p>Numpy中有一些列简便运算的函数。例如 <code>np.poly1d()</code>，多项式求和:</p>
 <p><span class="math display">\[p(x) = a_{0} + a_{1}x + a_{2}x^{2} + \cdots + a_{N}x^{N} = \sum_{n=0}^{N}a_{n}x^{n} \]</span></p>
-<div id="022aa275" class="cell" data-execution_count="12">
+<div id="ab7b22d5" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.poly1d([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -422,7 +562,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 <p>注意，<code>np.poly1d()</code> 函数高阶项在前面。</p>
 <p>利用向量计算，自定义一个函数：</p>
-<div id="d985817f" class="cell" data-execution_count="13">
+<div id="bf5e8873" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poly1d(x, coef):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.ones_like(coef)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    X[<span class="dv">1</span>:] <span class="op">=</span> x</span>
@@ -440,7 +580,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 data-number="1.6" class="anchored" data-anchor-id="random子库"><span class="header-section-number">1.6</span> Random子库</h3>
 <p>Numpy中有大量的与随机数生成器有关的函数。</p>
 <p>下面是一个例子，注意，没有设定随机种子数，因此每次运行结果会不同。</p>
-<div id="d2dc5d65" class="cell" data-execution_count="14">
+<div id="fde074f3" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an array of choices</span></span>
@@ -452,12 +592,12 @@ Table&nbsp;1: Numpy中生成数组的函数
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the random choice</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_choice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>apple</code></pre>
+<pre><code>grape</code></pre>
 </div>
 </div>
 <section id="例简单的随机游走" class="level4" data-number="1.6.1">
 <h4 data-number="1.6.1" class="anchored" data-anchor-id="例简单的随机游走"><span class="header-section-number">1.6.1</span> 例：简单的随机游走</h4>
-<div id="4297b28b" class="cell" data-execution_count="15">
+<div id="5945ca97" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -498,7 +638,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <li>重复抽样并计算均值: 从总体中抽取 num_samples 次样本，每次抽取 sample_size 个数据点，并计算每次抽样的平均值。</li>
 <li>可视化: 绘制样本均值的直方图，并与原始总体分布的直方图进行对比。</li>
 </ul>
-<div id="5b3e5106" class="cell" data-execution_count="16">
+<div id="0e1a224b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'SimHei'</span></span>
@@ -583,7 +723,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 <h3 data-number="1.7" class="anchored" data-anchor-id="通用函数"><span class="header-section-number">1.7</span> 通用函数</h3>
 <p>Numpy中许多函数是通用函数(universal functions)，是一种在 ndarray 数据中进行逐元素操作的函数，大多数数学函数属于此类。</p>
 <p>例如 <code>np.cos()</code> 函数：</p>
-<div id="02aef877" class="cell" data-execution_count="17">
+<div id="734a92be" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>np.cos(<span class="fl">1.0</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>np.cos(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -591,7 +731,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>例如，我们想计算<span class="math inline">\(\frac{0}{1},\frac{1}{2},\cdots, \frac{4}{5}\)</span>:</p>
-<div id="5213038f" class="cell" data-execution_count="18">
+<div id="d24c9a1f" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">5</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([0.        , 0.5       , 0.66666667, 0.75      , 0.8       ])</code></pre>
@@ -678,7 +818,7 @@ Table&nbsp;2: Numpy中算术运算子和函数
 <p>考察最大化函数 <span class="math inline">\(f(x,y)\)</span> 在区间 $ [−a,a] $ 上的最大值： <span class="math display">\[
 f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 \]</span> ​ 令<span class="math inline">\(a=3\)</span>。 我们定义一个函数，然后生成数组，计算对应的-值，通过栅格（grid）搜索最大值（等于1）。</p>
-<div id="c326b2ac" class="cell" data-execution_count="19">
+<div id="a36ac19c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -718,7 +858,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="例洛伦茨曲线和基尼系数" class="level3" data-number="1.9">
 <h3 data-number="1.9" class="anchored" data-anchor-id="例洛伦茨曲线和基尼系数"><span class="header-section-number">1.9</span> 例：洛伦茨曲线和基尼系数</h3>
-<div id="3b7cc317" class="cell" data-execution_count="20">
+<div id="d9ec4faf" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># 载入numpy库</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lorenz_curve(y):</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
@@ -729,7 +869,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    cum_income <span class="op">=</span> s <span class="op">/</span> s[n] <span class="co"># s[n]为最后的值，即所有值的和</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cum_people, cum_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a76e6791" class="cell" data-execution_count="21">
+<div id="2fb865ab" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">2000</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> np.exp(np.random.randn(n))</span>
@@ -761,7 +901,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 </section>
 <section id="基尼系数" class="level3" data-number="1.10">
 <h3 data-number="1.10" class="anchored" data-anchor-id="基尼系数"><span class="header-section-number">1.10</span> 基尼系数</h3>
-<div id="1c5e4b3a" class="cell" data-execution_count="22">
+<div id="ed8a643d" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gini(y):</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    y_1 <span class="op">=</span> np.reshape(y, (n, <span class="dv">1</span>))</span>
@@ -769,7 +909,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    g_sum <span class="op">=</span> np.<span class="bu">sum</span>(np.<span class="bu">abs</span>(y_1 <span class="op">-</span> y_2)) <span class="co"># 利用了numpy的广播（broadcasting）</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g_sum <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n <span class="op">*</span> np.<span class="bu">sum</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="913d4bf0" class="cell" data-execution_count="23">
+<div id="c7124d00" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 模拟对数正态数据</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">5</span></span>
@@ -781,7 +921,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> np.exp(mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(n))</span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    ginis.append(gini(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="56528958" class="cell" data-execution_count="24">
+<div id="ce9fec25" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>ax.plot(sigmas, ginis, marker <span class="op">=</span> <span class="st">'o'</span>,label<span class="op">=</span><span class="st">'simulated'</span>, lw <span class="op">=</span> <span class="dv">2</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Standard deviation'</span>)</span>

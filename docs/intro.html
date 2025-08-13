@@ -191,6 +191,70 @@ div.csl-indent {
  <span class="menu-text">Python基础</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numpy 基础</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">数据分析</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">数据的可视化</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas及应用</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">统计描述分析</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">回归分析</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">线性回归</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">逻辑回归</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lasso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lasso回归</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -360,7 +424,7 @@ Figure&nbsp;3: Python 版本
 <li>安装<a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab</a>。通过命令提示符（或Mac OS的终端）安装：<code>pip install jupyterlab</code>。应用过程中经常需要使用pip安装程序，建议将镜像源配置为<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华大学开源软件镜像站</a>。</li>
 <li>在命令提示符输入:<code>jupyter lab</code>，就可以在浏览器启动Jupyter Lab，新建一个Notebook就可以使用了，如 <a href="#fig-jupyter_lab" class="quarto-xref">Figure&nbsp;4</a> 所示 。选中单元格（cell），设置为“code”格式（其他两种是markdown和raw），输入：</li>
 </ul>
-<div id="b4c1013c" class="cell" data-execution_count="1">
+<div id="94a2a02e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello World!</code></pre>
@@ -429,7 +493,7 @@ Figure&nbsp;4: Jupyter Lab
 <h3 data-number="4.2" class="anchored" data-anchor-id="脚本模式"><span class="header-section-number">4.2</span> 脚本模式</h3>
 <p>脚本模式是将代码保存在.py格式的文件中，然后使用命令提示符调用脚本。</p>
 <p>例如，在文件夹pyfiles中保存有一个文件<code>lunch.py</code>，定义了一个随机选择午餐的函数<code>lunch()</code>，当运行该函数时，随机从列表中选择一个作为推荐的午餐。</p>
-<div id="63c280b0" class="cell" data-execution_count="2">
+<div id="b5847d7b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lunch():</span>
@@ -517,7 +581,7 @@ Figure&nbsp;6: 累计概率分布
 </div>
 </div>
 <p>Jupyter Notebook 延续了ipython中的<code>%run</code>命令，可以脚本模式运行：</p>
-<div id="91ddc56a" class="cell" data-execution_count="4">
+<div id="833732a2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run pyfiles<span class="op">/</span>lunch.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>推荐的午餐: 沙拉</code></pre>
@@ -531,7 +595,7 @@ Figure&nbsp;6: 累计概率分布
 <h3 data-number="5.1" class="anchored" data-anchor-id="help-和"><span class="header-section-number">5.1</span> <code>help()</code> 和<code>?</code></h3>
 <p>Python有非常详细的官方<a href="https://docs.python.org/zh-cn/3.13/">帮助文档</a>，帮助新用户快速的熟悉其用法。</p>
 <p>例如，Python有一个内置函数<code>help()</code>，可以查看定义的文档，例如对函数<code>len()</code>：</p>
-<div id="274dfab5" class="cell" data-execution_count="5">
+<div id="bf1b6d21" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on built-in function len in module builtins:
@@ -542,11 +606,11 @@ len(obj, /)
 </div>
 </div>
 <p>由于其重要性，Ipython和Jupyter中可以使用<code>?</code>作为缩写：</p>
-<div id="46628f09" class="cell" data-execution_count="6">
+<div id="2bf67723" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>当然，对自定义的对象也是适用的。下面定义的函数，有一段函数的说明文字（docstring）：</p>
-<div id="f5c41bee" class="cell" data-execution_count="7">
+<div id="53393d63" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates the square of a given number.</span></span>
@@ -560,7 +624,7 @@ len(obj, /)
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>如果输入<code>help()</code>函数：</p>
-<div id="5684e189" class="cell" data-execution_count="8">
+<div id="5e5b87fb" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function square in module __main__:
