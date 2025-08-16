@@ -102,5 +102,9 @@
   "eco/Lib/site-packages/soupsieve-2.7.dist-info/licenses/LICENSE.md": {
     "LICENSE.html": "e2989500",
     "LICENSE.tex": "3462eb20"
+  },
+  "eda.qmd": {
+    "eda.html": "ac3b1079",
+    "eda.tex": "b71411d3"
   }
 }

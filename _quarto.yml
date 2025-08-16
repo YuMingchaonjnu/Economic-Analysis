@@ -26,8 +26,8 @@ website:
             href: matplotlib.qmd
           - text: "Pandas及应用"
             href: pandas.qmd    
-          - text: "统计描述分析"
-            href: text_analysis.qmd
+          - text: "数据的统计描述"
+            href: eda.qmd
       - section: "回归分析"
         contents:
           - text: "线性回归"

@@ -231,8 +231,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">统计描述分析</span></a>
+  <a href="./eda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">数据的统计描述</span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +322,7 @@ window.Quarto = {
 <section id="创建数组" class="level3">
 <h3 class="anchored" data-anchor-id="创建数组">创建数组</h3>
 <p>有许多种方法创建数组，下面是一些简单的例子，使用<code>np.array()</code>函数，将列表、元组转化为数组：</p>
-<div id="54bae74c" class="cell" data-execution_count="1">
+<div id="f0651d1b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -332,7 +332,7 @@ window.Quarto = {
 </div>
 </div>
 <p>注意，与列表不同，Numpy数组只能包含相同类型的数据，下面的例子中，<code>np.array()</code>函数自动将列表中的整数转换为浮点数：</p>
-<div id="37d448a8" class="cell" data-execution_count="2">
+<div id="57f98e4d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">3.14</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -340,7 +340,7 @@ window.Quarto = {
 </div>
 </div>
 <p>列表总是一维的，Numpy数组可以是多维的，例如下面的例子使用：</p>
-<div id="c03f991a" class="cell" data-execution_count="3">
+<div id="647a1208" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.1</span>, <span class="dv">3</span>],</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="fl">6.5</span>]])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -350,7 +350,7 @@ window.Quarto = {
 </div>
 </div>
 <p>数组<code>data</code>是二维数组，可以查看属性<code>ndim</code>和<code>shape</code>：</p>
-<div id="ceaa693c" class="cell" data-execution_count="4">
+<div id="fb035818" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.ndim</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -358,7 +358,7 @@ window.Quarto = {
 </div>
 </div>
 <p>可以对<code>data</code>进行通常的数学运算：</p>
-<div id="0c5a271d" class="cell" data-execution_count="5">
+<div id="78cd707e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">*</span> <span class="dv">10</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data <span class="op">+</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -425,7 +425,7 @@ Table&nbsp;1: Numpy中生成数组的函数
 </figure>
 </div>
 <p>下面是一些例子：</p>
-<div id="34df1196" class="cell" data-execution_count="6">
+<div id="98956c82" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">10</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
@@ -451,26 +451,26 @@ Table&nbsp;1: Numpy中生成数组的函数
 </div>
 </div>
 <p>Numpy中random子库包含丰富的生成随机数的函数，用来生成数组进行模拟运算。如 <code>np.random.normal()</code>可以生成正态分布随机数、<code>np.random.randint()</code>用来生成随机整数：</p>
-<div id="cfe3899a" class="cell" data-execution_count="7">
+<div id="d391dd6e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#生成正态分布</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nums_norm <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_norm)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nums_int <span class="op">=</span> np.random.randint(low<span class="op">=</span><span class="dv">1</span>, high<span class="op">=</span><span class="dv">11</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">10</span>))</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 0.55566037  0.50309805  1.10401547]
- [ 2.37296246 -1.30508066 -0.33671401]
- [ 0.47472266 -0.08108065  0.02869927]
- [ 1.39099264  1.82176333  1.48874973]]
-[[ 7  5  8  5 10  7  2  2  9  6]
- [ 8 10  8  7  9  4  2  1  2  7]]</code></pre>
+<pre><code>[[-0.87927996  1.6570433  -0.88715671]
+ [ 0.44391094  0.81678759 -0.51933997]
+ [ 0.19050275 -0.77990952 -0.6859056 ]
+ [-1.29699674 -1.74421874  0.50865207]]
+[[ 3  9  4  2  4  5  2  2  8  3]
+ [ 4  6  3  2  1 10  7  6  8  3]]</code></pre>
 </div>
 </div>
 </section>
 <section id="数组运算效率" class="level3">
 <h3 class="anchored" data-anchor-id="数组运算效率">数组运算效率</h3>
 <p>数组采用的是向量化操作，运算速度比列表要快许多。让我们通过一个简单的例子来直观感受两者的速度差异：对一百万个元素的集合求平方运算，一种使用列表推导式，一种采用数组。</p>
-<div id="11593bbd" class="cell" data-execution_count="8">
+<div id="0db36aad" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -489,8 +489,8 @@ Table&nbsp;1: Numpy中生成数组的函数
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">}</span><span class="ss"> s"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time: 0.05379652976989746 s
-Time: 0.0019237995147705078 s</code></pre>
+<pre><code>Time: 0.05211329460144043 s
+Time: 0.002000570297241211 s</code></pre>
 </div>
 </div>
 <p>可见列表方式运算耗费的时间是数组运算的几十倍。</p>
@@ -498,7 +498,7 @@ Time: 0.0019237995147705078 s</code></pre>
 <section id="数组的索引" class="level3">
 <h3 class="anchored" data-anchor-id="数组的索引">数组的索引</h3>
 <p>注意索引与列表一样，从0开始，在选择元素时不包括右侧。</p>
-<div id="dd237460" class="cell" data-execution_count="9">
+<div id="ec0c5a1a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.array((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>:<span class="dv">2</span>]</span>
@@ -510,7 +510,7 @@ Time: 0.0019237995147705078 s</code></pre>
 </div>
 </div>
 <p>2维数组用类似行和列的方式进行切片：</p>
-<div id="09bdc958" class="cell" data-execution_count="10">
+<div id="5c041519" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>],</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">0</span>, <span class="dv">0</span>]</span>
@@ -536,7 +536,7 @@ Time: 0.0019237995147705078 s</code></pre>
 <li><code>arr.argmin()</code>, <code>arr.argmax()</code>: 返回数组中最小值或最大值所在的索引。</li>
 </ul>
 <p>要注意在2D数组时，参数<code>axis = 0</code>按列求和（默认），或 <code>arr.sum(axis=1)</code>按行求和。</p>
-<div id="c6576143" class="cell" data-execution_count="11">
+<div id="e9a9991d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span>(<span class="dv">100</span>, <span class="dv">2</span>))</span>
@@ -548,7 +548,7 @@ Time: 0.0019237995147705078 s</code></pre>
 </div>
 </div>
 <p>要寻找最大/小值所处的位置，可以使用：</p>
-<div id="f488c853" class="cell" data-execution_count="12">
+<div id="ea481efc" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x[x.argmax(axis<span class="op">=</span><span class="dv">0</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([[2.39236527, 0.41291216],
@@ -556,7 +556,7 @@ Time: 0.0019237995147705078 s</code></pre>
 </div>
 </div>
 <p>另外，累积求和或乘积也是常见的运算。下面是一个简单随机游走过程。假设独立的随机变量，<span class="math inline">\(Z_{1},Z_{2},\cdots,Z_{n}\)</span> ，每一个变量分别有50%的概率取值 <span class="math inline">\(1\)</span> 或 <span class="math inline">\(-1\)</span>。设 <span class="math inline">\(S_{0} = 0\)</span>， <span class="math inline">\(S_{n} = \sum_{i=1}^{n}Z_{i}\)</span> 是一个简单随机游走过程。</p>
-<div id="6334ab26" class="cell" data-execution_count="13">
+<div id="6f9c6c43" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -590,7 +590,7 @@ Time: 0.0019237995147705078 s</code></pre>
 <li><code>arr.flatten()</code>: 返回一个一维数组的副本。</li>
 <li><code>arr.transpose()</code>: 也是返回数组的转置，与 arr.T 类似。</li>
 </ul>
-<div id="81fc678b" class="cell" data-execution_count="14">
+<div id="1fdfad7d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape(<span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>arr.T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -610,7 +610,7 @@ Time: 0.0019237995147705078 s</code></pre>
 <li><code>arr.argsort()</code>: 返回排序后元素的索引，而不是排序后的值。</li>
 <li><code>np.where()</code>: 这是一个函数，但常用于搜索操作。它根据条件返回满足条件的元素的索引。</li>
 </ul>
-<div id="e0931b96" class="cell" data-execution_count="15">
+<div id="28df00f5" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>np.where(arr<span class="op">&gt;</span><span class="dv">4</span>, <span class="st">"High"</span>, <span class="st">"Low"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>array([['Low', 'Low', 'Low', 'Low'],
@@ -622,7 +622,7 @@ Time: 0.0019237995147705078 s</code></pre>
 <section id="数组的数学运算" class="level3">
 <h3 class="anchored" data-anchor-id="数组的数学运算">数组的数学运算</h3>
 <p>注意，运算符 <code>+</code>, <code>-</code> , <code>*</code>, <code>/</code> 和 <code>**</code>，都是逐元素运算。例如：</p>
-<div id="bc3a4d01" class="cell" data-execution_count="16">
+<div id="2efdbdb0" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span>
@@ -642,7 +642,7 @@ Time: 0.0019237995147705078 s</code></pre>
 </div>
 </div>
 <p>可以使用 <code>@</code> 或 <code>np.dot()</code> 进行矩阵乘法。如果是向量则计算内积。</p>
-<div id="0da566cd" class="cell" data-execution_count="17">
+<div id="950e3ea6" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>],</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>,<span class="dv">4</span>]])</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>,<span class="dv">6</span>,],</span>
@@ -661,7 +661,7 @@ Time: 0.0019237995147705078 s</code></pre>
 Ae = \lambda e
 \]</span></p>
 <p>Numpy 线性代数子库中的<code>eig()</code>函数可以计算特征根和对应的特征向量：</p>
-<div id="30504fa7" class="cell" data-execution_count="18">
+<div id="2d12066b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>],</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>eig, vec <span class="op">=</span> np.linalg.eig(A)</span>
@@ -680,7 +680,7 @@ Ae = \lambda e
 <section id="例t分布的厚尾特征" class="level3">
 <h3 class="anchored" data-anchor-id="例t分布的厚尾特征">例，t分布的厚尾特征</h3>
 <p>下面是一个例子比较了 <span class="math inline">\(t\)</span> 分布的厚尾特征，随机抽取了标准正态分布和t分布的随机数，绘制直方图。如果不设定随机种子数，因此每次运行结果会略有不同。</p>
-<div id="f789fbad" class="cell" data-execution_count="19">
+<div id="759fea19" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -775,7 +775,7 @@ Figure&nbsp;1: Central limit theorem
 <h3 class="anchored" data-anchor-id="通用函数">通用函数</h3>
 <p>Numpy中许多函数是通用函数(universal functions)，是一种在 ndarray 数据中进行逐元素操作的函数，大多数数学函数属于此类。</p>
 <p>例如 <code>np.cos()</code> 函数：</p>
-<div id="4fd7575e" class="cell" data-execution_count="21">
+<div id="ebabe11b" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.cos(<span class="fl">1.0</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>np.cos(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -783,7 +783,7 @@ Figure&nbsp;1: Central limit theorem
 </div>
 </div>
 <p>例如，我们想计算<span class="math inline">\(\frac{0}{1},\frac{1}{2},\cdots, \frac{4}{5}\)</span>:</p>
-<div id="1f81a113" class="cell" data-execution_count="22">
+<div id="50784c5a" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">5</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>array([0.        , 0.5       , 0.66666667, 0.75      , 0.8       ])</code></pre>
@@ -870,7 +870,7 @@ Table&nbsp;2: Numpy中算术运算子和函数
 <p>考察最大化函数 <span class="math inline">\(f(x,y)\)</span> 在区间 $ [−a,a] $ 上的最大值： <span class="math display">\[
 f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 \]</span> ​ 令<span class="math inline">\(a=3\)</span>。 我们定义一个函数，然后生成数组，计算对应的-值，通过栅格（grid）搜索最大值（等于1）。</p>
-<div id="1a46355a" class="cell" data-execution_count="23">
+<div id="6d3e5319" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -910,7 +910,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <section id="例洛伦茨曲线和基尼系数" class="level3">
 <h3 class="anchored" data-anchor-id="例洛伦茨曲线和基尼系数">例：洛伦茨曲线和基尼系数</h3>
 <p>这个例子里，定义了两个函数，用来计算洛伦茨曲线和基尼系数。</p>
-<div id="29377755" class="cell" data-execution_count="24">
+<div id="9fec3104" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># 载入numpy库</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lorenz_curve(y):</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(y)</span>
@@ -921,7 +921,7 @@ f(x,y)= \frac{cos(x^{2} + y^{2})}{1 + x^2 + y^2}
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    cum_income <span class="op">=</span> s <span class="op">/</span> s[n] <span class="co"># s[n]为最后的值，即所有值的和</span></span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cum_people, cum_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9bf55463" class="cell" data-execution_count="25">
+<div id="beed5348" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">2000</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> np.exp(np.random.randn(n))</span>
@@ -959,7 +959,7 @@ G = \frac{A}{A+B}
 <p>实际应用中常采用的公式为： <span class="math display">\[
 G = \frac{\sum_{i=1}^{n}\sum_{j=1}^{n}\vert x_{i} - x_{j}\vert}{2n^{2}\bar{x}} = \frac{\sum_{i=1}^{n}\sum_{j=1}^{n}\vert x_{i} - x_{j}\vert}{2n^{2}\sum_{i=1}^{n}x_{i}}
 \]</span></p>
-<div id="ed54b481" class="cell" data-execution_count="26">
+<div id="1c530dea" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gini(x):</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(x)</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    x_1 <span class="op">=</span> np.reshape(x, (n, <span class="dv">1</span>))</span>
@@ -967,7 +967,7 @@ G = \frac{\sum_{i=1}^{n}\sum_{j=1}^{n}\vert x_{i} - x_{j}\vert}{2n^{2}\bar{x}} =
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    g_sum <span class="op">=</span> np.<span class="bu">sum</span>(np.<span class="bu">abs</span>(x_1 <span class="op">-</span> x_2)) </span>
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g_sum <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n <span class="op">*</span> np.<span class="bu">sum</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2b6d10dc" class="cell" data-execution_count="27">
+<div id="151b3127" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 模拟对数正态数据</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">5</span></span>
@@ -979,7 +979,7 @@ G = \frac{\sum_{i=1}^{n}\sum_{j=1}^{n}\vert x_{i} - x_{j}\vert}{2n^{2}\bar{x}} =
 <span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> np.exp(mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(n))</span>
 <span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    ginis.append(gini(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7d2ae13f" class="cell" data-execution_count="28">
+<div id="c92df5ea" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>ax.plot(sigmas, ginis,</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>         marker <span class="op">=</span> <span class="st">'o'</span>,label<span class="op">=</span><span class="st">'simulated'</span>, lw <span class="op">=</span> <span class="dv">2</span>)</span>
