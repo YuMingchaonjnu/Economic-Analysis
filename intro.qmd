@@ -104,7 +104,7 @@ Visual Studio Code是由微软推出的免费、开源、跨平台的代码编�
   
 应用时，Visual Studio Code 可以“打开文件”或者 “打开文件夹”将项目所在文件夹处打开。建议以打开文件夹方式，可以比较清楚的概览代码、数据、图形等子文件夹。
   
-### 安装第三方程序包和创建虚拟环境
+### 设置虚拟环境和安装第三方程序包
 
 要安装第三方程序包，基本的方式是通过`pip`命令：
 
@@ -115,12 +115,6 @@ Visual Studio Code是由微软推出的免费、开源、跨平台的代码编�
 - Numpy: `python -m pip install numpy`
 - Pandas: `python -m pip install pandas`
 - Matplotlib: `python -m pip install matplotlib`
-
-建议为单独的项目设置一个Python虚拟环境：
-
-- 创建虚拟环境：在VSC中新建终端，运行：`python -m venv <env_name>`，其中`<env_name>`是你想给虚拟环境其的名称；
-- 激活虚拟环境：Windows系统下使用：`<env_name>Scripts/activate`，macOS下使用：`source <env_name>/bin/activate`
-- 停用虚拟环境： `deactivate`；
 
 更快捷的方式是通过下载记录有程序包名字的requirements.txt文件进行安装：
 
@@ -150,7 +144,8 @@ import random
 
 def lunch():
     """Randomly choose a lunch option and return the result."""
-    lunch_list = ["Rice Bowl", "Ramen", "Salad", "Burger", "Dumplings", "Pizza"]
+    lunch_list = ["Rice Bowl", "Ramen", "Salad",
+                 "Burger", "Dumplings", "Pizza"]
     return random.choice(lunch_list)
 
 if __name__ == "__main__":

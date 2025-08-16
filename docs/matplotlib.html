@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ec321d2d17bac5f70310a65ef785ba48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0508618caa1d256af916c83e0797e277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -311,11 +311,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#图形的构成" id="toc-图形的构成" class="nav-link active" data-scroll-target="#图形的构成"><span class="header-section-number">1</span> 图形的构成</a></li>
-  <li><a href="#绘图一般步骤" id="toc-绘图一般步骤" class="nav-link" data-scroll-target="#绘图一般步骤"><span class="header-section-number">2</span> 绘图一般步骤</a></li>
-  <li><a href="#常用的图形" id="toc-常用的图形" class="nav-link" data-scroll-target="#常用的图形"><span class="header-section-number">3</span> 常用的图形</a></li>
-  <li><a href="#多图和子图" id="toc-多图和子图" class="nav-link" data-scroll-target="#多图和子图"><span class="header-section-number">4</span> 多图和子图</a></li>
-  <li><a href="#应用收益率的几个典型事实" id="toc-应用收益率的几个典型事实" class="nav-link" data-scroll-target="#应用收益率的几个典型事实"><span class="header-section-number">5</span> 应用：收益率的几个典型事实</a></li>
+  <li><a href="#图形的构成" id="toc-图形的构成" class="nav-link active" data-scroll-target="#图形的构成">图形的构成</a></li>
+  <li><a href="#绘图一般步骤" id="toc-绘图一般步骤" class="nav-link" data-scroll-target="#绘图一般步骤">绘图一般步骤</a></li>
+  <li><a href="#常用的图形" id="toc-常用的图形" class="nav-link" data-scroll-target="#常用的图形">常用的图形</a></li>
+  <li><a href="#多图和子图" id="toc-多图和子图" class="nav-link" data-scroll-target="#多图和子图">多图和子图</a></li>
+  <li><a href="#应用收益率的几个典型事实" id="toc-应用收益率的几个典型事实" class="nav-link" data-scroll-target="#应用收益率的几个典型事实">应用：收益率的几个典型事实</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="matplotlib.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -342,8 +342,8 @@ window.Quarto = {
 
 
 <p><a href="https://matplotlib.org/stable/tutorials/index.html">官方使用教程</a>是非常重要的学习来源。</p>
-<section id="图形的构成" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="图形的构成"><span class="header-section-number">1</span> 图形的构成</h2>
+<section id="图形的构成" class="level2">
+<h2 class="anchored" data-anchor-id="图形的构成">图形的构成</h2>
 <p>图形的构成可以参考Matplotlib官方网站上<a href="https://matplotlib.org/stable/gallery/showcase/anatomy.html">Anatomy of a figure</a>的说明：</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -352,7 +352,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>我们用一个例子来说明绘图的过程。下面的全球电影票房数据来自维基百科<a href="https://en.wikipedia.org/wiki/List_of_highest-grossing_films">全球最高電影票房收入列表</a></p>
-<div id="3b0a2342" class="cell" data-execution_count="1">
+<div id="f22d0fa5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_excel(<span class="st">"datasets/highest_gross_films.xlsx"</span>)</span>
@@ -462,24 +462,24 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="绘图一般步骤" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="绘图一般步骤"><span class="header-section-number">2</span> 绘图一般步骤</h2>
+<section id="绘图一般步骤" class="level2">
+<h2 class="anchored" data-anchor-id="绘图一般步骤">绘图一般步骤</h2>
 <p>图形的种类非常多，应用Python绘图时可以大致分为几个步骤。</p>
-<section id="载入必要的库" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="载入必要的库"><span class="header-section-number">2.1</span> 载入必要的库</h3>
+<section id="载入必要的库" class="level3">
+<h3 class="anchored" data-anchor-id="载入必要的库">载入必要的库</h3>
 <p>除了基本的绘图工具<a href="https://matplotlib.org/">Matplotlib</a>外，<a href="https://seaborn.pydata.org/">Seaborn</a>库也经常使用，在应用之前均应载入。</p>
-<div id="ab878008" class="cell" data-execution_count="2">
+<div id="41fbf7e3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>另外，Matplotlib 默认情况下不支持中文字符。如果你直接在图表标题、坐标轴标签或图例中使用中文，很可能会看到方框乱码或者问号。</p>
-<div id="2a83c091" class="cell" data-execution_count="3">
+<div id="21547ed7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>] <span class="op">=</span> [<span class="st">'SimHei'</span>, <span class="st">'Heiti TC'</span>, <span class="st">'WenQuanYi Zen Hei'</span>, <span class="st">'Arial'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"axes.unicode_minus"</span>] <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>现在有了图形轴（Axes）的实例，就可以在上面绘制图形了。例如绘制一幅柱形图，使用<code>.bar()</code>方法：</p>
-<div id="f92c5826" class="cell" data-execution_count="4">
+<div id="7380a173" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax.bar(x<span class="op">=</span>df[<span class="st">'影片名称'</span>], height<span class="op">=</span>df[<span class="st">'全球票房'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -492,7 +492,7 @@ window.Quarto = {
 </div>
 </div>
 <p>显然，图形还有改善的空间。比如横轴的标签，即电影名字挤在一起看不清楚，也可以设置纵轴标签、图形标题等：</p>
-<div id="2775c147" class="cell" data-execution_count="5">
+<div id="92290e5d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ax.bar(x<span class="op">=</span>df[<span class="st">'影片名称'</span>], height<span class="op">=</span>df[<span class="st">'全球票房'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ax.set_yscale(<span class="st">"log"</span>)</span>
@@ -510,7 +510,7 @@ window.Quarto = {
 </div>
 </div>
 <p>横向柱形图</p>
-<div id="0c825172" class="cell" data-execution_count="6">
+<div id="c4f47da7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ax.barh(y <span class="op">=</span> df[<span class="st">'影片名称'</span>], width<span class="op">=</span>df[<span class="st">'全球票房'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ax.set_xscale(<span class="st">"log"</span>)</span>
@@ -529,14 +529,14 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="常用的图形" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="常用的图形"><span class="header-section-number">3</span> 常用的图形</h2>
-<section id="直方图" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="直方图"><span class="header-section-number">3.1</span> 直方图</h3>
+<section id="常用的图形" class="level2">
+<h2 class="anchored" data-anchor-id="常用的图形">常用的图形</h2>
+<section id="直方图" class="level3">
+<h3 class="anchored" data-anchor-id="直方图">直方图</h3>
 <p>直方图可以被看作是估计概率密度函数（PDF）的一种基本而直观的方法，但严格来说，它估计的是概率质量函数（PMF），尤其是在处理离散数据时。当用于连续数据时，它更像是PDF的一个粗略估计。</p>
 <p>直方图将数据分成一系列不重叠的“箱子”（bins）。对于每个箱子，它统计落入该箱子中的数据点的数量，并以一个矩形柱的高度来表示这个数量，当然也可以用每个柱子的高度表示该箱子中数据点所占的比例或频率。</p>
 <p>下面的例子自雅虎财经网站下载几支股票的月度（后复权调整）收盘价数据，然后使用<code>df.pct_change()</code>函数计算了简单收益率。</p>
-<div id="de183126" class="cell" data-execution_count="7">
+<div id="b59ff9d1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -559,7 +559,7 @@ window.Quarto = {
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> stocks_price_us.pct_change()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>例如，绘制苹果公司股票收益率的直方图：</p>
-<div id="2684cb7b" class="cell" data-execution_count="8">
+<div id="0508fa3f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ax.hist(x<span class="op">=</span>returns[<span class="st">'AAPL'</span>], bins<span class="op">=</span><span class="dv">20</span>, </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"skyblue"</span>, edgecolor<span class="op">=</span><span class="st">"black"</span>) </span>
@@ -579,7 +579,7 @@ window.Quarto = {
 </div>
 <p>如果纵轴希望表示为概率密度，加上参数<code>density=True</code>。</p>
 <p>下载的数据包含8家7家企业以及标准普尔500指数（GSPC），下面将收益率为子图绘制直方图。为了可比，横轴使用了<code>sharex=True</code>参数：</p>
-<div id="e9df1869" class="cell" data-execution_count="9">
+<div id="a7cbe36b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                        ncols<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                        figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>),</span>
@@ -606,15 +606,15 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="核密度图" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="核密度图"><span class="header-section-number">3.2</span> 核密度图</h3>
+<section id="核密度图" class="level3">
+<h3 class="anchored" data-anchor-id="核密度图">核密度图</h3>
 <p>对连续数据来讲，估计概率密度函数的更好的方法是核密度函数估计（Kernel Density Estimator，KDE）。</p>
 <p>设 <span class="math inline">\((x_{1}, x_{2},\cdots ,x_{n})\)</span> 为从单变量分布中抽取的独立同分布样本，给定点 <span class="math inline">\(x\)</span> 有未知的概率密度 <span class="math inline">\(f(x)\)</span>，我们需要估计观察到的值的概率密度函数 <span class="math inline">\(\hat{f}(x)\)</span> 。</p>
 <p>在KDE估计过程中处于核心地位的是<strong>核函数</strong>，我们逐步来看应用的过程。</p>
 <p>假设有一个观测值，例如 <span class="math inline">\(x = 0\)</span>，我们要估计观测值服从的概率密度函数，最合理的估计是使用一个PDF在该点取峰值，向两侧衰减。例如函数 <span class="math inline">\(= \exp(-x^{2})\)</span> 满足这个条件。但是我们知道，PDF下面积应为1，因此进行适当转换以满足该条件，记为： <span class="math display">\[
 K(x) = \frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})
 \]</span></p>
-<div id="954d0f14" class="cell" data-execution_count="10">
+<div id="4311ff54" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -657,7 +657,7 @@ K(x - x_{i})
 <p>首先假设观测值只包含一个点，<span class="math inline">\(x_{1} = 1.33\)</span>，我们选择一个带宽，比如 <span class="math inline">\(h=0.3\)</span>，估计的PDF为： <span class="math display">\[
 \frac{1}{h}K(\frac{x - x_{1}}{h})
 \]</span></p>
-<div id="68016509" class="cell" data-execution_count="11">
+<div id="4636306c" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="fl">1.5</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.3</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -690,7 +690,7 @@ f(x) = \frac{1}{2h}\left[K(\frac{x-x_{1}}{h}) + K(\frac{x-x_{2}}{h}) \right] = \
 <li>对所有PDF值进行求和；</li>
 <li></li>
 </ul>
-<div id="52aec2b5" class="cell" data-execution_count="12">
+<div id="5e38b97c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="fl">1.5</span>, <span class="fl">0.5</span>])</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.3</span></span>
@@ -719,7 +719,7 @@ f(x) = \frac{1}{2h}\left[K(\frac{x-x_{1}}{h}) + K(\frac{x-x_{2}}{h}) \right] = \
 <p><a id="equ-kernel-"></a> <span class="math display">\[
 f(x) = \frac{1}{nh}\sum_{i=1}^{n}K(\frac{x-x_{i}}{h}) \tag{5.2}
 \]</span></p>
-<div id="10c05053" class="cell" data-execution_count="13">
+<div id="24422b3f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
@@ -764,7 +764,7 @@ h\approx 1.06\cdot\hat{\sigma}n^{-1/5}
 h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 \]</span></p></li>
 </ul>
-<div id="9f80bcbf" class="cell" data-execution_count="14">
+<div id="68b97e36" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([<span class="fl">1.5</span>, <span class="fl">0.5</span>,<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.23</span>])</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
@@ -788,7 +788,7 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 <p>可以取不同带宽看其影响。注意这里<code>bw_adjust</code>是作为一个系数乘以<code>scott</code>方法得到的带宽值，详见说明文档：</p>
-<div id="620cdccf" class="cell" data-execution_count="15">
+<div id="856fb979" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>bw_adjust_values <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.8</span>, <span class="fl">1.4</span>, <span class="fl">2.0</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bw <span class="kw">in</span> bw_adjust_values:</span>
@@ -810,7 +810,7 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 <p>我们可以定义一个函数计算soctt方法的带宽值，然后用自定义的函数来绘制KDE图：</p>
-<div id="7d5cbc50" class="cell" data-execution_count="16">
+<div id="3fb75956" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scott_method(x):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> <span class="fl">1.06</span><span class="op">*</span>x.std()<span class="op">*</span><span class="bu">len</span>(x)<span class="op">**</span>(<span class="op">-</span><span class="fl">0.2</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h</span>
@@ -828,10 +828,10 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 <p>除了正态核函数以外，还有其他核函数，但总体来讲核函数的影响没有带宽影响的差异大，Seaborn的<code>kdeplot</code>方法甚至取消了原本可以选择的设定。<a href="https://scikit-learn.org/stable/modules/density.html">Scikit-Learn Kernel Density</a> 算法提供了6种不同的核函数。另外，Pandas库的<code>s.plot.kde()</code>方法也可以绘制核密度图。</p>
 </section>
-<section id="热图" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="热图"><span class="header-section-number">3.3</span> 热图</h3>
+<section id="热图" class="level3">
+<h3 class="anchored" data-anchor-id="热图">热图</h3>
 <p>热图是一种数据可视化技术，用颜色深浅来表示数据集中不同数值的大小或密集程度。</p>
-<div id="66d8fffb" class="cell" data-execution_count="17">
+<div id="30dd1788" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> returns.corr().<span class="bu">round</span>(<span class="dv">2</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
@@ -848,17 +848,17 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="箱形图" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="箱形图"><span class="header-section-number">3.4</span> 箱形图</h3>
+<section id="箱形图" class="level3">
+<h3 class="anchored" data-anchor-id="箱形图">箱形图</h3>
 </section>
-<section id="散点图" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="散点图"><span class="header-section-number">3.5</span> 散点图</h3>
+<section id="散点图" class="level3">
+<h3 class="anchored" data-anchor-id="散点图">散点图</h3>
 </section>
 </section>
-<section id="多图和子图" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="多图和子图"><span class="header-section-number">4</span> 多图和子图</h2>
+<section id="多图和子图" class="level2">
+<h2 class="anchored" data-anchor-id="多图和子图">多图和子图</h2>
 <p>当有多幅图形绘制时，可以放在一张图形上或用子图排列。 ### 多图</p>
-<div id="f6e12fda" class="cell" data-execution_count="18">
+<div id="0985171f" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 正态分布</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
@@ -881,10 +881,10 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </div>
-<section id="子图" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="子图"><span class="header-section-number">4.1</span> 子图</h3>
+<section id="子图" class="level3">
+<h3 class="anchored" data-anchor-id="子图">子图</h3>
 <p>下面的例子绘制了4个子图，按照 <span class="math inline">\(2\times 2\)</span> 的方式排列<code>nrows=2, ncols=2</code>：</p>
-<div id="77e37360" class="cell" data-execution_count="19">
+<div id="2b3d5fce" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>),sharex<span class="op">=</span><span class="va">True</span>,sharey<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
@@ -904,9 +904,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="图形风格" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="图形风格"><span class="header-section-number">4.2</span> 图形风格</h3>
-<div id="383dd1f8" class="cell" data-execution_count="20">
+<section id="图形风格" class="level3">
+<h3 class="anchored" data-anchor-id="图形风格">图形风格</h3>
+<div id="3e4591dc" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plt.style.available</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>['Solarize_Light2',
@@ -940,7 +940,7 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
  'tableau-colorblind10']</code></pre>
 </div>
 </div>
-<div id="8d482e5b" class="cell" data-execution_count="21">
+<div id="82a4ab38" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">"ggplot"</span>)</span>
@@ -967,10 +967,10 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </section>
 </section>
-<section id="应用收益率的几个典型事实" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="应用收益率的几个典型事实"><span class="header-section-number">5</span> 应用：收益率的几个典型事实</h2>
+<section id="应用收益率的几个典型事实" class="level2">
+<h2 class="anchored" data-anchor-id="应用收益率的几个典型事实">应用：收益率的几个典型事实</h2>
 <p>这部分内容，</p>
-<div id="0fb65eb4" class="cell" data-execution_count="22">
+<div id="a968758f" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -980,7 +980,7 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>然后下载或读取数据：</p>
-<div id="16479806" class="cell" data-execution_count="23">
+<div id="f4075952" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df = yf.download(['^GSPC', '^VIX'], </span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                 start='1990-01-01',</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                 auto_adjust=True,                </span></span>
@@ -995,9 +995,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'log_ret'</span>] <span class="op">=</span> np.log(df[<span class="st">'SP500'</span>]<span class="op">/</span>df[<span class="st">'SP500'</span>].shift(<span class="dv">1</span>))</span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="厚尾" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="厚尾"><span class="header-section-number">5.1</span> 厚尾</h3>
-<div id="5f7a5c8f" class="cell" data-execution_count="24">
+<section id="厚尾" class="level3">
+<h3 class="anchored" data-anchor-id="厚尾">厚尾</h3>
+<div id="61339a25" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(df[<span class="st">'log_ret'</span>], fill<span class="op">=</span><span class="va">False</span>,label<span class="op">=</span><span class="st">'kernel density'</span>,ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> stats.norm.fit(df[<span class="st">'log_ret'</span>])</span>
@@ -1017,9 +1017,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="高斯性质" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="高斯性质"><span class="header-section-number">5.2</span> 高斯性质</h3>
-<div id="541b78a0" class="cell" data-execution_count="25">
+<section id="高斯性质" class="level3">
+<h3 class="anchored" data-anchor-id="高斯性质">高斯性质</h3>
+<div id="b7e2287b" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>periods <span class="op">=</span> [<span class="st">'D'</span>,<span class="st">'W'</span>,<span class="st">'ME'</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>frequency <span class="op">=</span> [<span class="st">'daily'</span>,<span class="st">'weekly'</span>,<span class="st">'monthly'</span>]</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1041,9 +1041,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="波动集聚性" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="波动集聚性"><span class="header-section-number">5.3</span> 波动集聚性</h3>
-<div id="605de92b" class="cell" data-execution_count="26">
+<section id="波动集聚性" class="level3">
+<h3 class="anchored" data-anchor-id="波动集聚性">波动集聚性</h3>
+<div id="a38dd392" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">300</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>ax.plot(df[<span class="st">'log_ret'</span>]<span class="op">*</span><span class="dv">100</span>,</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'SP500 Log Return'</span>)</span>
@@ -1060,9 +1060,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="自相关" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="自相关"><span class="header-section-number">5.4</span> 自相关</h3>
-<div id="43479657" class="cell" data-execution_count="27">
+<section id="自相关" class="level3">
+<h3 class="anchored" data-anchor-id="自相关">自相关</h3>
+<div id="63ffbca0" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.tsaplots <span class="im">import</span> plot_acf</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>periods <span class="op">=</span> [<span class="st">'D'</span>,<span class="st">'W'</span>,<span class="st">'ME'</span>]</span>
@@ -1092,9 +1092,9 @@ h = 0.9\cdot \min(\hat{\sigma}, IQR/1.35)n^{-1/5}
 </div>
 </div>
 </section>
-<section id="杠杆效应" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="杠杆效应"><span class="header-section-number">5.5</span> 杠杆效应</h3>
-<div id="0d5957f7" class="cell" data-execution_count="28">
+<section id="杠杆效应" class="level3">
+<h3 class="anchored" data-anchor-id="杠杆效应">杠杆效应</h3>
+<div id="09fc09a6" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'datasets/sp500_vix.csv'</span>,                </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>                header<span class="op">=</span><span class="dv">0</span>,</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                index_col<span class="op">=</span><span class="dv">0</span>,</span>

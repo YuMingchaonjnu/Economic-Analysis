@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ec321d2d17bac5f70310a65ef785ba48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0508618caa1d256af916c83e0797e277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -308,9 +308,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#建立计量模型" id="toc-建立计量模型" class="nav-link active" data-scroll-target="#建立计量模型"><span class="header-section-number">1</span> 建立计量模型</a></li>
-  <li><a href="#ols-估计量" id="toc-ols-估计量" class="nav-link" data-scroll-target="#ols-估计量"><span class="header-section-number">2</span> OLS 估计量</a></li>
-  <li><a href="#iv-估计" id="toc-iv-估计" class="nav-link" data-scroll-target="#iv-估计"><span class="header-section-number">3</span> IV 估计</a></li>
+  <li><a href="#建立计量模型" id="toc-建立计量模型" class="nav-link active" data-scroll-target="#建立计量模型">建立计量模型</a></li>
+  <li><a href="#ols-估计量" id="toc-ols-估计量" class="nav-link" data-scroll-target="#ols-估计量">OLS 估计量</a></li>
+  <li><a href="#iv-估计" id="toc-iv-估计" class="nav-link" data-scroll-target="#iv-估计">IV 估计</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="regression.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -336,16 +336,16 @@ window.Quarto = {
 </header>
 
 
-<section id="建立计量模型" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="建立计量模型"><span class="header-section-number">1</span> 建立计量模型</h2>
+<section id="建立计量模型" class="level2">
+<h2 class="anchored" data-anchor-id="建立计量模型">建立计量模型</h2>
 <p>作者认为，一个国家的生活水平取决于该国与其他国家的国际贸易、该国的国内贸易以及其他因素。从一个简单的计量模型出发： <span class="math display">\[
 \ln Y_{i} = \alpha + \beta T_{i} + \gamma W_{i} + \epsilon_{i}
 \]</span></p>
 <p>其中，<strong>被解释变量</strong>是人均收入 <span class="math inline">\(Y_{i}\)</span> 的对数；<strong>解释变量</strong> <span class="math inline">\(T_{i}\)</span> 表示国际贸易，<span class="math inline">\(W_{i}\)</span> 表示国内贸易，<span class="math inline">\(\epsilon_{i}\)</span> 为<strong>误差项</strong>，表示其他对收入影响的因素。</p>
 <p>预期国际贸易和</p>
-<section id="最小二乘回归方法" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="最小二乘回归方法"><span class="header-section-number">1.1</span> 最小二乘回归方法</h3>
-<div id="7cdef378" class="cell" data-execution_count="1">
+<section id="最小二乘回归方法" class="level3">
+<h3 class="anchored" data-anchor-id="最小二乘回归方法">最小二乘回归方法</h3>
+<div id="6d02a067" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -356,9 +356,9 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="ols-估计量" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="ols-估计量"><span class="header-section-number">2</span> OLS 估计量</h2>
-<div id="c4a9ca2f" class="cell" data-execution_count="2">
+<section id="ols-估计量" class="level2">
+<h2 class="anchored" data-anchor-id="ols-估计量">OLS 估计量</h2>
+<div id="04a62312" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">20</span>)</span>
@@ -395,9 +395,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="okuns-law" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="okuns-law"><span class="header-section-number">2.1</span> Okun’s law</h3>
-<div id="03495bc4" class="cell" data-execution_count="3">
+<section id="okuns-law" class="level3">
+<h3 class="anchored" data-anchor-id="okuns-law">Okun’s law</h3>
+<div id="e3e831b5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> <span class="st">'1947-01-01'</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> <span class="st">'2019-12-31'</span></span>
@@ -414,18 +414,14 @@ window.Quarto = {
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(df[<span class="st">'gdp_growth_rate'</span>], sm.add_constant(df[<span class="st">'unemp_changed'</span>])).fit()</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_43592\1037386578.py:6: FutureWarning: 'Q' is deprecated and will be removed in a future version, please use 'QE' instead.
-  df = data.resample('Q').mean()</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:        gdp_growth_rate   R-squared:                       0.466
 Model:                            OLS   Adj. R-squared:                  0.464
 Method:                 Least Squares   F-statistic:                     248.4
-Date:                Wed, 13 Aug 2025   Prob (F-statistic):           1.11e-40
-Time:                        19:02:34   Log-Likelihood:                -295.55
+Date:                Sat, 16 Aug 2025   Prob (F-statistic):           1.11e-40
+Time:                        18:31:37   Log-Likelihood:                -295.55
 No. Observations:                 287   AIC:                             595.1
 Df Residuals:                     285   BIC:                             602.4
 Df Model:                           1                                         
@@ -445,6 +441,10 @@ Kurtosis:                       3.729   Cond. No.                         2.63
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\admin\AppData\Local\Temp\ipykernel_4592\1037386578.py:6: FutureWarning: 'Q' is deprecated and will be removed in a future version, please use 'QE' instead.
+  df = data.resample('Q').mean()</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -454,9 +454,9 @@ Notes:
 </div>
 </div>
 </section>
-<section id="无偏性" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="无偏性"><span class="header-section-number">2.2</span> 无偏性</h3>
-<div id="c8cfccae" class="cell" data-execution_count="4">
+<section id="无偏性" class="level3">
+<h3 class="anchored" data-anchor-id="无偏性">无偏性</h3>
+<div id="b039b642" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">12345</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>true_intercept <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>true_slope <span class="op">=</span> <span class="fl">3.0</span></span>
@@ -495,9 +495,9 @@ Notes:
 </div>
 </div>
 </section>
-<section id="置信区间" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="置信区间"><span class="header-section-number">2.3</span> 置信区间</h3>
-<div id="f32ed6f8" class="cell" data-execution_count="5">
+<section id="置信区间" class="level3">
+<h3 class="anchored" data-anchor-id="置信区间">置信区间</h3>
+<div id="1c438fca" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### ci</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lower, upper <span class="op">=</span> (<span class="fl">1.0941</span><span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>, <span class="fl">1.0941</span><span class="op">+</span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.029</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>((lower, upper),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,22 +506,22 @@ Notes:
 </div>
 </div>
 </section>
-<section id="联合显著性检验" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="联合显著性检验"><span class="header-section-number">2.4</span> 联合显著性检验</h3>
+<section id="联合显著性检验" class="level3">
+<h3 class="anchored" data-anchor-id="联合显著性检验">联合显著性检验</h3>
 </section>
-<section id="解释回归结果" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="解释回归结果"><span class="header-section-number">2.5</span> 解释回归结果</h3>
+<section id="解释回归结果" class="level3">
+<h3 class="anchored" data-anchor-id="解释回归结果">解释回归结果</h3>
 </section>
-<section id="函数形式变化" class="level3" data-number="2.6">
-<h3 data-number="2.6" class="anchored" data-anchor-id="函数形式变化"><span class="header-section-number">2.6</span> 函数形式变化</h3>
+<section id="函数形式变化" class="level3">
+<h3 class="anchored" data-anchor-id="函数形式变化">函数形式变化</h3>
 </section>
-<section id="回归诊断分析" class="level3" data-number="2.7">
-<h3 data-number="2.7" class="anchored" data-anchor-id="回归诊断分析"><span class="header-section-number">2.7</span> 回归诊断分析</h3>
+<section id="回归诊断分析" class="level3">
+<h3 class="anchored" data-anchor-id="回归诊断分析">回归诊断分析</h3>
 </section>
-<section id="应用mankiw-romer-weil-1992" class="level3" data-number="2.8">
-<h3 data-number="2.8" class="anchored" data-anchor-id="应用mankiw-romer-weil-1992"><span class="header-section-number">2.8</span> 应用：Mankiw, Romer, Weil (1992)</h3>
+<section id="应用mankiw-romer-weil-1992" class="level3">
+<h3 class="anchored" data-anchor-id="应用mankiw-romer-weil-1992">应用：Mankiw, Romer, Weil (1992)</h3>
 <p>这一部分以@mankiw1992contribution 为例，阐释最小二乘法的应用。</p>
-<div id="32294449" class="cell" data-execution_count="6">
+<div id="cbaada80" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -647,10 +647,10 @@ Notes:
 </div>
 </section>
 </section>
-<section id="iv-估计" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="iv-估计"><span class="header-section-number">3</span> IV 估计</h2>
-<section id="应用开放与增长" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="应用开放与增长"><span class="header-section-number">3.1</span> 应用：开放与增长</h3>
+<section id="iv-估计" class="level2">
+<h2 class="anchored" data-anchor-id="iv-估计">IV 估计</h2>
+<section id="应用开放与增长" class="level3">
+<h3 class="anchored" data-anchor-id="应用开放与增长">应用：开放与增长</h3>
 <p>这一部分中，用 <span class="citation" data-cites="frankel1999">Frankel and Romer (<a href="#ref-frankel1999" role="doc-biblioref">1999</a>)</span> 的经典论文，阐释OLS和IV估计的方法，包括：</p>
 <ul>
 <li>如何从理论观点中确定一个统计模型；</li>
@@ -662,7 +662,7 @@ Notes:
 <li>如何解释模型整体拟合度。</li>
 </ul>
 </section>
-<section id="应用制度与增长" class="level3" data-number="3.2">
+<section id="应用制度与增长" class="level3">
 
 
 
@@ -670,7 +670,7 @@ Notes:
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">3.2 应用：制度与增长</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">应用：制度与增长</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-frankel1999" class="csl-entry" role="listitem">
 Frankel, Jeffrey A., and David H. Romer. 1999. <span>“Does Trade Cause Growth?”</span> <em>American Economic Review</em> 89 (3): 379–99. <a href="https://doi.org/10.1257/aer.89.3.379">https://doi.org/10.1257/aer.89.3.379</a>.
 </div>

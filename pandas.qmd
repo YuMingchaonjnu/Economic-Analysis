@@ -1,72 +1,99 @@
-# Pandas 及应用
+# Pandas 基础应用
 
-Pandas是数据分析最常用的包:
+Pandas是数据分析最常用的包，从基本的数据处理到更复杂的统计功能，如 statsmodels 和 scikit-learn库，都是建立在pandas基础上的。
 
-- Pandas 定义了处理数据的结构；
-- 数据处理：读取、调整指数、日期和时间序列、排序、分组、处理缺失值；
-- 一些更复杂的统计功能，如 statsmodels 和 scikit-learn，也是建立在pandas基础上。
+这一部分应用[Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/)介绍应用Pandas处理原始数据的一些常用方法。该数据集当前版本为PWT 10.01，包含183个国家1950-2019年的收入、产出、投入和生产率等指标，详细介绍可参见[User Guide to PWT 10.0 data files](https://www.rug.nl/ggdc/docs/pwt100-user-guide-to-data-files.pdf)。数据背后的方法、理论及使用建议，可参见 @feenstra2015next。
 
-## Pandas 序列
-
-
-
-Pandas中两类数据，Series 和 DataFrame；
-
-Series 基于Numpy数组，支持许多类似运算；
-
-Series 可以看作一“列”数据；
-
-DataFrame 可以看作储存相应列数据的二维对象；类似Excel表单；
-
-Series一些方法
+同样，在进行进一步操作之前，先载入必要的库：
 
 ```{python}
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams["figure.figsize"] = (8, 6)
 
-np.random.seed(123)
-s = pd.Series(np.random.randn(100), name="daily return")
-s.plot();
-np.abs(s)
-s.describe()
+import wbgapi as wb
 ```
 
-### Pandas数据框
+## 载入数据
 
 
-DataFrames 是几列数据组成，每一列对应一个变量；
+### 创建DataFrame
 
-用来方便的处理行和列组织的数据；索引（index）对应行，变量列名（columns）对应列；
-
-可以读取各类软件格式存储数据，csv, excel, stata, html, json,sql等；
-
-
-## 应用：Penn World Table
-
-这一部分应用[Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/)介绍对原始数据的一些常见处理方法。该数据集当前版本为PWT 10.01，包含183个国家1950-2019年的收入、产出、投入和生产率等指标，详细介绍可参见[User Guide to PWT 10.0 data files](https://www.rug.nl/ggdc/docs/pwt100-user-guide-to-data-files.pdf)。数据背后的方法、理论及使用建议，可参见 @feenstra2015next。
-
-网站提供了Stata和Excel格式数据，这里我们下载了后者。数据本身是一个面板数据（Panel Data），“国家 - 年” 唯一识别一个观测值。我们从截面数据入手先只保留2019年数据， 然后再看更复杂的情况。
-
-### 导入数据
-
-假设数据保存在当前路径的datasets子文件中：
+可以由数组、列表、字典、序列等创建数据框。例如，使用Numpy生成两列服从正态分布的随机数：
 
 ```{python}
-import pandas as pd
+X = np.random.normal(loc=1, scale=2, size=(100, 2))
+df = pd.DataFrame(data=X,             
+             columns=['X1', 'X2'])
+df.head()
+```
+
+下面来看字典的例子。定义字典常采用两种方式:
+
+- **面向列的字典**，字典的键代表表格的列名，而每个值是一个包含该列所有数据的列表。当使用 `pd.DataFrame(data)` 创建 DataFrame 时，会直接将这些键作为列名，值作为列数据：
+```{python}
+data = {
+    '地区': ['江苏省', '浙江省', '上海市'],
+    '人口（万人）': [8526, 6627, 2487],
+    '人均国内生产总值（元）': [150487, 125043, 19032]
+}
+pd.DataFrame(data)
+```
+
+- 面向行的字典，将每一行数据定义为一个独立的字典，然后将这些字典放入一个列表中。每个字典的键是列名，值是该行对应的数据。
+```{python}
+data = [
+    {'地区': '江苏省', '人口（万人）': 8526, '人均国内生产总值（元）': 150487},
+    {'地区': '浙江省', '人口（万人）': 6627, '人均国内生产总值（元）': 125043},
+    {'地区': '上海市', '人口（万人）': 2487, '人均国内生产总值（元）': 19032}
+]
+pd.DataFrame(data)
+```
+
+### 读取数据 {#sec-reading_data}
+
+Pandas提供了广泛的导入数据的命令，当前主要软件存储格式的文件，csv, excel, stata, html, json,sql等，几乎都可以识别。
+网站提供了Stata和Excel格式数据，假设数据保存在当前路径的datasets子文件中。Excel格式数据使用`pd.read_excel()`函数读取数据，有多个表单需要用参数`sheet_name`指明表单名称：
+
+```{python}
 pwt = pd.read_excel(io = "datasets/pwt1001.xlsx",
                 header=0,                
                 sheet_name="Data")
-# 保留2019年数据
-pwt2019 = pwt[pwt['year'] == 2019].copy().drop(labels='cor_exp',axis=1)
 ```
 
-注意其中的几个参数，`io`是文件路径；`header`表明列标题行，这里是第一行；`sheet_name`是数据所在表单名；将载入的数据赋值给pwt数据框。我们只保留2019年的观测值，变量`cor_exp`在这一年全部为缺失值，这里直接删除了。
+注意其中的几个参数，`io`是文件路径；`header`表明列标题行，这里是第一行；`sheet_name`是数据所在表单名；将载入的数据赋值给pwt数据框。
 
-先为`pwt2019`数据框设置索引变量，这里使用国家名代码变量（countrycode）：
+如果下载了Stata格式，使用`pd.read_stata()`函数读取数据：
+```{python}
+pwt = pd.read_stata(filepath_or_buffer="datasets/pwt1001.dta")
+```
+
+Pandas中的Series 基于Numpy数组，支持许多类似运算，可以看作一“列”数据；
+
+```{python}
+pop = pwt['pop']
+type(pop)
+```
+
+序列与Numpy数组一样有许多方法运算，读者可以参阅[pandas.Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html)。数据处理中主要对象是DataFrame，类似Excel表单每一列对应一个变量。索引（index）对应行，变量列名（columns）对应列。
+
+Penn World Table 数据本身是一个面板数据（Panel Data），“国家 - 年” 唯一识别一个观测值。我们从截面数据入手先只保留2019年数据，然后再看多索引的情况。这里`.copy()`拷贝了原数据生成一个新的数据框，这样即使改变数据也不影响初始的数据框。另外，变量`cor_exp`在2019年全部为缺失值，这里直接删除了。
+
+```{python}
+pwt2019 = pwt[pwt['year'] == 2019].copy().drop(labels='cor_exp', axis=1)
+```
+
+## Pandas的基本操作
+
+### 设置索引
+
+先为`pwt2019`数据框设置索引(index)变量，这里使用国家名代码变量（countrycode），`inplace=True`选项原地改变数据框，不需要另外赋值：
 ```{python}
 pwt2019.set_index('countrycode', inplace=True)
 ```
+
+### 概览数据
 
 可以`df.info()`概率数据集，或者使用`df.head()`或`df.tail()`查看头部和尾部观测值：
 ```{python}
@@ -83,33 +110,39 @@ print(pwt2019.shape)
 print(pwt2019.columns)
 ```
 
+`df.describe()`函数报告数值型变量基本的描述统计量，如观测值数、最小/大值等：
+```{python}
+pwt2019.describe()
+```
+
 ### 选择观测值和变量
 
-应用中经常对某些观测值或特定子集进行操作，因此很重要的一步是选择观测值和变量。
+应用中经常需要对某些观测值或特定子样本进行操作，就需要选择观测值和变量。
 
-最基本的方法可以通过Python数组的切片（slicing）方式选择特定的**行**。例如，选择第3至5个观测值：
+选择特定的**行**，在Python中最基本的方法是采用数组切片（slicing）方式。例如，选择第3至5个观测值，注意索引对应的是`[2:5]`：
 
 ```{python}
 pwt2019[2:5]
 ```
 
-要选择**列**，可以用包含列名字的列表：
+要选择**列**，可以用包含列名字的列表指定：
 ```{python}
 vars_selected = ['country', 'rgdpe', 'rgdpo', 'pop', 'emp', 'cgdpe', 'cgdpo', 'ctfp' ]
-df = pwt2019[vars_selected]
+pwt2019_sub = pwt2019[vars_selected]
+pwt2019_sub.head()
 ```
 
-#### `.loc`方法
+### `.loc`方法
 
-`.loc` 是基于 标签（label-based） 的数据选择方法。这意味着你使用行和列的实际标签名来选择数据，而不是它们的整数位置。
+`.loc` 是基于标签（label-based） 的数据选择方法。这意味着你使用行和列的实际标签名来选择数据，而不是它们的整数位置。
 
-例如，要选择金砖国家（BRICKS）的观测值：
+在之前我们将ISO国家代码设置位索引，因此选择列时可以用索引标签进行。例如，要选择金砖国家（BRICKS）的观测值：
 ```{python}
 bricks = ['CHN', 'BRA', 'RUS', 'IND', 'ZAF']
 pwt2019.loc[bricks]
 ```
 
-或者选择列：
+或者选择列指定列标签（名），效果与不使用`.loc()`只使用变量名效果一样。
 
 ```{python}
 variables = ['country', 'rgdpe', 'pop']
@@ -122,31 +155,41 @@ pwt2019.loc[:, variables]
 pwt2019.loc[bricks, variables]
 ```
 
-#### `.iloc`方法
-
-相应的，`.iloc` 是基于整数位置（integer-location based）的，使用行和列的整数位置（从 0 开始）来选择数据。例如：
+等价于
 ```{python}
-# 选择第2行数据（索引位置为1）
+pwt2019.loc[bricks][variables]
+```
+
+### `.iloc`方法
+
+相应的，`.iloc` 是使用行和列的整数位置（从 0 开始）来选择数据。这里需要注意Python中索引位置，进行切片（slicing）操作时，语法类似 `[start:end]`，要注意：
+
+- `start`：切片的起始索引，对应的元素会被包含。
+- `end`：切片的结束索引，对应的元素不会被包含。例如：
+
+选择第2行数据（索引位置为1），结果得到一个序列:
+```{python}
 pwt2019.iloc[1]
-# 选择第1行（索引为0）、第3行（索引为2）和第5行（索引为4）
+```
+
+选择第1行（索引为0）、第3行（索引为2）和第5行（索引为4）
+```{python}
 pwt2019.iloc[[0, 2, 4]]
-# 选择前5行、第4至第6列观测值
+```
+
+选择前5行、第4至第6列观测值
+```{python}
 pwt2019.iloc[:5, 3:6]
 ```
 
-这里需要注意Python中索引位置。Python中进行切片（slicing）操作时，语法通常类似 `[start:end]`，要注意：
-
-- `start`：切片的起始索引，对应的元素会被包含。
-- `end`：切片的结束索引，对应的元素不会被包含。
-  
-#### 根据条件筛选
+### 根据条件筛选
 
 除了根据索引或位置选择数据外，也可以利用条件来筛选观测值。例如，根据人口变量（`pop`，单位：百万）选择2019年总人口超过2亿的观测值：
 ```{python}
 pwt2019[pwt2019['pop'] >= 200]
 ```
 
-注意，`pwt2019['pop'] >= 200` 的结果是一列布林值，然后`pwt2019[]`选择返回取值为`True`的观测值。
+注意，条件`pwt2019['pop'] >= 200` 的结果是一列布林值，然后`pwt2019[]`选择返回取值为`True`的观测值。
 
 再例如，下面的代码包含了两个条件：
 
@@ -158,8 +201,7 @@ pwt2019[pwt2019['pop'] >= 200]
 BRICKS = ['China','Brazil',  ' Russian Federation', 'India', 'South Africa']
 #
 pwt2019[(pwt2019['country'].isin(BRICKS)) & (pwt2019['pop'] > 1000)]
-```
- 
+``` 
 
 更复杂的情况，可以在条件语句中加入数学表达式。例如，下面的代码筛选了人均实际GDP超过2万美元和人口超过5000万的国家的观测值，这里人均实际GDP是购买力平价调整后支出法衡量的实际GDP与人口的比值：
 
@@ -167,23 +209,29 @@ pwt2019[(pwt2019['country'].isin(BRICKS)) & (pwt2019['pop'] > 1000)]
 pwt2019[(pwt2019['rgdpe']/pwt2019['pop'] > 20000) & (pwt2019['pop'] > 50)]
 ```
 
-### apply 方法
+**注意**，当用 Pandas 进行数据筛选时，需要使用 `&`(`|`) 而不是 `and`(`or`) 来连接多个条件。
+
+`&` 和 `|` 是 NumPy 的按位运算符，Pandas 借用了它们来实现元素级的逻辑运算:
+
+- `&` (按位与)：对两个布尔系列中的每个对应元素进行 `AND` 运算。只有当两个对应元素都为 `True` 时，结果才为 `True`。
+- `| `(按位或)：对两个布尔系列中的每个对应元素进行 `OR` 运算。只要其中一个对应元素为`True`，结果就为 `True`。
+
+## apply 方法
 
 Pandas中一个广泛应用的方法是 `df.apply()`，它将一个函数应用到每一行/列，返回一个序列；
 
-函数可以是内嵌的（built in）也可以是自定义的，例如，计算每一列的最大值，为了节省输出空间，使用子集`df`数据框：
+函数可以是内嵌的（built in）也可以是自定义的，例如，计算每一列的最大值，这里使用了Numpy库的max函数：
 
 ```{python}
-df.apply(np.max, axis=0)
+pwt2019_sub.apply(np.max, axis=0)
 ```
 
 或者，自定义一个函数`range(x)`计算极差：
 
 ```{python}
-import numpy as np
 def range(x):
     return np.max(x) - np.min(x)
-df.select_dtypes(np.number).apply(range)
+pwt2019_sub.select_dtypes(np.number).apply(range)
 ```
 
 再例如，归一化（normalization）经常使用minmax方法：
@@ -202,27 +250,32 @@ pwt2019[['pop','rgdpe', 'emp']].apply(minmax)
 
 ```{python}
 variables = ['rgdpe', 'rgdpo','cgdpe','cgdpo']
-df[variables].apply(lambda row:
+pwt2019[variables].apply(lambda row:
     row['rgdpe']*0.3 + row['rgdpo']*0.2 + row['cgdpe']*0.3 + row['cgdpo']*0.2,
     axis=1)
 ```
 
-注意，z选项`axis = 1` ，将函数应用至每一行，默认值为0。
+注意，选项`axis = 1` ，将函数应用至每一行，默认值为0。
 
 
-### 检测和处理缺失值
+## 检测和处理缺失值
 
-Pandas中最常用的缺失值表示是`NaN`（Not a Number）。可以使用`isnull()`或`isna()`函数检测缺失值，返回一个布尔型的DataFrame，其中`True`表示缺失值：
+数据集不可避免会遇到存在缺失值的情况。在@sec-reading_data 部分导入数据时，Pandas中最常用的缺失值表示是`NaN`（Not a Number）。可以使用`isnull()`或`isna()`函数检测缺失值，返回一个布尔型的DataFrame，其中`True`表示缺失值：
 ```{python}
-pwt2019.isna()
 #pwt2019.isnull()
+pwt2019.isna().sum()
 ```
 
-下面的的代码计算了缺失值的数量，将其除以样本容量得到缺失值比例，然后按照降序排序，并将比例最高的前15个变量绘制柱形图：
+下面的的代码计展示了Pandas中链式操作的强大功能，仅用一行命令实现了：
+
+- 计算了缺失值的数量
+- 除以样本容量得到缺失值比例
+- 按照降序排序
+- 并将比例最高的前15个变量绘制柱形图：
 
 ```{python}
-fig, ax = plt.subplots(figsize=(8, 6))
-(pwt2019.isna().sum()/pwt2019.shape[0]*100).sort_values(ascending=False)[:15].plot(kind='bar', ax=ax)
+fig, ax = plt.subplots()
+(pwt2019.isna().sum()/pwt2019.shape[0] * 100).sort_values(ascending=False)[:15].plot(kind='bar', ax=ax)
 ax.set_ylabel("%")
 plt.show()
 ```
@@ -231,13 +284,14 @@ plt.show()
 
 ```{python}
 import missingno as msno
-plt.figure(figsize=(12, 6))
-msno.matrix(pwt2019)
-plt.title("Missing Values Matrix")
+fig, ax = plt.subplots(figsize=(12,6))
+msno.matrix(pwt2019,sparkline=False, ax=ax)
+ax.set_xlabel("Missing Values Matrix")
+plt.tight_layout()
 plt.show()
 ```
 
-**删除缺失值**
+### 删除缺失值
 
 处理缺失值的方法有很多种，选择哪种方法取决于你的数据特性、缺失原因以及分析目标。最直接的方法是使用`df.dropna()`函数删除包含缺失值的行或列：
 ```{python}
@@ -247,31 +301,103 @@ pwt2019.dropna()
 pwt2019.dropna(axis=1)
 ```
 
-另外，上面的命令并没有改变原数据框，可以通过赋值方式保存。或者加上选项`df.dropna(inplace=True)`，即在原数据框中生效。
+上面的命令并没有改变原数据框，可以通过赋值方式保存删除后数据，或者使用`df.dropna(inplace=True)`，即在原数据框中生效。
 
-**填充**
+### 数值填充
 
-`df.fillna()`是用于填充缺失值的核心函数。
+数值型变量缺失值处理中最简单的是用某个值进行填充，`df.fillna()`是核心函数。
+
+在Penn World Data中有几个变量是分类变量，如i_icg, i_xm等，参见数据集Excel表中“Data information variables”的说明。如果简单使用`pwt2019.fillna(0)`的命令会报错。我们小需要只对数值型列的缺失值（NaN）进行填充，而其他非数值型列（如分类变量、文本等）则保持原样。下面的链式命令需要简单的说明：
+
+- `.select_dtypes(np.number)`筛选出所有数据类型为数值型（numeric）的列变量；
+- `.fillna(0)`对筛选后的数据框上，用0填充缺失值；
+- `.combine_first(pwt2019)`，是整个命令中最关键的一步。combine_first 是一个强大的方法，它将两个 DataFrame 按索引和列名进行合并。它的工作原理是：
+
+    - 对于每一个位置（即索引和列），它首先查看调用者（也就是 .fillna(0) 之后得到的那个填充了 0 的数值型 DataFrame）的值。
+    - 如果调用者的值不是缺失值（NaN），就使用这个值。
+    - 如果调用者的值是缺失值（NaN），它就会去使用参数 pwt2019 中对应位置的值。
+
+由于第一步已经将非数值型列移除了，因此在 `.fillna(0)` 之后的 DataFrame 中，这些被移除的列全部变成了 `NaN`，就会使用
+`pwt2019` 中对应位置的值。
+- 最后按照初始变量`pwt2019.columns`的顺序重新排列数据。
 
 ```{python}
-#
-pwt2019.fillna(0)
-#
-pwt2019.select_dtypes(np.number).fillna(0).combine_first(pwt2019)
-pwt2019.select_dtypes(np.number).fillna(pwt2019.mean(numeric_only=True)).combine_first(pwt2019)
-pwt2019.select_dtypes(np.number).fillna(pwt2019.median(numeric_only=True)).combine_first(pwt2019)
+pwt2019.select_dtypes(np.number).fillna(0).combine_first(pwt2019)[pwt2019.columns]
 ```
+
+除了0值外，常使用平均值或中位数来进行数值填充。下面的命令在计算均值/中位数时，使用了`numeric_only=True`参数只对数值型变量进行操作：
+
+```{python}
+pwt2019.select_dtypes(np.number).fillna(pwt2019.mean(numeric_only=True)).combine_first(pwt2019)
+# pwt2019.select_dtypes(np.number).fillna(pwt2019.median(numeric_only=True)).combine_first(pwt2019)
+```
+
+也可以使用向后填充（backward fill），即用一个观测值向其后面（更低索引位置）的缺失值来填充这个缺失值；或向前填充（forward fill）
 
 ```{python}
 #pwt2019.fillna(method='ffill')
 pwt2019.fillna(method='bfill')
 ```
 
-**插值法（Interpolation）**
+另外，`.fillna()`函数可以根据定义的字典，不同的列用不同的值填充。
 
-除了填充给定值以外，也有更复杂的插值法。
 ```{python}
-pwt2019.interpolate(method="linear")
+values = {"pop":0.01, 'emp':0.005, "ctfp": 0.1,}
+pwt2019_sub.fillna(values)
+```
+
+### 插值法（Interpolation）
+
+除了填充给定值以外，也有更复杂的插值法。例如线性插值法。
+
+![线性插值法](images/linear_interpolation.png){#fig-linear_interpolation}
+
+假设已知两个点 $(x_{0},y_{0})$ 和 $x_{1}, y_{1}$，线性插值法意味着满足方程：
+$$
+\frac{y-y_{0}}{x-x_{0}} = \frac{y_{1}-y_{0}}{x_{1}-x_{0}}
+$$
+
+```{python}
+s = pd.Series([0, 1, np.nan, 3])
+s.interpolate()
+```
+
+将其应用至数值型变量：
+
+```{python}
+pwt2019.select_dtypes(np.number).interpolate(method="linear")
+```
+
+### 应用：长期经济增长
+
+[Maddison Project Database 2023](https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023)是基于经济史学家Angus Maddison 的研究构建的长期经济增长数据库，主要包含人均GDP（gdppc）和人口（pop）数据，最早至公元1年，中间有大量的缺失值。
+
+我们下载并载入数据，来绘制一幅：
+
+```{python}
+mpd = pd.read_excel("datasets/mpd2023_web.xlsx", sheet_name="Full data")
+gdp_pc = mpd.set_index(['countrycode', 'year'])['gdppc'].unstack('countrycode')
+gdp_pc.tail()
+
+```
+
+由于中间有缺失值，绘制的图形出现大段的空白，因此，我们用线性插值法补充，用虚线表示：
+
+```{python}
+countries = ['CHN', 'GBR', 'USA']
+colors = ['blue','red','green']
+fig, ax = plt.subplots()
+for country, color in zip(countries, colors):
+    ax.plot(gdp_pc[country], linewidth = 2,
+        label = country,
+        color = color)
+    ax.plot(gdp_pc[country].interpolate(),
+            linestyle = '--',
+            lw=2, color = color)
+ax.set_title("GDP per Capita, 1000- (China, UK, USA)")
+ax.legend()
+plt.tight_layout()
+plt.show()
 ```
 
 更复杂的方法涉及到模型估计问题，如KNN预测等。Scikit-learn库有专门的方法，这里就不多涉及。
@@ -280,6 +406,49 @@ from sklearn.impute import SimpleImputer
 imputer_mean = SimpleImputer(strategy='mean')
 pd.DataFrame(imputer_mean.fit_transform(pwt2019.select_dtypes(np.number)), columns=pwt2019.select_dtypes(np.number).columns)
 ```
+
+## 异常值
+
+异常值的存在可能对数据运算结果产生较大的影响。
+
+### 异常值的检测
+
+可以计算统计量或图形的方法来检测是否存在异常值。这里介绍常用的Z-Score方法：
+$$
+Z = \frac{x - \mu}{\sigma}
+$$
+
+它度量了一个数据点与均值之间以标准差为单位的距离，当数据近似正态分布的时候适合使用。将Z-Score超过某个阈值（如2或3）的数据点，视为异常值。
+
+如果是对数据框操作，可以应用`apply()`函数：
+```{python}
+pd.options.display.float_format = '{:.3f}'.format
+zscore = pwt2019.select_dtypes(np.number).apply(lambda x: (x-x.mean(axis=0))/x.std(axis=0))
+pwt2019[zscore['pop']>3]['pop']
+```
+
+另外一种方法是根据四分位距（Interquartile Range，IQR），令 $IQR = Q_{3} - Q_{1}$，在 $Q_{1} - 1.5\cdot IQR$ 或 $Q_{3} + 1.5\cdot IQR$ 范围之外的数据点是异常值。
+```{python}
+def iqr_outlier(ser):
+    Q1 = ser.quantile(0.25)
+    Q3 = ser.quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    outlier = (ser < lower_bound) | (ser > upper_bound)
+    return outlier
+
+pwt2019[iqr_outlier(pwt2019['pop'])][['country', 'pop']]
+```
+
+通常IQR方法是采用箱形图的形式展示的，如图所示，位于 $Q_{3}$ 上方1.5倍IQR的观测值，以散点的形式展现出来。
+
+```{python}
+fig, ax = plt.subplots()
+ax.boxplot(x=pwt2019['pop'])
+plt.show()
+```
+
 
 ### 缩尾处理
 
@@ -294,89 +463,200 @@ q05 = pwt2019['ctfp'].quantile(0.05)
 pwt2019['ctfp'].dropna().clip(lower=q05, upper=q95, inplace=False)
 ```
 
-### 观测值排序
+## 观测值排序
 
 有时候需要对数据集进行一定的排序，Pandas中可以按索引(`df.sort_index`)和值（`df.sort_values`）排序。
+
+### 根据索引排序
 
 例如，将索引按降序排序，这里的索引是国家代码，因此升序/降序是按照字母顺序：
 ```{python}
 pwt2019.sort_index(ascending=False)
 ```
 
-来看`df.sort_values`的例子，假设我们希望按2019年的人均GDP（PPP链式调整后）降序排列：
+### 根据值排序
+
+来看`df.sort_values`的例子，假设我们希望按2019年的人均GDP（PPP链式调整后）降序（令`ascending=False`）排列：
 
 ```{python}
 pwt2019['rgdp_per'] = pwt2019['rgdpe']/pwt2019['pop']
 pwt2019.sort_values(by='rgdp_per', ascending=False) 
 ```
 
-### 数据集合并
+## 数据集合并
 
-实际应用中，数据可能来自不同的来源，经常需要合并数据集，`pd.merge()`函数
+在Pandas中，数据集合并是一个非常常见的操作，它允许你将多个DataFrame或Series根据某种关系组合成一个新的数据结构。Pandas提供了几个强大的函数来处理数据合并，如 @tbl-merge_data 所示，它们各有侧重，适用于不同的场景，更多详细内容参见官方文档[Merge, join, concatenate and compare](https://pandas.pydata.org/pandas-docs/version/1.1/user_guide/merging.html)。
 
+:数据集的合并 {#tbl-merge_data}
+
+| 函数      | 主要功能                  | 默认连接方式            | 主要对齐方式 | 典型用途                                               |
+|-----------|--------------------------|-------------------------|--------------|--------------------------------------------------------|
+| concat()  | 按轴堆叠，合并            | 按行（axis=0），outer    | 索引         | 拼接多个DataFrame，例如将多个文件的数据读入后合并       |
+| merge()   | 根据键连接                | inner                   | 键（列名）    | 根据共同的列将两个或多个DataFrame关联起来，类似于SQL JOIN |
+| .join()   | 根据索引连接              | left                   | 索引         | 基于索引的快速连接，通常用于连接有相同索引的数据集         |
+
+### `pd.concat()`
+`concat()` 函数主要用于按轴（行或列）堆叠数据，它不对数据进行智能对齐，而是简单地将两个或多个DataFrame或Series沿着指定的轴拼接起来。
 ```{python}
-import wbgapi as wb
-inf = wb.data.DataFrame(series='NY.GDP.DEFL.KD.ZG', time='2019')
-pd.merge(df[['country','pop','emp']], inf, left_index=True, right_index=True)
+bricks = ['CHN', 'BRA', 'RUS', 'IND', 'ZAF']
+europe = ['GBR', 'NOR', 'SWE','ESP']
+asia = ['JPN','KOR','SGP']
+variables = ['country', 'rgdpe', 'pop']
+
+df1 = pwt2019.loc[bricks, variables]
+df2 = pwt2019.loc[europe, variables]
+df3 = pwt2019.loc[asia, variables]
+
+pd.concat([df1, df2, df3])
 ```
 
+默认是按列堆叠，即`axis=0`。
+```{python}
+variables2 = ['emp','avh']
+df4 = pwt2019.loc[bricks, variables2]
+pd.concat([df1, df4], axis=1)
+```
 
-### 多级索引
+### Merge
 
-这里的数据是一个面板数据，“国家-年”对应一个观测值，可以利用Pandas的多级索引功能，详见Pandas文档[MultiIndex / advanced indexing](https://pandas.pydata.org/docs/dev/user_guide/advanced.html#)。
+实际应用中，数据可能来自不同的来源，经常需要合并数据集。`pd.merge()`函数是最常用和最强大的合并函数，用于根据一个或多个键（列或索引）将两个DataFrame连接起来。
+
+```{python}
+help(pd.merge)
+```
+
+其典型语法：
+
+`pd.merge(left, right, on=None, how='inner')`
+
+- `left`, `right`: 要合并的两个DataFrame。
+- `on`: 用于合并的键，可以是列名或列名列表。如果未指定，merge 会自动寻找两个DataFrame中同名的列作为键。如果合并的键不同，可以设定:
+  - `left_on`：左DataFrame合并的键；
+  - `right_on`：右DataFrame合并的键；
+  - `left_index`:使用左DataFrame的索引为合并的键；
+  - `right_index`：使用右DataFrame的索引为合并的键
+- `how`: 指定合并类型，如图 @fig-merge 所示：
+  - 'inner'（默认）：内连接，只保留两个DataFrame中键都存在的数据。
+  - 'outer': 外连接，保留所有键，缺失值用NaN填充。
+  - 'left': 左连接，保留左DataFrame的所有键，右DataFrame中没有对应键的数据用NaN填充。
+  - 'right': 右连接，保留右DataFrame的所有键，左DataFrame中没有对应键的数据用NaN填充。
+
+![Merge 方法示意图](images/merge.png){#fig-merge}
+
+PWT数据是经过购买力平价调整后的数据，假如我们还需要其他的跨国数据，如通货膨胀率、霍比增长速度等，我们就需要与其他数据集合并。
+
+首先我们从世界银行数据库下载
+[Inflation, GDP deflator (annual %)](https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG)、[Broad money growth (annual %)](https://data.worldbank.org/indicator/FM.LBL.BMNY.ZG)，
+两个变量：
+```{python}
+# import wbgapi as wb
+# df_wb = wb.data.DataFrame(series=['NY.GDP.DEFL.KD.ZG', 'FM.LBL.BMNY.ZG'], time='2019')
+#df_wb.to_csv("datasets/Inf_M2.csv")
+df_wb = pd.read_csv("datasets/Inf_M2.csv", index_col=0)
+df_wb
+```
+
+我们发现数据集索引变量`economy`使用的同样是ISO国家代码，作为练习，我们希望获得国家名称、收入水平等级、首都等信息，可以使用`wb.economy.DataFrame()`获取一个包含所有国家/地区信息的数据框：
+```{python}
+country_info = wb.economy.DataFrame(skipAggs=True)[['name', 'incomeLevel','capitalCity']]
+```
+
+现在我们有3个数据集，`pwt2019`、`df_wb`、`country_info`，要合并在一起，我们可以：
+
+-  `df_wb`和`country_info`数据集索引相同，根据索引首先进行合并；
+-  合并后的数据有变量`name`，表示国家名称，然后用**变量**作为合并的键进行合并
+
+```{python}
+merged_df1 =pd.merge(pwt2019_sub, 
+            pd.merge(df_wb, country_info, left_index=True, right_index=True),
+            left_on="country", right_on="name")
+merged_df1.shape
+```
+
+默认的是 `how='inner'`，不能合并的数据将被删除。我们发现，合并后观测值有156个，这是因为两个数据集中国家名称并不完全一致。推荐使用索引进行合并:
+
+```{python}
+merged_df2 = pd.merge(pwt2019_sub,
+            pd.merge(df_wb, country_info, left_index=True, right_index=True),
+            left_index=True, right_index=True, how="left")
+merged_df2.shape
+```
+
+## 多级索引
+
+数据集Penn World Table是一个面板数据，“国家-年”对应一个观测值，每个国家都有多个观测值。可以利用Pandas的多级索引功能，详见Pandas文档[MultiIndex / advanced indexing](https://pandas.pydata.org/docs/dev/user_guide/advanced.html#)。
 
 ```{python}
 pwt = pd.read_excel(io = "datasets/pwt1001.xlsx",
                 header=0,                
                 sheet_name="Data")
 pwt.set_index(['countrycode','year'], inplace=True)
+pwt.tail()
 ```
 
-我们可以使用`.loc()`方法选择需要的数据，例如：
-
+多重索引是由多个级别的标签构成的，在Pandas内部以元组的形式表示和管理：
 ```{python}
-# 中国子集
-df_china = pwt.loc['CHN']
-# 中国、美国子集
-df_china_us = pwt.loc[['CHN','USA']]
-# 变量子集
-df_sub_china_us = pwt.loc[['CHN', 'USA']][['rgdpe','rgdpo']]
+pwt.index[:3]
 ```
 
-如果需要选择某一年的截面数据：
+### 选择数据
+
+同样，我们可以使用`.loc()`标签（labels）方法选择需要的数据，例如：
+
 ```{python}
-pwt.loc[(slice(None), [2019]), :]
-# 1992年之后的数据
+pwt.loc[['CHN', 'USA'], ['rgdpe','pop']]
+```
+
+如果需要选择某一年的截面数据，由于有多级索引，可以用一个元组来为每一级索引提供一个选择器：
+
+```{python}
+pwt.loc[(slice(None), 2015), :]
+```
+
+注意，
+- 这里使用了 `slice(None)`，是 Python 中表示**“所有”的一种方式，表示：“在第一级索引（例如，国家代码）上，选择所有标签。”
+- `2015`表示：“在第二级索引（例如，年份）上，只选择标签为 2015 的行。”
+- 如果想选择多年数据可以列表形式，如[2001,2015]。
+  
+如果是选择1992年以后的数据，可以在第二级索引上同样应用  `slice()`：
+年之后的数据
+```{python}
 pwt.loc[(slice(None), slice(1992, None)), :]
 ```
 
-这里使用了`df.loc`结合`slice`函数的方法，注意：
-
-- `slice(None)`: 这表示选择 所有 `countrycode`。
-- `slice(1992, None)`: 这表示从 `year` 的 1992年 开始，选择到 **所有**后续年份。由于索引是排序的（通常情况下），这有效地选择了所有 `year > 1992` 的数据。
-- `:`表示选择所有列。
-
-上面的例子使用`slice`函数不是那么直观，也可以使用`df.index.get_level_values('year')`提取索引`year`的值，形成一个序列（可以另存为一个变量），然后利用表达式生成一个布尔序列，对数据框进行筛选：
+上面的例子使用`slice`函数不是那么直观，也可以使用`df.index.get_level_values('year')`提取索引`year`的值，形成一个序列（可以另存为一个变量），然后利用条件表达式生成一个布尔序列，对数据框进行筛选：
 ```{python}
-pwt[pwt.index.get_level_values('year') > 1992]
+sec_index = pwt.index.get_level_values('year')
+pwt[sec_index > 1992]
 ```
 
 当然，可以同时选择指定的变量和年份，例如：
 ```{python}
-pwt.loc[(slice(None),[2016,2019]), ['rgdpe','rgdpo']]
+pwt.loc[(slice(None), [2016,2019]), ['rgdpe','rgdpo']]
 #
 pwt.loc[((["CHN", "USA"], [2016,2019])), ['rgdpe','rgdpo']]
 ```
 
+### 按索引排序
+
 除了通常的排序以外，由于有了二级索引，如果按索引排序，两级索引变量是同时排序的：
 ```{python}
-pwt.sort_index()
+pwt.sort_index(ascending=False)
 ```
 
 可以对两级索引以列表的形式分别设定排序的顺序。例如，先将国家代码按字母升序，然后将年降序：
 
 ```{python}
 pwt.sort_index(ascending=[True, False])
+```
+
+### `pd.merge`
+
+假如我们想要把国家有关信息`country_info`数据与`pwt`合并，由于后者是面板数据，需要使用参数`validate = "m:1"`。下面的例子在合并之前先将索引名称重命名保持一致，否则会报错：
+
+```{python}
+country_info = country_info.rename_axis('countrycode', axis=0)
+pd.merge(pwt, country_info, left_index=True, right_index=True,validate= "m:1")
 ```
 
 ### `stack` 和 `unstack`
@@ -420,7 +700,7 @@ df_long.pivot_table(index=['economy', 'year'], columns='series', values='value')
 ```
 
 
-### Pandas中的分组计算（`groupby`）
+## Pandas中的分组计算（`groupby`）
 
 Pandas 的分组（`groupby()`）方法按照“分割-应用-组合（split-apply-combine）”的原理，创建一个 groupby 对象，可以应用各种方法来聚合、转换或过滤数据。更多介绍参见Pandas官方文档[Group by: split-apply-combine](https://pandas.pydata.org/docs/user_guide/groupby.html)。
 
@@ -463,7 +743,7 @@ pwt.groupby(by=['country']).last()
 ```
 
 
-#### 转换方法（Transformation Methods）
+### 转换方法（Transformation Methods）
 
 - `transform(func)`: 对每个组应用函数，并将结果广播回原始 DataFrame 的形状。
 - `rank(method='average')`: 计算组内排名。
@@ -482,7 +762,7 @@ pwt.select_dtypes(np.number).groupby(level=0).transform(lambda x: (x - x.mean())
 ```
 
 
-#### 过滤方法（Filtration Methods）
+### 过滤方法（Filtration Methods）
 
 过滤方法会根据每个组的某个条件来排除整个组。
 
@@ -492,7 +772,7 @@ pwt.select_dtypes(np.number).groupby(level=0).transform(lambda x: (x - x.mean())
 pwt.groupby(level=0).filter(lambda x: x['pop'].mean() > 50)
 ```
 
-#### 应用方法（Application Methods）
+### 应用方法（Application Methods）
 apply() 方法是最通用的方法，它允许你对每个组应用任何自定义函数。这个函数可以执行聚合、转换或过滤操作，或者任何更复杂的逻辑。
 
 - apply(func): 将一个自定义函数应用于每个组。函数的返回值可以是 Series、DataFrame 或标量。
